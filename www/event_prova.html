@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title> ONLUS </title>
+  </head>
+
+  <body>
+    <h1>SINGLE EVENT</h1>
+    <h1 id="event_name"></h1>
+    <p id="demo"></p>
+    <p id="demow"></p>
+    <p id="demoww"></p>
+
+
+    </body>
+
+      <script>
+        document.getElementById("demo").innerHTML = "Page path is: " + window.location.pathname;
+        document.getElementById("demow").innerHTML = "Page path is: " + window.location.search;
+        var myString = window.location.search.toString();
+        var lastChar = myString[myString.length -1];
+        console.log(lastChar)
+        document.getElementById("demoww").innerHTML = lastChar;
+
+        var event_name = document.getElementById("event_name");
+        fetch("v1/events/"+lastChar).then(function(response){
+          return response.json();
+        }).then(function(json){
+          let title = json.name;
+          console.log(json.name);
+          event_name.innerHTML = `${title}`;
+        });
+
+      </script>
+      <!-- <script src="../assets/js/book.js"></script> -->
+  </html>

@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Lumia Bootstrap Template - Index</title>
+  <meta content="" name="descriptison">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
+  <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Lumia - v2.0.0
+  * Template URL: https://bootstrapmade.com/lumia-bootstrap-business-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center">
+    <div class="container d-flex align-items-center">
+
+      <div class="logo mr-auto">
+        <!-- <h1><a href="index.html">Lumia</a></h1>
+         Uncomment below if you prefer to use an image logo -->
+        <a href="/"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>
+      </div>
+
+      <nav class="nav-menu d-none d-lg-block">
+        <ul>
+          <li><a href="/allservices.html">Services</a></li>
+
+          <li><a href="/allevents.html">Events</a></li>
+          <li><a href="/allpeople.html">People</a></li>
+          <li><a href="/association">Association</a></li>
+          <li><a href="/supportus.html">Support Us</a></li>
+          <li><a href="/users/login">MY AINA</a></li>
+        </ul>
+      </nav><!-- .nav-menu -->
+
+
+
+    </div>
+  </header><!-- End Header -->
+
+
+  <main id="main">
+
+
+    <section id="person">
+
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb" style="background-color:white;">
+          <li class="breadcrumb-item"><a href="/services">Services</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Service</li>
+        </ol>
+      </nav>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6">
+            <h3><span id="name"></span></h3>
+            <p><span id="description"></span>
+              </p>
+          </div>
+          <div class="col-lg-6">
+              <br><br><img src="assets/img/services/paolos.jpg" class="card-img-top" alt="...">
+          </div>
+        </div>
+        <br><br><br>
+
+        <div class="row">
+          <h3> Related People </h3>
+        </div>
+
+        <div class="row">
+          <span id="relative_people_card" class="row"></span>
+      <!--
+          <div class="card" style="width: 18rem; margin-right:30px;">
+            <img src="assets/img/people/gagliotti.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class="card-text"><%= person_names[0] %> <%= person_surnames[0] %></p>
+            </div>
+          </div>
+
+          <div class="card" style="width: 18rem; margin-right:30px;">
+            <img src="assets/img/people/gagliotti.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class="card-text"><%= person_names[1] %> <%= person_surnames[1] %></p>
+            </div>
+          </div>
+          <div class="card" style="width: 18rem; margin-right:30px;">
+            <img src="assets/img/people/gagliotti.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class="card-text"><%= person_names[2] %> <%= person_surnames[2] %></p>
+            </div>
+          </div> -->
+        </div>
+
+        <br><br><br>
+        <div class="row">
+
+          <h3> Related Events </h3>
+        </div>
+        <div class="row">
+
+          <span id="relative_events_card" class="row"></span>
+<!--          <div class="card" style="width: 18rem; margin-right:30px; height:23rem;">
+            <a href="/event<%= event_ids[0] %>" class="link-details" title="More Details">
+            <img src="assets/img/event01.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-lg-8">
+                  <p class="card-text">Rome, Italy </p>
+                  <h5 class="card-text"><%= event_names[0] %><br> wowowo</h5>
+                  <p class="card-text">Foundraising</p>
+                </div>
+                <div class="col-lg-4">
+                  <p class="card-text" style="text-align:right">Nome nome cogno </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card" style="width: 18rem; margin-right:30px; height:23rem;">
+            <a href="/event<%= event_ids[1] %>" class="link-details" title="More Details">
+            <img src="assets/img/event01.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-lg-8">
+                  <p class="card-text">Rome, Italy </p>
+                  <h5 class="card-text"><%= event_names[1] %><br> wowowo</h5>
+                  <p class="card-text">Foundraising</p>
+                </div>
+                <div class="col-lg-4">
+                  <p class="card-text" style="text-align:right">Nome nome cogno </p>
+                </div>
+              </div>
+            </div>
+          </div>
+-->
+        </div>
+    </section>
+
+
+  </main><!-- End #main -->
+  <br><br><br><br>
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-4 col-md-6 footer-contact">
+            <h5>TERMS & CONDITION</h5>
+            <p>
+              We employ the use of cookies. <br>
+              By accessing aina-onlus.it, you <br>
+              agreed to use cookies in agreement <br>
+              with the Aina Onlus’ Privacy Policy.
+            </p>
+          </div>
+          <div class="col-lg-4 col-md-6 footer-contact">
+            <h5>CONTACT US</h5>
+            <p>
+
+              <strong>Phone:</strong> +1 5589 55488 55<br>
+              <strong>Email:</strong> hello@aina-onlus.it<br>
+            </p>
+          </div>
+
+
+          <div class="col-lg-4 col-md-6 footer-newsletter">
+            <h5>NEWSLETTER</h5>
+
+            <form action="" method="post">
+              <input type="email" name="email"><input type="submit" value="Subscribe">
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/jquery/jquery.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+  <script src="assets/vendor/counterup/counterup.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/venobox/venobox.min.js"></script>
+  <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+
+<script>
+var myString = window.location.search.toString();
+var lastChar = myString[myString.length -1];
+
+fetch("v1/services/"+lastChar).then(function(response){
+  return response.json();
+}).then(function(json){
+  const name = json.name;
+  const description = json.description;
+  document.getElementById("name").innerHTML = `${name}`;
+  document.getElementById("description").innerHTML = `${description}`;
+
+  fetch("v1/events").then(function(respo){
+    return respo.json();
+}).then(function(json){
+  let related_events = [];
+  for(var t=0;t<json.length;t++){
+    if(json[t].service_id==lastChar){
+      related_events.push(t);
+    }
+  }
+  for(var z=0;z<related_events.length;z++){
+    document.getElementById("relative_events_card").innerHTML += `<div class="card" style="width: 18rem; margin-right:30px; height:23rem;">
+      <a href="/event.html?${json[related_events[z]].id}" class="link-details" title="More Details">
+      <img src="assets/img/event01.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-lg-8">
+            <p class="card-text">Rome, Italy </p>
+            <h5 class="card-text">${json[related_events[z]].name}<br> -----</h5>
+            <p class="card-text">Foundraising</p>
+          </div>
+          <div class="col-lg-4">
+            <p class="card-text" style="text-align:right">Nome nome cogno </p>
+          </div>
+        </div>
+      </div>
+    </div>`
+  }
+})
+
+
+  fetch("v1/rel").then(function(res){
+    return res.json();
+  }).then(function(json){
+    related_people_ids = [];
+    for(var j=0;j<json.length;j++){
+      if(json[j].service_id == lastChar){
+        related_people_ids.push(json[j].person_id);
+      }
+    }
+
+    let related_people_name_surname = [];
+
+    async function get_person_name_surname(related_people_ids){
+      for(let h=0;h<related_people_ids.length;h++){
+        let x = await fetch("v1/people/"+related_people_ids[h]).then((res)=>{
+          return res.json();
+        });
+        related_people_name_surname.push(x.name + " " + x.surname);
+    }
+    for(let i=0;i<related_people_ids.length;i++){
+      document.getElementById("relative_people_card").innerHTML += `<div class="card" style="width: 18rem; margin-right:30px;">
+        <img src="assets/img/people/gagliotti.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <p class="card-text">${related_people_name_surname[i]}</p>
+        </div>
+      </div>`
+              }
+    }
+    get_person_name_surname(related_people_ids);
+
+  })
+  })
+
+
+  </script>
+
+
+</html>

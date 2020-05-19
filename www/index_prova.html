@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>AINA ONLUS </title>
+  </head>
+
+  <body>
+    <h1>home page</h1>
+
+    <div class="user"></div>
+    <form method="post" action="v1/users/login">
+      <input type="text" name="username" value="username" />
+      <input type="text" name="password" value="password" />
+      <input type="submit" value="submit" />
+
+    </body>
+    <footer id="footer">
+
+      <div class="footer-top ">
+        <div class="container-fluid ">
+          <div class="row mr-5 ml-5">
+
+            <div class="col-lg-4 col-md-6 footer-contact">
+              <h5>TERMS & CONDITION</h5>
+              <p>
+                We employ the use of cookies. <br>
+                By accessing aina-onlus.it, you <br>
+                agreed to use cookies in agreement <br>
+                with the Aina Onlus’ Privacy Policy.
+              </p>
+            </div>
+            <div class="col-lg-4 col-md-6 footer-contact">
+              <h5>CONTACT US</h5>
+              <p>
+
+                <strong>Phone:</strong> +1 5589 55488 55<br>
+                <strong>Email:</strong> hello@aina-onlus.it<br>
+              </p>
+            </div>
+
+            <div class="col-lg-4 col-md-6 footer-newsletter">
+              <h5>NEWSLETTER</h5>
+
+              <form action="" method="post">
+                <input type="email" name="email"><input type="submit" value="Subscribe">
+              </form>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+
+    let myUser = document.querySelector(".user"):
+    fetch("v1/users/me").then(function(response){
+        if(!response.ok){
+          /* the user is not logged in */
+          return {name: "Sorry, you must be logged in"}
+        }
+        else{
+          return response.json();
+        }
+      }).then(function(json){
+        let user = document.createElement("p");
+        user.innerHTML=`Current user: ${json.name}`;
+        myUser.appendChild(user);
+      });
+
+
+      </script>
+
+    </html>
