@@ -899,7 +899,7 @@
           <div class="col-lg-4 col-md-6 footer-newsletter">
             <h5>NEWSLETTER</h5>
 
-            <form action="" method="post">
+            <form action="/users/login" method="post">
               <input type="email" name="email"><input type="submit" value="Subscribe">
             </form>
           </div>
@@ -951,5 +951,38 @@
   <script src="assets/js/main.js"></script>
 
 </body>
+
+<script>
+
+async function (req, res) {
+  let message = [];
+  let email = req.body;
+  pool.query(
+    `select * from email
+    where email = $1`,[email],(err, results) => {
+      if (err){
+        throw err;
+      }
+      if(results.rows.length > 0){
+        message.push("This email is already registered for the newsletter");
+        res.render("newsletter",{message});
+      }
+      else{
+        pool.query(
+          `insert into email (email)
+          values ($1)`, [email], (err, results) => {
+            if (err){
+              throw err
+            }
+            message.push("You are registered for the newsletter!");
+            res.render("newsletter",{message});
+          }
+        );
+      }
+    }
+  );
+};
+
+</script>
 
 </html>

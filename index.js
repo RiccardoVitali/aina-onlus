@@ -4,10 +4,11 @@ const { Client } = require('pg');
 
 const client = new Client({
   //connectionString: process.env.DATABASE_URL,
-  connectionString:'postgressql://fabio:sailor@localhost:5432/demo',
-  ssl: {
-    rejectUnauthorized: false
-  }
+  connectionString:'postgres://isbqdpgvdgoxyl:b6bfc8722207ffe332d057a8b2a0982b266e0d13b3a220ffbfaffcd8f7705441@ec2-54-217-236-206.eu-west-1.compute.amazonaws.com:5432/dcghe6369hs0cv
+'//,
+//  ssl: {
+//    rejectUnauthorized: false
+//  }
 });
 
 client.connect();
@@ -71,6 +72,24 @@ swaggerTools.initializeMiddleware(swaggerDoc, function (middleware) {
   app.use(serveStatic(__dirname + '/www'));
   //app.use(serveStatic(__dirname + '/assets'));  // NON PERCHE QUESTO NON VA (ho dovuto usare il mio amato express)
   app.use('/assets', express.static('assets'));
+
+
+
+
+async function readServices(){
+  try{
+    const results = await client.query("select * from service");
+    console.log(results.rows);
+    return results.rows;
+  }
+  catch(e){
+    return [];
+  }
+}
+readServices();
+console.log("results.rows");
+
+
 
   // Start the server
   setupDataLayer().then( () => {
