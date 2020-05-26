@@ -29,9 +29,9 @@ const fs = require('fs'),
     path = require('path'),
     http = require('http');
 
-//var app = require('connect')();
+var app = require('connect')();
 const express = require("express");
-const app = express();
+//const app = express();
 const routes = require("./routes");
 const serveStatic = require("serve-static");
 //const session = require("express-session");
