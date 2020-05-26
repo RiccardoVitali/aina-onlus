@@ -1,6 +1,6 @@
 const routes = require("express").Router();
 const path = require("path");
-const user = require("./User");
+const user = require("./user");
 
 
 routes.get("/isLoggedIn", (req, res) => {
