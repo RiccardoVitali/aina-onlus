@@ -1,4 +1,4 @@
-const dataUser = require("../../controllers/user");
+const dataUser = require("../../controllers/User");
 const bcrypt = require("bcrypt");
 
 module.exports = (req, res, next) => {
