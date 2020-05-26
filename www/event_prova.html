@@ -1,36 +1,55 @@
 <!DOCTYPE html>
 <html>
+<script src="assets/js/user.js"></script>
   <head>
   <title> ONLUS </title>
   </head>
 
   <body>
-    <h1>SINGLE EVENT</h1>
-    <h1 id="event_name"></h1>
-    <p id="demo"></p>
-    <p id="demow"></p>
-    <p id="demoww"></p>
+    <h1>LOGIN</h1>
+
+    <div  id="loginForm" class="login-form">
+    <form   class="form">
+      <div class="form__header">
+        <h2 class="form__heading">
+          Sign up
+        </h2>
+        <p class="form__heading--small">Already have an account <a href="login.html">Login</a> instead </p>
+      </div>
+     <div class="signup-form__error"></div>
+      <div class="form__group">
+        <input
+          type="text"
+          class="form__input"
+          placeholder="Username"
+          id="signupUsername"
+
+        />
+        <label for="signupUsername" class="form__label">Username</label>
+      </div>
+
+      <div class="form__group">
+        <input
+          type="password"
+          class="form__input"
+          placeholder="Password"
+          id="signupPassword"
+
+        />
+        <label for="signupPassword" class="form__label">Password</label>
+      </div>
+      <div class="form__group">
+      <input id="login" class="form__btn" type="submit" />
+      <div class="form__group">
+
+    </form>
+    </div>
+
 
 
     </body>
 
-      <script>
-        document.getElementById("demo").innerHTML = "Page path is: " + window.location.pathname;
-        document.getElementById("demow").innerHTML = "Page path is: " + window.location.search;
-        var myString = window.location.search.toString();
-        var lastChar = myString[myString.length -1];
-        console.log(lastChar)
-        document.getElementById("demoww").innerHTML = lastChar;
 
-        var event_name = document.getElementById("event_name");
-        fetch("v1/events/"+lastChar).then(function(response){
-          return response.json();
-        }).then(function(json){
-          let title = json.name;
-          console.log(json.name);
-          event_name.innerHTML = `${title}`;
-        });
 
-      </script>
-      <!-- <script src="../assets/js/book.js"></script> -->
+
   </html>

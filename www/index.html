@@ -68,10 +68,10 @@
           </li> -->
           <li><a href="/allevents.html">Events</a></li>
           <li><a href="/allpeople.html">People</a></li>
-          <li><a href="/association">Association</a></li>
+          <li><a href="/association.html">Association</a></li>
           <li><a href="/supportus.html">Support Us</a></li>
 
-          <li><a href="/users/login"> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <span id="login">Log in</span> </a></li>
+          <li><a href="#login"> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <span id="login">Log in</span> </a></li>
 
 
         </ul>
@@ -899,8 +899,8 @@
           <div class="col-lg-4 col-md-6 footer-newsletter">
             <h5>NEWSLETTER</h5>
 
-            <form action="" method="post">
-              <input type="email" name="email"><input type="submit" value="Subscribe">
+            <form action="/newsletter" method="post">
+              <input type="email" id="email" name="email"><input type="submit" value="Subscribe">
             </form>
           </div>
 
@@ -951,5 +951,21 @@
   <script src="assets/js/main.js"></script>
 
 </body>
+
+<script>
+
+const data = document.getElementById("email").value,
+fetch('/newsletter', {
+  method: 'POST',
+  headers: {
+      'Content-Type': 'application/json'
+  },
+  body: JSON.stringify(data)
+}).then(
+  console.log("data");
+  console.log(data);)
+
+</script>
+
 
 </html>

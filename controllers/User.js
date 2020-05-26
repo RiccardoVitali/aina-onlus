@@ -1,36 +1,23 @@
+"use strict";
 
-'use strict';
+const connectionPool = require("./database");
 
-var utils = require('../utils/writer.js');
-var User = require('../service/UserService');
-
-
-module.exports.usersLoginPOST = function usersLoginPOST (req, res, next) {
-  var username = req.swagger.params['username'].value;
-  var password = req.swagger.params['password'].value;
-  User.usersLoginPOST(username, password)
-    .then(function (response) {
-      req.session.uid = response.id;
-      res.writeHead(301, { Location: "/index_prova.html" });
-      res.end();
-      utils.writeJson(res, response);
-    })
-    .catch(function (response) {
-      utils.writeJson(res, response);
-    });
+exports.getUser = async username => {
+  console.log("getting user");
+  const result = await connectionPool.query(
+    "SELECT * FROM Users WHERE user_name = $1  LIMIT 1",
+    [username]
+  );
+  console.log("result");
+  console.log(result.rows);
+  return result.rows;
 };
 
-module.exports.usersMeGET = function usersMeGET (req, res, next) {
-  User.usersMeGET()
-    .then(function (response) {
-      if(req.session.uid){
-        utils.writeJson(res, response);
-      }
-      else{
-        utils.writeJson(res, { error: "Sorry, invalid credentials"}, 401);
-      }
-    })
-    .catch(function (response) {
-      utils.writeJson(res, response);
-    });
+exports.insertUser = async (username, password) => {
+  console.log("inserting user");
+
+  return await connectionPool.query(
+    "INSERT INTO Users (user_name, user_password) VALUES ($1,$2)",
+    [username, password]
+  );
 };

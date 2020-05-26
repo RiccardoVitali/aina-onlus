@@ -1,6 +1,15 @@
 'use strict';
 
-let sqlDb;
+//let sqlDb = require("./DataLayer.js")
+const sqlDbFactory = require("knex");
+let sqlDb = sqlDbFactory({
+  client: "pg",
+  debug: true,
+  //connection: process.env.DATABASE_URL,
+  connection:'postgressql://fabio:sailor@localhost:5432/demo',
+  ssl: true
+});
+
 exports.servicesDbSetup = function(connection){
   sqlDb = connection;
   console.log("checking if the services table exists");
@@ -17,31 +26,7 @@ exports.servicesDbSetup = function(connection){
     }
   });
 };
-/**
- * get info about a service
- *
- * search String generic text search (optional)
- * returns List
- **/
- /*
-exports.servicesGET = function(search) {
-  return new Promise(function(resolve, reject) {
-    var examples = {};
-    examples['application/json'] = [ {
-  "id" : 0,
-  "title" : "School"
-}, {
-  "id" : 0,
-  "title" : "School"
-} ];
-    if (Object.keys(examples).length > 0) {
-      resolve(examples[Object.keys(examples)[0]]);
-    } else {
-      resolve();
-    }
-  });
-};
-*/
+
 exports.servicesGET = function(offset, search, limit) {
   if(!limit) limit=50;
   return sqlDb("services")
@@ -53,13 +38,7 @@ exports.servicesGET = function(offset, search, limit) {
 };
 
 
-/**
- * Find service by ID
- * return a service
- *
- * serviceId Long ID of service to return
- * returns Service
- **/
+
 exports.servicesServiceIdGET = function(serviceId) {
   return sqlDb("services").then(data => {
     for(var i=0;i<data.length;i++){
@@ -69,19 +48,4 @@ exports.servicesServiceIdGET = function(serviceId) {
     return "The service with id = "+serviceId+" does not exist";
   });
 
-
-  /*
-  return new Promise(function(resolve, reject) {
-    var examples = {};
-    examples['application/json'] = {
-  "id" : 0,
-  "title" : "School"
-};
-    if (Object.keys(examples).length > 0) {
-      resolve(examples[Object.keys(examples)[0]]);
-    } else {
-      resolve();
-    }
-  });
-  */
 };

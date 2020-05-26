@@ -12,6 +12,7 @@ let sqlDb = sqlDbFactory({
 });
 
 
+
 exports.eventsDbSetup = function(connection){
   sqlDb = connection;
   console.log("checking if the events table exists");

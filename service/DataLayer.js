@@ -1,6 +1,5 @@
-let {servicesDbSetup} = require("./ServiceService");
-//let {eventsDbSetup} = require("./EventService");  //SERVONO?
-//let {peopleDbSetup} = require("./PersonService");  //SERVE??
+//let {servicesDbSetup} = require("./ServiceService");
+
 
 const sqlDbFactory = require("knex");
 
@@ -12,9 +11,10 @@ let sqlDb = sqlDbFactory({
   ssl: true
 });
 
-function setupDataLayer(){
+
+/*function setupDataLayer(){
   console.log("setting up Data Layer");
   return servicesDbSetup(sqlDb);
-}
-
-module.exports = {database: sqlDb, setupDataLayer};
+}*/
+module.exports = sqlDb;
+//module.exports = {database: sqlDb}//, setupDataLayer};
