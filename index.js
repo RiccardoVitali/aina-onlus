@@ -39,7 +39,7 @@ const session = require("cookie-session");
 const cookieParser = require("cookie-parser");
 const swaggerTools = require('swagger-tools');
 const jsyaml = require('js-yaml');
-const serverPort = 4000;
+const serverPort = process.env.PORT || 4000;
 //var express = require('express');  // l'ho usato solo per caricare i file statici (lo giuro)
 
 const { setupDataLayer } = require("./service/DataLayer");
