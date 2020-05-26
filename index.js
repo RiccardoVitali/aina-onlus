@@ -47,7 +47,7 @@ const { setupDataLayer } = require("./service/DataLayer");
 //LOGIN
 const cookieSession = require("cookie-session");
 app.use(cookieSession({name: "session", keys: ["abc", "def"] }));
-
+/*
 const {
   PORT,
   NODE_ENV,
@@ -71,7 +71,7 @@ app.use(
     }
   })
 );
-
+*/
 app.use(cookieParser());
 
 // swaggerRouter configuration
