@@ -242,6 +242,13 @@ fetch("v1/people/"+lastChar).then(function(response){
   document.getElementById("description").innerHTML = `${description}`;
   document.getElementById("main_service").innerHTML = `${main_service}`;
 
+  fetch("v1/services"+main_service).then(function(res){
+    return res.json();
+  }).then(function(json){
+  const main_service_name = json.name;
+  document.getElementById("main_service").innerHTML = `${main_service_name}`;
+  });
+    
   fetch("v1/events").then(function(respo){
     return respo.json();
 }).then(function(json){
