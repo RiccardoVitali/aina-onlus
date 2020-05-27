@@ -80,7 +80,7 @@
         <div class="row d-flex align-items-center">
           <div class="col-lg-6">
             <h3 id="event_name"></h3>
-            <h4><%= date %> <a href="/service.html?1"><span class="badge badge-dark"><div id="service_name"> </div></span></a></h4>
+            <h4><span id="event_date"> <span> <a href="/service.html?1"><span class="badge badge-dark"><div id="service_name"> </div></span></a></h4>
             <p>Rome, Italy</p>
             <p id="event_description">
 
@@ -208,6 +208,8 @@
     })
     document.getElementById("event_name").innerHTML = `${name}`;
     document.getElementById("event_description").innerHTML = `${description}`;
+    document.getElementById("event_date").innerHTML = `${date}`;
+
   });
 
     </script>
