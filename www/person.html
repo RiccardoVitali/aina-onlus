@@ -240,7 +240,6 @@ fetch("v1/people/"+lastChar).then(function(response){
   document.getElementById("role").innerHTML = `${role}`;
   document.getElementById("phone").innerHTML = `${phone}`;
   document.getElementById("description").innerHTML = `${description}`;
-  document.getElementById("main_service").innerHTML = `${main_service}`;
 
   fetch("v1/services"+main_service).then(function(res){
     return res.json();
