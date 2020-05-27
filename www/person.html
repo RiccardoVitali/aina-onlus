@@ -85,7 +85,7 @@
           </div>
           <div class="col-lg-6">
             <h2><span id="name"></span></h2>
-            <h6><span id="role"></span> <a href="..."><span class="badge badge-dark">Education</span></a></h6>
+            <h6><span id="role"></span> <a href="..."><span class="badge badge-dark"><span id="main_service"></span></span></a></h6>
             <p> <span id="email"></span></p>
             <p> <span id="phone"></span></p>
             <p> <span id="description"></span></p>
@@ -240,6 +240,7 @@ fetch("v1/people/"+lastChar).then(function(response){
   document.getElementById("role").innerHTML = `${role}`;
   document.getElementById("phone").innerHTML = `${phone}`;
   document.getElementById("description").innerHTML = `${description}`;
+  document.getElementById("main_service").innerHTML = `${main_service}`;
 
   fetch("v1/events").then(function(respo){
     return respo.json();
