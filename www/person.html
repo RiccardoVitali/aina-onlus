@@ -243,12 +243,28 @@ fetch("v1/people/"+lastChar).then(function(response){
     return respo.json();
 }).then(function(json){
   const main_service_name = json.name;
+      var color;
+  if(main_service_name=="School"){
+    color = "warning";
+  }
+  if(main_service_name=="Farm & Garden"){
+    color = "success";
+  }
+  if(main_service_name=="Outdoor Activities"){
+    color = "info";
+  }
+  if(main_service_name=="Medical Clinic"){
+    color = "danger";
+  }
+  if(main_service_name=="Accommodation"){
+    color = "secondary";
+  }
   document.getElementById("person_card").innerHTML = `<div class="col-lg-4">
     <img src="assets/img/people/gagliotti.jpg" class="img-fluid" alt="">
   </div>
   <div class="col-lg-6">
     <h2>${name} ${surname}</h2>
-    <h6>${role}</span> <a href="/service.html?${main_service}"><span class="badge badge-dark">${main_service_name}</span></a></h6>
+    <h6>${role}</span> <a href="/service.html?${main_service}"><span class="badge badge-${color}">${main_service_name}</span></a></h6>
     <p>${email}</span></p>
     <p>${phone}</span></p>
     <p>${description}</p>
