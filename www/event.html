@@ -180,7 +180,7 @@
 </body>
   <script>
   var myString = window.location.search.toString();
-  var lastChar = myString[myString.length -1];
+  var lastChar = myString.substring(1,myString.length);
 
   fetch("v1/events/"+lastChar).then(function(response){
     return response.json();
