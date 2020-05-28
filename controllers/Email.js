@@ -3,9 +3,8 @@
 var utils = require('../utils/writer.js');
 var Email = require('../service/EmailService');
 
-module.exports.emailPOST = function emailPOST (req, res, next) {
-  var email = req.swagger.params['email'].value;
-  Email.emailPOST()
+module.exports.emailGET = function emailGET (req, res, next) {
+  Email.emailGET()
     .then(function (response) {
       utils.writeJson(res, response);
     })
