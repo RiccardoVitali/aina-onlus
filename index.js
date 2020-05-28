@@ -29,9 +29,9 @@ const fs = require('fs'),
     path = require('path'),
     http = require('http');
 
-var app = require('connect')();
+//var app = require('connect')();
 const express = require("express");
-//const app = express();
+const app = express();
 const routes = require("./routes");
 const serveStatic = require("serve-static");
 //const session = require("express-session");
@@ -41,8 +41,10 @@ const swaggerTools = require('swagger-tools');
 const jsyaml = require('js-yaml');
 const serverPort = process.env.PORT || 4000;
 //var express = require('express');  // l'ho usato solo per caricare i file statici (lo giuro)
+const bodyParser = require('body-parser');
 
-const { setupDataLayer } = require("./service/DataLayer");
+app.use(bodyParser.urlencoded({extended: true}));
+//const { setupDataLayer } = require("./service/DataLayer");
 
 //LOGIN
 const cookieSession = require("cookie-session");
