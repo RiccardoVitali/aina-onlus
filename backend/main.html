@@ -1,0 +1,376 @@
+<html>
+  <head>
+    <title>Aina Onlus</title>
+  </head>
+  <style>
+    .question {
+      color: red;
+      font-style: italic;
+    }
+
+    .models {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .model {
+      margin: 10px;
+    }
+
+    .model__resources {
+      font-weight: bold;
+      font-size: 16px;
+      margin-bottom: 2px;
+    }
+    .model__prop {
+      font-size: 14px;
+      display: block;
+    }
+
+    .model__type {
+      margin-left: 4px;
+      font-size: 12px;
+      font-style: initial;
+      color: darkgray;
+    }
+
+    body {
+      max-width: 750px;
+    }
+  </style>
+  <body>
+    <h1 id="documentation-of-the-backend-part">
+      Documentation of the Backend part
+    </h1>
+
+    <h1>Deliverable D1</h1>
+    <h2>General group information</h2>
+    <table>
+      <tr>
+        <th>First name</th>
+        <th>Last name</th>
+        <th>Matricola</th>
+        <th>Email address</th>
+      </tr>
+      <tr>
+        <td>Riccardo</td>
+        <td>Vitali</td>
+        <td>926834</td>
+        <td>riccardo.vitali3@mail.polimi.it</td>
+      </tr>
+      <tr>
+        <td>Andrea</td>
+        <td>Silvano</td>
+        <td>926834</td>
+        <td>andrea.silvano@mail.polimi.it</td>
+      </tr>
+      <tr>
+        <td>Federico</td>
+        <td>Pozzi</td>
+        <td>926834</td>
+        <td>federico.pozzi3@mail.polimi.it</td>
+      </tr>
+    </table>
+
+    <h2>Links to other deliverables</h2>
+    <p>
+      - Deliverable D0: the web application is accessible at
+      <a href="https://afronlus.herokuapp.com/"
+        >https://afronlus.herokuapp.com</a
+      >
+    </p>
+    <p>
+      - Deliverable D2: the YAML or JSON file containing the specification of
+      the app API can be found at
+      <a
+        href="https://afronlus.herokuapp.com/backend/spec.yaml"
+        >https://afronlus.herokuapp.com/backend/spec.yaml</a
+      >.
+    </p>
+    <p>
+      - Deliverable D3: the SwaggerUI page of the same API is available at
+      <a
+        href="https://afronlus.herokuapp.com/backend/swaggerui"
+        >https://afronlus.herokuapp.com/backend/swaggerui</a
+      >
+       -----------------------DA FARE
+    </p>
+    <p>
+      - Deliverable D4: the source code of D0 is available as a zip file at
+      <a href="https://afronlus.herokuapp.com/backend/app.zip"
+        >https://afronlus.herokuapp.com/backend/app.zip</a
+      >       -----------------------DA FARE
+
+    </p>
+    <p>
+      - Deliverable D5: the address of the online source control repository is
+      available at
+      <a href="https://github.com/RiccardoVitali/afraina.git"
+        >https://github.com/RiccardoVitali/afraina.git</a
+      >. We hereby declare that this is a private repository and, upon request,
+      we will give access to the instructors.
+    </p>
+    <h2>Specification</h2>
+
+    <h3>Web Architecture</h3>
+    <p class="question">
+      Describe here, with a diagram, the components of your web application and
+      how they interact. Highlight which parts belong to the application layer,
+      data layer or presentation layer. How did you ensure that HTML is not
+      rendered server side?
+    </p>
+    <div><img src="img/WebArchitecture.png" width="700px" /></div>
+    <p>
+      The initial response will be large and serve the static files including
+      all CSS, all Javascript, some images and a HTML page containing a header,
+      a footer and a container, but no real content. The future requests will
+      only serve JSON with information from the database. The JS will generate
+      the appropriate HTML with the data in the response JSON as content.
+    </p>
+
+    <h3>API</h3>
+    <h4>REST compliance       -----------------------DA FARE
+</h4>
+    <p class="question">
+      Describe here to what extent did you follow REST principles and what are
+      the reasons for which you might have decided to diverge. Note, you must
+      not describe the whole API here, just the design decisions.
+    </p>
+    <p>
+      The Rest API could be considered to be of maturity level 2. Level 1: It
+      take advantage of resources, where every resource has it own URI: Level 2:
+      It takes advantage HTTP verbs, status codes, and query parameters is used.
+      Level 3: No Hateoas is implemented, the responses don’t include any links.
+      The reason why Level 3 is not implemented was to make the implementation
+      simpler, since I don’t have any previous experience with it and wanted to
+      focus on other parts.
+    </p>
+    <h4>OpenAPI Resource models</h4>
+    <p class="question">
+      Describe here synthetically, which models you have introduced for
+      resources.
+    </p>
+    <div class="models">
+      <div class="model">
+        <h1 class="model__resources">Person</h1>
+        <span class="model__prop"
+          >name <span class="model__type">string</span></span
+        >
+        <span class="model__prop"
+          >surname<span class="model__type">string</span></span
+        >
+        <span class="model__prop"
+          >email<span class="model__type">string</span></span
+        >
+        <span class="model__prop"
+          >role<span class="model__type">string</span></span
+        >
+        <span class="model__prop"
+          >description<span class="model__type">string</span></span
+        >
+        <span class="model__prop"
+          >phone<span class="model__type">string</span></span
+        >
+        <span class="model__prop"
+          >photo_url<span class="model__type">string</span></span
+        >
+        <span class="model__prop"
+          >main_service_id<span class="model__type">integer</span></span
+        >
+      </div>
+      <div class="model">
+        <h1 class="model__resources">Event</h1>
+        <span class="model__prop"
+          >name <span class="model__type">string</span></span
+        >
+        <span class="model__prop"
+          >location<span class="model__type">string</span></span
+        >
+        <span class="model__prop"
+          >date<span class="model__type">string</span></span
+        >
+        <span class="model__prop"
+          >description<span class="model__type">string</span></span
+        >
+        <span class="model__prop"
+          >photo_url<span class="model__type">string</span></span
+        >
+        <span class="model__prop"
+          >person_id<span class="model__type">integer</span></span
+        >
+        <span class="model__prop"
+          >service_id<span class="model__type">integer</span></span
+        >
+      </div>
+
+      <div class="model">
+        <h1 class="model__resources">Service</h1>
+        <span class="model__prop"
+          >name<span class="model__type">string</span></span
+        >
+        <span class="model__prop"
+          >subtitle<span class="model__type">string</span></span
+        >
+        <span class="model__prop"
+          >description<span class="model__type">string</span></span
+        >
+
+
+      </div>
+
+      <div class="model">
+        <h1 class="model__resources">User</h1>
+        <span class="model__prop"
+          >username <span class="model__type">string</span></span
+        >
+        <span class="model__prop"
+          >password<span class="model__type">string</span></span
+        >
+      </div>
+
+      <div class="model">
+        <h1 class="model__resources">Newsletter</h1>
+        <span class="model__prop"
+          >email<span class="model__type">string</span></span
+        >
+
+      </div>
+
+      <div class="model">
+        <h1 class="model__resources">People/Service</h1>
+        <span class="model__prop"
+          >person_id<span class="model__type">integer</span></span
+        >
+        <span class="model__prop"
+          >service_id<span class="model__type">integer</span></span
+        >
+
+      </div>
+    </div>
+
+    <h3>Data model</h3>
+    <p class="question">
+      Describe with an ER diagram the model used in the data layer of your web
+      application. How these map to the OpenAPI data model?
+    </p>
+    The relationship between entities is the following:
+    a person can work for several services and can organize numerous events,
+    but each person has a main service (each person works mainly on one service).
+    People related to a person are those who work for the main service
+    of the person. <br>
+    An event can support only one service but a service can be supported by
+    many events. <br>
+    The person's id and the service's id, in the single event table, assign to a
+    single event who is the organizer and which service it supports by means
+    of ids. <br>
+    In order to manage the relationship between people and services
+    we have created a specific table. Each row of this table is formed by
+    the person's id and the service's id. <br>
+    The newsletter table takes track of the email of who is registered to the
+    association's newsletter.
+
+    <p></p>
+    <p><img src="img/erdplus-diagram.png" width="700px" /></p>
+    <p></p>
+    <h2>Implementation</h2>
+    <h3>Tools used</h3>
+    <p class="question">
+      Describe here which tools, languages and frameworks did you use for the
+      backend of the application.
+    </p>
+    <p>
+      The backend of the application has been implemented with NodeJS, where the
+      server framework Express has been used to created the server. For the data
+      storage Postgres has been used.
+    </p>
+    <h3>Discussion       -----------------------DA FARE
+</h3>
+    <p class="question">
+      - How did you make sure your web application adheres to the provided
+      OpenAPI specification?
+    </p>
+    <p>
+      By documenting all the routes in the web application and testing the
+      operations via
+      <a
+        href="https://afronlus.herokuapp.com/backend/swaggerui"
+        >SwaggerUI</a
+      >. However, login with example user works but future request will not
+      include session id and therefore routes that need authentication will not
+      be allowed from SwaggerUI. The reason for this is that "...for Swagger UI
+      and Swagger Editor Cookie authentication is currently not supported for
+      "try it out" requests due to browser security restrictions."
+    </p>
+    <p class="question">
+      - Why do you think your web application adheres to common practices to
+      partition the web application (static assets vs. application data)
+    </p>
+    <p>
+      The Node module serve-static is used to serve a folder named Public
+      containing static assets when the root of the application is requested.
+      While the application data, in this case as JSON, will be served when the
+      different routes are accessed with the help of Express Routing middleware.
+    </p>
+    <p class="question">
+      - Describe synthetically why and how did you manage session state, what
+      are the state change triggering actions (e.g., POST to login etc..).
+    </p>
+    <p>
+      The application is using express-session to help to manage session. In
+      this version of the default server-side session storage, MemoryStore is
+      used. This is not something that should be in a real production since it
+      will often leak memory and scale badly. The reason why I have used it is
+      easier to manage during development.
+    </p>
+    <p>
+      Three actions exists to change session state: <br />
+      POST to /user/signup with username and password in body: will create new
+      session if username is not taken.
+      <br />
+      POST to /user/login with username and password: will create new session if
+      username and password match.
+      <br />
+      POST to /user/logut with session in header: will destroy the session
+      provided in the header.
+    </p>
+    <p class="question">
+      - Which technology did you use (relational or a no-SQL database) for
+      managing the data model?
+    </p>
+    <p>I have been using a relational database, Postgres</p>
+    <h2>Other information</h2>
+    <h3>Task assignment</h3>
+    <p class="question">
+      Describe here how development tasks have been subdivided among members of
+      the group
+    </p>
+    <p>Riccardo Vitali took care of the backend part, while
+    Federico Pozzi and Andrea Silvano worked on the frontend.</p>
+    <h3>Analysis of existing API</h3>
+    <p
+      question="Describe here if you have found relevant APIs that have inspired the OpenAPI
+    specification and why (at least two)."
+    ></p>
+    <p>
+      I was inspired by this simple and practical example:
+      <a href="https://petstore.swagger.io/">Swagger Petstore</a>, moreover
+      I explored the swagger documentation and I watched several swagger tutorials
+      on youtube.
+      Professor Zaccaria's lessons helped me a lot, providing me the necessary
+      information to get acquainted with the OpenAPI specification.
+    </p>
+    <h3>Learning outcome</h3>
+    <p class="question">
+      What was the most important thing all the members have learned while
+      developing this part of the project, what questions remained unanswered,
+      how you will use what you've learned in your everyday life?
+    </p>
+    <p>
+      I'd never seen a javascript code before in my life and I'd never worked
+      with databases or websites.
+      So I had to learn everything from scratch, the effort was great but,
+      between Professor Zaccaria's lectures and the many videos on youtube and
+      posts on stackoverflow I slowly became familiar with the environment.
+    </p>
+  </body>
+</html>
