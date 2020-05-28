@@ -287,9 +287,13 @@ fetch("v1/services/"+lastChar).then(function(response){
     }
     for(let i=0;i<related_people_ids.length;i++){
       document.getElementById("relative_people_card").innerHTML += `<div class="card" style="width: 18rem; margin-right:30px;">
-        <img src="assets/img/people/gagliotti.jpg" class="card-img-top" alt="...">
+        <a href="/person.html?${related_people_ids[i]}">
+        <img src="assets/img/people/gagliotti.jpg" class="card-img-top" href="/person.html?${related_people_ids[i]}" alt="...">
+        </a>
         <div class="card-body">
+        <a href="/person.html?${related_people_ids[i]}">
           <p class="card-text">${related_people_name_surname[i]}</p>
+        </a>
         </div>
       </div>`
               }
