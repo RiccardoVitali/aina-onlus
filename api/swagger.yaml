@@ -6,9 +6,6 @@ info:
   title: "AINA onlus"
   contact:
     email: "10641118@polimi.it"
-  license:
-    name: "AFR"
-    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
 host: "localhost:4000"
 basePath: "/v1"
 tags:
@@ -225,17 +222,17 @@ paths:
           description: "Unexpected error"
       x-swagger-router-controller: "Rel"
   /email:
-    post:
+    get:
       tags:
       - "email"
-      summary: "email of the newsletter"
-      operationId: "emailPOST"
+      summary: "get email of the newsletter"
+      operationId: "emailGET"
       produces:
       - "application/json"
       parameters: []
       responses:
         "200":
-          description: "newsletter's email"
+          description: "email of the nesletter"
           schema:
             type: "array"
             items:
