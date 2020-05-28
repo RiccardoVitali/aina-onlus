@@ -267,7 +267,16 @@
     we have created a specific table. Each row of this table is formed by
     the person's id and the service's id. <br>
     The newsletter table takes track of the email of who is registered to the
-    association's newsletter.
+    association's newsletter. <br>
+    Tables are linked in a suitable way in order to avoid future mistakes:
+    person's id and service's id in the events' table are directly linked
+    to their respectively tables, in this way an event can be attached
+    only to an existing person or service, and if we delete a person, or
+    a service, all the events linked to them will be deleted as consequence.
+    Instead, if we delete an event, nothing happens. Moreover, since a service 
+    can support only one event, we have made impossible to create an event supported
+    by a service that already supports an existing event, by a 'unique' constraint. 
+    
 
     <p></p>
     <p><img src="img/erdplus-diagram.png" width="700px" /></p>
