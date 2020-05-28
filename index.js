@@ -109,66 +109,49 @@ swaggerTools.initializeMiddleware(swaggerDoc, function (middleware) {
 
 
   //NEWSLETTER-NEWSLETTER-NEWSLETTER-NEWSLETTER-NEWSLETTER
-      app.use(function(req,res){
-        console.log("req.method")
-        console.log(req.method)
-        console.log("req.url")
-        console.log(req.url);
 
-        if(req.method == 'POST'){
-          /*if(req.url == '/v1/user/login'){
-            var y = '';
-            req.on('data', function(x){
-              var y = x.toString();
-              res.send("v1/user/me",y);
-            });
-          }*/
-          if(req.url == '/newsletter'){
-            res.writeHead(200, {'Content-Type': 'text/html'});
-            var body = '';
-            req.on('data', function(chunk) {
+   const fetch = require("node-fetch");
 
-            //grab form data as string
-            var body = chunk.toString();
-            //console.log(body);
-            var body2 = body.substring(6, body.lentgh);
-            var split = body2.split("%40");
-            var email = split[0]+"@"+split[1];
-            console.log(email);
+      app.post("/newsletter",(req, res) => {
+        req.on('data', function(chunk) {
 
-            pool.query(
-              `select * from email
-              where email = $1`,[email],(err, results) => {
-            if (err){
-              throw err;
-            }
-            if(results.rows.length > 0){
-              console.log("email gia presente");
+        //grab form data as string
+        var email = chunk.toString();
+        if(email.length==2){
+        res.sendStatus(402);
+        return;
+      }
 
-            }
-            else{
-              console.log("inserisco la nuova email");
-              pool.query(
-                `insert into email (email)
-                values ($1)`, [email], (err, results) => {
-                  if (err){
-                    throw err
-                  }
-                  else{
-                    console.log("email inserita correttamente");
+      fetch("https://afronlus.herokuapp.com/v1/email").then(function(response){
+        return response.json();
+      }).then(function(json){
 
-                  }
-                }
-              );
-            }
+        var check = false;
+        var i=0;
+
+        while(i<json.length && check==false){
+          console.log(check);
+          if(json[i].e.trim()==email.substring(1,email.length-1).trim() ){
+            check=true;
           }
-        );
-
-          });
-          }
+          i++;
         }
-      res.end();
+      if(check==true){
+        console.log("check_is_true");
+        res.sendStatus(400);
+      }
+      else{
+        console.log("check_is_false");
+        res.sendStatus(201);
+        pool.query(
+          `insert into email (e) values ($1)`, [email]
+        );
+        console.log("email inserita");
+      }
     });
+    //res.end();
+    });
+  });
 
   // Start the server
   //setupDataLayer().then( () => {
