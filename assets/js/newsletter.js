@@ -16,7 +16,7 @@ function check(){
     if(res.status==400){
     alert("This email is already registered");
     }
-    if(res.status==201)
+    if(res.status==301)
     alert("You are now registered to the newsletter!");
   })
 
