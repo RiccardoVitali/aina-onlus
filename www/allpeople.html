@@ -223,7 +223,7 @@ fetch("v1/people").then(function(response){
   return response.json();
 }).then(function(json){
 console.log(json[2].id)
-for(let i=0;i<json.length && i<6;i++){
+for(let i=0;i<json.length;i++){
   document.getElementById("people_card").innerHTML += `<div class="col-lg-4 col-md-6 portfolio-item filter-Feb wow fadeInUp">
     <div class="portfolio-wrap">
       <figure>
