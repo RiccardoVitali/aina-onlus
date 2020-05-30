@@ -137,7 +137,7 @@ swaggerTools.initializeMiddleware(swaggerDoc, function (middleware) {
       }
       else{
         console.log("check_is_false");
-        res.sendStatus(200);
+        res.sendStatus(301);
         pool.query(
           `insert into email (e) values ($1)`, [email]
         );
