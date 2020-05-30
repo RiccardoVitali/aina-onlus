@@ -109,8 +109,7 @@ swaggerTools.initializeMiddleware(swaggerDoc, function (middleware) {
 
 
   //NEWSLETTER-NEWSLETTER-NEWSLETTER-NEWSLETTER-NEWSLETTER
-
-   const fetch = require("node-fetch");
+  var Email = require('./service/EmailService');
 
       app.post("/newsletter",(req, res) => {
         req.on('data', function(chunk) {
@@ -121,17 +120,12 @@ swaggerTools.initializeMiddleware(swaggerDoc, function (middleware) {
         res.sendStatus(402);
         return;
       }
-
-      fetch("https://afronlus.herokuapp.com/v1/email").then(function(response){
-        return response.json();
-      }).then(function(json){
-
+        Email.emailGET().then(function (response) {
         var check = false;
         var i=0;
-
-        while(i<json.length && check==false){
-          console.log(check);
-          if(json[i].e.trim()==email.substring(1,email.length-1).trim() ){
+        while(i<response.length && check==false){
+          //console.log(check);
+          if(response[i].e.trim()==email.trim() ){
             check=true;
           }
           i++;
@@ -139,14 +133,16 @@ swaggerTools.initializeMiddleware(swaggerDoc, function (middleware) {
       if(check==true){
         console.log("check_is_true");
         res.sendStatus(400);
+        return;
       }
       else{
         console.log("check_is_false");
-        res.sendStatus(201);
+        res.sendStatus(200);
         pool.query(
           `insert into email (e) values ($1)`, [email]
         );
         console.log("email inserita");
+        return;
       }
     });
     //res.end();
