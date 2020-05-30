@@ -553,8 +553,8 @@ padding: 70px 0;
 }
 
 .portfolio .portfolio-item {
-  position: relative;
-  height: 460px;
+  /* position: relative; */
+  padding-bottom: 4vh;
   overflow: hidden;
 }
 
