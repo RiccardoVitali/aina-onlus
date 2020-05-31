@@ -14,10 +14,10 @@ function check(){
     alert("You do not insert anything");
     }
     if(res.status==400){
-    alert("This email is already registered");
+    alert("The email:  "+email+"  is already registered");
     }
     if(res.status==301)
-    alert("You are now registered to the newsletter!");
+    alert("You are now registered to the newsletter! You'll receive Aina's news at:  "+email);
   })
 
 }
