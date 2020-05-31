@@ -102,7 +102,7 @@
           <p id="title"> Contact Us </p>
           <p id="explain"> hello@aina-onlus.it <br> +39 340 9455 439 (IT) <br> +1 5589 55488 55 (KE) <br> via Nomentana 1367, 0137, Roma RM</p>
 
-          <form id="contact-form" name="contact-form" action="mail.php" method="POST">
+          <form id="contact-form" name="contact-form" onsubmit="contact()">
 
             <!--Grid row-->
             <div class="row">
@@ -121,7 +121,7 @@
               <div class="col-md-6">
                 <div class="md-form mb-0">
                   <label for="email" class="">Your email</label>
-                  <input type="text" id="email" name="email" class="form-control">
+                  <input type="email" id="email" name="email" class="form-control">
 
                 </div>
               </div>
@@ -157,10 +157,9 @@
               </div>
             </div>
             <!--Grid row-->
-
+            <br>
+            <input class="btn btn-dark" style="color:white;" type="submit" value="Send">
           </form>
-          <br>
-          <a class="btn btn-dark" style="color:white;">Send</a>
 
         </div>
         <div class="col-lg-6">
