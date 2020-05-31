@@ -240,6 +240,25 @@ paths:
         "404":
           description: "Unexpected error"
       x-swagger-router-controller: "Email"
+  /contact_form:
+    get:
+      tags:
+      - "contact_form"
+      summary: "get messages from the contact form"
+      operationId: "contact_formGET"
+      produces:
+      - "application/json"
+      parameters: []
+      responses:
+        "200":
+          description: "contact form"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Contact_form"
+        "404":
+          description: "Unexpected error"
+      x-swagger-router-controller: "Contact_form"
   /user/login:
     post:
       tags:
@@ -394,3 +413,21 @@ definitions:
     description: "email registered to the newsletter"
     example:
       email: "email"
+  Contact_form:
+    type: "object"
+    properties:
+      name:
+        type: "string"
+      email:
+        type: "string"
+      subject:
+        type: "string"
+      message:
+        type: "string"
+    title: "Contact_form"
+    description: "contact form"
+    example:
+      name: "Lucio"
+      email: "lucio33@gmail.com"
+      subject: "School"
+      message: "How many teachers does the association support?"
