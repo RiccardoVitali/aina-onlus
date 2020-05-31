@@ -149,6 +149,42 @@ swaggerTools.initializeMiddleware(swaggerDoc, function (middleware) {
     });
   });
 
+    // CONTACT FORM -- CONTACT FORM -- CONTACT FORM -- CONTACT FORM -- CONTACT FORM --
+  var Contact_form = require('./service/Contact_formService');
+
+      app.post("/contact",(req, res) => {
+        req.on('data', function(chunk) {
+
+        //grab form data as string
+        var split = chunk.toString().substring(1,chunk.toString().length-1).split(",");
+
+        console.log(chunk.toString());
+        var name = split[0];
+        var email = split[1];
+        var subject = split[2];
+        var message = "";
+        for(var i=3;i<split.length-1;i++){
+        message += split[i] + ",";
+        }
+        message += split[split.length-1];
+      console.log(message);
+
+        if(email.length==2 || name.length==2 || subject.length==2 || message.length==2){
+        res.sendStatus(402);
+        return;
+      }
+      else{
+        res.sendStatus(301);
+        pool.query(
+          `insert into contact_form (name,email,subject,message) values ($1,$2,$3,$4)`, [name,email,subject,message]
+        );
+        console.log("message put into db");
+        return;
+      }
+
+    })
+  });
+
   // Start the server
   //setupDataLayer().then( () => {
 
