@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Lumia Bootstrap Template - Index</title>
+  <title>Aina - Onlus</title>
   <meta content="" name="descriptison">
   <meta content="" name="keywords">
 
@@ -23,16 +23,14 @@
   <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
   <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
   <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/6d757dfe9b.js" crossorigin="anonymous"></script>
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: Lumia - v2.0.0
-  * Template URL: https://bootstrapmade.com/lumia-bootstrap-business-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 </head>
 
 <body>
@@ -55,7 +53,7 @@
           <li><a href="/association.html">Association</a></li>
           <li><a href="/supportus.html">Support Us</a></li>
 
-          <li><a href="/login.html"> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <span id="login">Log in</span> </a></li>
+          <li><a href="/dash.html"> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <span id="login">Log in</span> </a></li>
 
 
         </ul>
@@ -67,72 +65,47 @@
   </header><!-- End Header -->
 
 
-<main id="main">
-     <section id="portfolio" class="portfolio mr-5 ml-5">
-       <nav aria-label="breadcrumb">
-         <ol class="breadcrumb brc-bkg" >
-           <li class="breadcrumb-item"><a href="/allservices.html">Services</a></li>
-
-         </ol>
-       </nav>
-      <div class="container">
-
-        <div class="section-title">
-          <h2>SERVICES</h2>
-
-        </div>
-
-        
-
-        <div class="row " id="services_card">
-        <!-- <span id="services_card" class="row"></span> -->
-<!--
-          <div class="col-lg-4 col-md-6 portfolio-item filter-Jan wow fadeInUp">
-            <div class="portfolio-wrap">
-              <div>
-                <a href="/service1" class="link-details" title="More Details"><img src="assets/img/services/paolos.jpg" class="img-fluid" alt="">
-              </a>
-              </div>
-
-              <div class="portfolio-info">
-                <h4><a href="/service1">School</a></h4>
-                <p>Service 1</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-Jan wow fadeInUp">
-            <div class="portfolio-wrap">
-              <div>
-                <a href="/service2" class="link-details" title="More Details"><img src="assets/img/services/paolos.jpg" class="img-fluid" alt="">
-              </a>
-              </div>
-
-              <div class="portfolio-info">
-                <h4><a href="/service1">Medical Clinic</a></h4>
-                <p>Service 2</p>
-              </div>
-            </div>
-          </div>
--->
 
 
+  <main id="main" style="padding-top:20vh;" >
 
-      </div>
-    </section>
+    <div class="card offset-lg-4 col-lg-4">
+<article class="card-body">
+	<h4 class="card-title text-center mb-4 mt-1">Sign in</h4>
+	<hr>
 
+	<form>
+	<div class="form-group">
+	<div class="input-group">
+		<div class="input-group-prepend">
+		    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+		 </div>
+		<input name="" class="form-control" placeholder="Email or login" type="email">
+	</div> <!-- input-group.// -->
+	</div> <!-- form-group// -->
+	<div class="form-group">
+	<div class="input-group">
+		<div class="input-group-prepend">
+		    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+		 </div>
+	    <input class="form-control" placeholder="******" type="password">
+	</div> <!-- input-group.// -->
+	</div> <!-- form-group// -->
+	<div class="form-group">
+	<button type="submit" class="btn btn-primary btn-block"> <a href="/dash.html">Login</a>  </button>
+	</div> <!-- form-group// -->
+	<p class="text-center"><a href="#" class="btn">Forgot password?</a></p>
+	</form>
+</article>
+</div>
 
 
   </main><!-- End #main -->
-
-
+  <br><br><br><br>
 
   <!-- ======= Footer ======= -->
   <footer id="footer">
-
-
-    </footer>
-
+  </footer>
 
 
   <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
@@ -148,36 +121,13 @@
   <script src="assets/vendor/venobox/venobox.min.js"></script>
   <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
 
+
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/newsletter.js"></script>
   <script src="assets/js/footer.js"></script>
 
 </body>
-
-
-<script>
-fetch("v1/services").then(function(response){
-  return response.json();
-}).then(function(json){
-
-for(let i=0;i<json.length && i<6;i++){
-  document.getElementById("services_card").innerHTML += `<div class="col-lg-3 col-md-6 portfolio-item filter-Jan wow fadeInUp">
-    <div class="portfolio-wrap">
-      <div>
-        <a href="/service.html?${json[i].id}" class="link-details" title="More Details"><img src="${json[i].photo_url}" class="img-fluid" alt="">
-      </a>
-      </div>
-
-      <div class="portfolio-info">
-        <h4><a href="/service.html?${json[i].id}" >${json[i].name}</a></h4>
-        <p>Service 1</p>
-      </div>
-    </div>
-  </div>`
-          }
-});
-
-  </script>
 
 
 </html>
