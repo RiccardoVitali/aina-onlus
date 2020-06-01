@@ -13,7 +13,7 @@ document.getElementById("footer").innerHTML = `<div class="footer-top ">
       </div>
       <div class="col-lg-4 col-md-6 footer-contact">
         <a href="/supportus.html">
-        <h5>CONTACT US</h5>
+        <h5 style="color:white;">CONTACT US</h5>
       </a>
         <p>
 
