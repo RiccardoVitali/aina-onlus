@@ -18,7 +18,7 @@
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+   <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
   <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
   <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
   <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
@@ -135,7 +135,7 @@
                 <div class="card-body bx-sdw">
                   <p class="card-title" id="price">€15 <br> <span id="month">PER MONTH</span></p>
                   <p class="card-text" id="descr">By making a donation you will contribute to the realization of AINA Onlus projects. You can donate at any time and on any day.</p>
-                  <button type="button" class="btn btn-danger red-true" id="donate">DONATE NOW</button>
+                  <button type="button" class="btn btn-danger red-true" id="donate1">DONATE NOW</button>
                 </div>
               </div>
               <div class="card">
@@ -143,7 +143,7 @@
                 <div class="card-body bx-sdw">
                   <p class="card-title" id="price">€25 <br> <span id="month">PER MONTH</span></p>
                   <p class="card-text" id="descr">By making a donation you will contribute to the realization of AINA Onlus projects. You can donate at any time and on any day.</p>
-                  <button type="button" class="btn btn-danger red-true" id="donate">DONATE NOW</button>
+                  <button type="button" class="btn btn-danger red-true" id="donate1">DONATE NOW</button>
                 </div>
               </div>
               <div class="card">
@@ -151,7 +151,7 @@
                 <div class="card-body bx-sdw">
                   <p class="card-title" id="price">€50 <br> <span id="month">PER MONTH</span></p>
                   <p class="card-text" id="descr">By making a donation you will contribute to the realization of AINA Onlus projects. You can donate at any time and on any day.</p>
-                  <button type="button" class="btn btn-danger red-true" id="donate">DONATE NOW</button>
+                  <button type="button" class="btn btn-danger red-true" id="donate1">DONATE NOW</button>
                 </div>
               </div>
             </div>
@@ -161,49 +161,130 @@
     </section>
 
 
-    <section id="skills" class="skills mr-5 ml-5">
-      <div class="container">
+    <section>
+
+      <div class="container ">
 
 
         <div class="top-content">
           <div class="container-fluid">
-            <div id="carousel-example" class="carousel slide" data-ride="carousel">
-              <div class="carousel-inner row w-100 mx-auto" role="listbox">
-                <div style="cursor: pointer;" onclick="window.location='/event1';" class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3 active">
-                  <img src="assets/img/event01.jpg" class="img-fluid mx-auto d-block" alt="img1">
+            <!--Carousel Wrapper-->
+            <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
+
+              <!--Controls-->
+              <div class="controls-top">
+                <a class="btn-floating" href="#multi-item-example" data-slide="prev"><i class="fas fa-chevron-left"></i></a>
+                <a class="btn-floating" href="#multi-item-example" data-slide="next"><i
+                    class="fas fa-chevron-right"></i></a>
+              </div>
+              <!--/.Controls-->
+
+              <!--Indicators-->
+              <ol class="carousel-indicators">
+                <li data-target="#multi-item-example" data-slide-to="0" class="active"></li>
+                <li data-target="#multi-item-example" data-slide-to="1"></li>
+
+              </ol>
+              <!--/.Indicators-->
+
+              <!--Slides-->
+              <div class="carousel-inner" role="listbox">
+
+                <!--First slide-->
+                <div class="carousel-item active">
+
+                  <div class="col-md-3" style="float:left">
+                   <div class="card mb-2">
+                      <img class="card-img-top"
+                        src="assets/img/story/story01.png" alt="Card image cap">
+                      <div class="card-body">
+                        <h2 class="card-title">1992</h2>
+                        <p class="card-text">The meeting in Africa in 1992 with the Little Missionary Sisters of Don Orione in the house of Igoji (Meru, Kenya) gave life - with the support of Sister Noemi - to a great dream.</p>
+
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-3" style="float:left">
+                    <div class="card mb-2">
+                      <img class="card-img-top"
+                        src="assets/img/story/story02.png" alt="Card image cap">
+                      <div class="card-body">
+                        <h2 class="card-title">1998</h2>
+                        <p class="card-text">A.I.N.A. is part of the Coordination of Associations for Distance Scholastic Support “La Gabbianella” which brings together about 42 associations throughout Italy.</p>
+
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-3" style="float:left">
+                    <div class="card mb-2">
+                      <img class="card-img-top"
+                        src="assets/img/story/story03.png" alt="Card image cap">
+                      <div class="card-body">
+                        <h2 class="card-title">2000</h2>
+                        <p class="card-text">In Argentina, A.I.N.A. has promoted the Comunità del Sole project that has allowed the construction of a neighborhood for 20 families in Barranqueras (Chaco).</p>
+
+                      </div>
+                    </div>
+                  </div>
+
+                   <div class="col-md-3" style="float:left">
+                   <div class="card mb-2">
+                      <img class="card-img-top"
+                        src="assets/img/story/story04.png" alt="Card image cap">
+                      <div class="card-body">
+                        <h2 class="card-title">2005</h2>
+                        <p class="card-text">The project Bimbi del Meriggio is born to respond to the requests for help and collaboration received from the population and the local authorities of the District of Meru (Kenya).</p>
+
+                      </div>
+                    </div>
+                  </div>
 
                 </div>
-                <div style="cursor: pointer;" onclick="window.location='/event3';" class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
-                  <img src="assets/img/event02.jpg" class="img-fluid mx-auto d-block" alt="img2">
+                <!--/.First slide-->
+
+                <!--Second slide-->
+                <div class="carousel-item">
+
+                  <div class="col-md-3" style="float:left">
+                    <div class="card mb-2">
+                      <img class="card-img-top"
+                        src="assets/img/story/story05.png" alt="Card image cap">
+                      <div class="card-body">
+                        <h4 class="card-title">2010</h4>
+                        <p class="card-text">Inauguration of the family village “Bimbi del Meriggio” is celebrated the official opening of the centre. The event is attended by local institutions and the community linked to the village of Nchiru.</p>
+
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-3" style="float:left">
+                    <div class="card mb-2">
+                      <img class="card-img-top"
+                        src="assets/img/story/story06.png" alt="Card image cap">
+                      <div class="card-body">
+                        <h4 class="card-title">2014</h4>
+                        <p class="card-text">Construction of the laundry room with two drying racks and construction of the artesian well necessary for the supply of water to the village.</p>
+
+                      </div>
+                    </div>
+                  </div>
+
+
+
+
+
                 </div>
-                <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
-                  <img src="assets/img/event03.jpg" class="img-fluid mx-auto d-block" alt="img3">
-                </div>
-                <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
-                  <img src="assets/img/event04.jpg" class="img-fluid mx-auto d-block" alt="img4">
-                </div>
-                <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
-                  <img src="assets/img/event04.jpg" class="img-fluid mx-auto d-block" alt="img5">
-                </div>
-                <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
-                  <img src="assets/img/event04.jpg" class="img-fluid mx-auto d-block" alt="img6">
-                </div>
-                <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
-                  <img src="assets/img/event04.jpg" class="img-fluid mx-auto d-block" alt="img7">
-                </div>
-                <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
-                  <img src="assets/img/event04.jpg" class="img-fluid mx-auto d-block" alt="img8">
-                </div>
+                <!--/.Second slide-->
+
+
+
               </div>
-              <a class="carousel-control-prev" href="#carousel-example" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-              </a>
-              <a class="carousel-control-next" href="#carousel-example" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-              </a>
+              <!--/.Slides-->
+
             </div>
+            <!--/.Carousel Wrapper-->
           </div>
         </div>
       </div>
