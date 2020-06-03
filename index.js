@@ -34,22 +34,21 @@ const express = require("express");
 const app = express();
 const routes = require("./routes");
 const serveStatic = require("serve-static");
-//const session = require("express-session");
-const session = require("cookie-session");
+const session = require("express-session");
+const cookieSession = require("cookie-session");
 const cookieParser = require("cookie-parser");
 const swaggerTools = require('swagger-tools');
 const jsyaml = require('js-yaml');
 const serverPort = process.env.PORT || 4000;
-//var express = require('express');  // l'ho usato solo per caricare i file statici (lo giuro)
 const bodyParser = require('body-parser');
 
 app.use(bodyParser.urlencoded({extended: true}));
 //const { setupDataLayer } = require("./service/DataLayer");
 
 //LOGIN
-const cookieSession = require("cookie-session");
+app.use(cookieParser());
 app.use(cookieSession({name: "session", keys: ["abc", "def"] }));
-/*
+
 const {
   PORT,
   NODE_ENV,
@@ -73,8 +72,7 @@ app.use(
     }
   })
 );
-*/
-app.use(cookieParser());
+
 
 // swaggerRouter configuration
 var options = {
