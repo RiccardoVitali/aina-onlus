@@ -6,7 +6,7 @@ info:
   title: "AINA onlus"
   contact:
     email: "10641118@polimi.it"
-host: "localhost:4000"
+host: "https://afronlus.herokuapp.com"
 basePath: "/v1"
 tags:
 - name: "service"
