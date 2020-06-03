@@ -184,6 +184,68 @@ swaggerTools.initializeMiddleware(swaggerDoc, function (middleware) {
 
     })
   });
+  
+  
+    // SIGN UP --- SIGN UP --- SIGN UP --- SIGN UP --- SIGN UP --- SIGN UP --- SIGN UP --- SIGN UP ---
+  var User = require('./service/UserService');
+
+      app.post("/signup",(req, res) => {
+        req.on('data', function(chunk) {
+
+        //grab form data as string
+        var split = chunk.toString().substring(1,chunk.toString().length-1).split(",");
+
+        console.log(chunk.toString());
+        var username = split[0].substring(1,split[0].length-1);
+        var email = split[1].substring(1,split[1].length-1);
+        var password = split[2].substring(1,split[2].length-1);
+        var password2 = split[3].substring(1,split[3].length-1);
+
+        if(email.length==0 || username.length==0 || password.length==0 || password2.length==0){
+        res.sendStatus(402);
+        return;
+      }
+      if(password!=password2){
+        res.sendStatus(405);
+        return;
+      }
+      User.userGET().then(function (response) {
+      var checkuser = false;
+      var checkemail = false;
+      var i=0;
+      while(i<response.length && checkuser == false){
+        //console.log(check);
+        if(response[i].username.trim()==username.trim() ){
+          checkuser=true;
+        }
+        if(response[i].email.trim()==email.trim() ){
+          checkemail=true;
+        }
+        i++;
+      }
+    if(checkuser==true){
+      console.log("checkuser_is_true");
+      res.sendStatus(400);
+      return;
+    }
+    if(checkemail==true){
+      console.log("checkemail_is_true");
+      res.sendStatus(403);
+      return;
+    }
+    else{
+      console.log("check_is_false");
+      res.sendStatus(301);
+      pool.query(
+        `insert into users (username,email,password) values ($1,$2,$3)`, [username,email,password]
+      );
+      console.log("user inserito");
+      return;
+      }
+    });
+  });
+});
+
 
   // Start the server
   //setupDataLayer().then( () => {
