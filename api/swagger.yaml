@@ -259,13 +259,27 @@ paths:
         "404":
           description: "Unexpected error"
       x-swagger-router-controller: "Contact_form"
-  /user/login:
+  /users/login:
     post:
       tags:
         - user
       description: Login user
-      operationId: userLogin
-
+      operationId: usersLoginPOST
+      consumes:
+      - "application/x-www-form-urlencoded"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "username"
+        in: "formData"
+        description: "example: ric"
+        required: true
+        type: "string"
+      - name: "password"
+        in: "formData"
+        description: "example: aa"
+        required: true
+        type: "string
       responses:
         200:
           description: Succesfull login
@@ -275,14 +289,17 @@ paths:
           description: Request body is not complete
         500:
           description: Internal Server Error
-
-  /user/signup:
-    post:
+      x-swagger-router-controller: "UserSwagger"
+  /users/me:
+    get:
       tags:
         - user
-      description: Register user
-      operationId: userRegister
-
+      description: Get user
+      operationId: usersMeGET
+      consumes:
+      - "application/x-www-form-urlencoded"
+      produces:
+      - "application/json"
       responses:
         200:
           description: succesfull Registration
@@ -290,18 +307,7 @@ paths:
           description: Request body is not complete
         500:
           description: Internal Server Error
-  /user/logout:
-    post:
-      tags:
-        - user
-      description: Logout user
-      operationId: userLogout
-      responses:
-        200:
-          description: Successfull logout
-
-        500:
-          description: Internal Server Error
+      x-swagger-router-controller: "UserSwagger"
 definitions:
   Service:
     type: "object"
@@ -412,7 +418,7 @@ definitions:
     title: "Email"
     description: "email registered to the newsletter"
     example:
-      email: "email"
+      email: "email@email.com"
   Contact_form:
     type: "object"
     properties:
