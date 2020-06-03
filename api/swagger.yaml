@@ -279,7 +279,7 @@ paths:
         in: "formData"
         description: "example: aa"
         required: true
-        type: "string
+        type: "string"
       responses:
         200:
           description: Succesfull login
