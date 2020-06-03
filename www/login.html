@@ -25,8 +25,8 @@
   <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
   <script src="https://kit.fontawesome.com/6d757dfe9b.js" crossorigin="anonymous"></script>
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
@@ -53,7 +53,7 @@
           <li><a href="/association.html">Association</a></li>
           <li><a href="/supportus.html">Support Us</a></li>
 
-          <li><a href="/login.html"> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <span id="login">Log in</span> </a></li>
+          <li><a href="/login.html">  <span id="login">Log in</span> </a></li>
 
 
         </ul>
@@ -67,38 +67,40 @@
 
 
 
-  <main id="main" style="padding-top:20vh;" >
+  <main id="main" style="padding-top:20vh;">
 
     <div class="card offset-lg-4 col-lg-4">
-<article class="card-body">
-	<h4 class="card-title text-center mb-4 mt-1">Sign in</h4>
-	<hr>
-  <div style="color:red" id="err"></div>
+      <article class="card-body">
+        <h5 class="card-title text-center mb-4 mt-1">Sign in</h5>
+        <hr>
+        <div style="color:red" id="err"></div>
 
-	<form method="post" action="v1/users/login">
-	<div class="form-group">
-	<div class="input-group">
-		<div class="input-group-prepend">
-		    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
-		 </div>
-		<input name="username" class="form-control" placeholder="username" type="text" value="">
-	</div> <!-- input-group.// -->
-	</div> <!-- form-group// -->
-	<div class="form-group">
-	<div class="input-group">
-		<div class="input-group-prepend">
-		    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
-		 </div>
-	    <input name="password" class="form-control" placeholder="password" type="password" value="">
-	</div> <!-- input-group.// -->
-	</div> <!-- form-group// -->
-	<div class="form-group">
-	<button type="submit" class="btn btn-primary btn-block">Login</button>
-	</div> <!-- form-group// -->
-	<p class="text-center"><a href="#" class="btn"><h3>If you are not registered <a href="sign_up.html">Sign up!</a></h3></a></p>
-	</form>
-</article>
-</div>
+        <form method="post" action="v1/users/login">
+          <div class="form-group">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+              </div>
+              <input name="username" class="form-control" placeholder="username" type="text" value="">
+            </div> <!-- input-group.// -->
+          </div> <!-- form-group// -->
+          <div class="form-group">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+              </div>
+              <input name="password" class="form-control" placeholder="password" type="password" value="">
+            </div> <!-- input-group.// -->
+          </div> <!-- form-group// -->
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary btn-block" style="background-color:#e41f2c; border-color:#e41f2c">Login</button>
+          </div> <!-- form-group// -->
+          <span class="text-center">
+              <p>Don't have an account? <a href="sign_up.html" style="color:#e41f2c">Sign up</a></p>
+            </span>
+        </form>
+      </article>
+    </div>
 
 
   </main><!-- End #main -->
@@ -130,21 +132,22 @@
 
 </body>
 <script>
-fetch("v1/users/me").then(function(response){
+  fetch("v1/users/me").then(function(response) {
 
-  console.log("response html");
-  console.log(response)
+    console.log("response html");
+    console.log(response)
 
-  response.json().then(res=>{
-    if(response.status==303){
-      return {err: "Invalid credentials"}
-    }
-  }).then(function(json){
-    document.getElementById("err").innerHTML = `${json.err}`;
+    response.json().then(res => {
+      if (response.status == 303) {
+        return {
+          err: "Invalid credentials"
+        }
+      }
+    }).then(function(json) {
+      document.getElementById("err").innerHTML = `${json.err}`;
 
+    });
   });
-});
-
-  </script>
+</script>
 
 </html>
