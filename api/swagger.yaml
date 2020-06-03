@@ -308,6 +308,22 @@ paths:
         500:
           description: Internal Server Error
       x-swagger-router-controller: "UserSwagger"
+  /users/logout:
+    post:
+      tags:
+        - user
+      description: Logout user
+      operationId: usersLogout
+      consumes:
+      - "application/x-www-form-urlencoded"
+      produces:
+      - "application/json"
+      responses:
+        200:
+          description: Successfull logout
+        500:
+          description: Internal Server Error
+      x-swagger-router-controller: "UserSwagger"
 definitions:
   Service:
     type: "object"
