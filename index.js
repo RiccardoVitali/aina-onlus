@@ -85,6 +85,10 @@ var options = {
 var spec = fs.readFileSync(path.join(__dirname,'api/swagger.yaml'), 'utf8');
 var swaggerDoc = jsyaml.safeLoad(spec);
 
+//redirect from /docs to /swaggerui
+const swaggerUi = require('swagger-ui-express');
+app.use('/backend/swaggerui', swaggerUi.serve, swaggerUi.setup(swaggerDoc));
+
 // Initialize the Swagger middleware
 swaggerTools.initializeMiddleware(swaggerDoc, function (middleware) {
 
