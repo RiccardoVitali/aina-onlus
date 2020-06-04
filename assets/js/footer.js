@@ -26,14 +26,13 @@ document.getElementById("footer").innerHTML = `<div class="footer-top ">
       <div class="container-fluid">
   <div class="row justify-content-center">
 
-
-              <h5 class="sub-n"> Subscribe to the newsletter </h5>
+     <h5 class="sub-n"> Subscribe to the newsletter </h5>
+          <form id="email_form" name="email_form" onsubmit="check()">
               <div class="row d-flex my-2 pr-2 pr-md-5 div1">
                   <div class="col-9"> <input type="email" class="form-control py-3" id="inp1" placeholder="Enter email address"> </div>
                   <div class="col-3 px-0"> <button class="btn-foot text-white px-4 py-2" > <span style="color:black">OK</span> </button> </div>
-
-
-      </div>
+               </div>
+          </form>
   </div>
 </div>
       <!-- <form id="email_form" name="email_form" onsubmit="check()">
