@@ -300,8 +300,9 @@
     </p>
     <p>
       The backend of the application has been implemented with NodeJS, where the
-      server framework Express has been used to created the server. For the data
-      storage Postgres has been used.
+      server framework Express has been used to created the server. We used Postgres 
+      for the data storage. We used Swagger to generate and manage the 
+      specification.
     </p>
     <h3>Discussion       -----------------------DA FARE
 </h3>
@@ -312,35 +313,51 @@
     <p>
       By documenting all the routes in the web application and testing the
       operations via
-      <a
-        href="https://afronlus.herokuapp.com/backend/swaggerui"
-        >SwaggerUI</a
-      >. However, login with example user works but future request will not
+      <a href="https://afronlus.herokuapp.com/backend/swaggerui">SwaggerUI</a>. 
+      However, requests from newsletter, contact-form and signup are internally 
+      managed.
+      <!--
+      login with example user works but future request will not
       include session id and therefore routes that need authentication will not
       be allowed from SwaggerUI. The reason for this is that "...for Swagger UI
       and Swagger Editor Cookie authentication is currently not supported for
-      "try it out" requests due to browser security restrictions."
+      "try it out" requests due to browser security restrictions."-->
     </p>
     <p class="question">
       - Why do you think your web application adheres to common practices to
       partition the web application (static assets vs. application data)
     </p>
     <p>
-      The Node module serve-static is used to serve a folder named Public
-      containing static assets when the root of the application is requested.
+      We think our web application adheres to common practices to partition
+      the web application because we have separated the static resources 
+      (html, css, js) from the data by putting them respectively on the server
+      and on a remote database, and the data are accessed through specific
+      calls.
+      <!--
+      The Node module serve-static is used to serve a folder named www
+      containing html pages.
       While the application data, in this case as JSON, will be served when the
-      different routes are accessed with the help of Express Routing middleware.
+      different routes are accessed with the help of Express. -->
     </p>
     <p class="question">
       - Describe synthetically why and how did you manage session state, what
       are the state change triggering actions (e.g., POST to login etc..).
     </p>
     <p>
-      The application is using express-session to help to manage session. In
+      We used cookie-session and cookie-parser for the session state.
+      The idea is that a user can access his own page to see how his contribution 
+      is helping the association, like letters or photo concerning distance
+      adoption or the progress of specific services.
+      As soon as the user registers, his data are stored in the database,
+      and when a user does the login, a new session is generated, contening
+      all the information about him, in this way he can navigate the website
+      remaining logged in, until he does the logout that will destroy that 
+      session.
+      <!--The application is using express-session to help to manage session. In
       this version of the default server-side session storage, MemoryStore is
       used. This is not something that should be in a real production since it
       will often leak memory and scale badly. The reason why I have used it is
-      easier to manage during development.
+      easier to manage during development.-->
     </p>
     <p>
       Three actions exists to change session state: <br />
@@ -357,26 +374,26 @@
       - Which technology did you use (relational or a no-SQL database) for
       managing the data model?
     </p>
-    <p>I have been using a relational database, Postgres</p>
+    <p>We have been using a relational database, Postgres</p>
     <h2>Other information</h2>
     <h3>Task assignment</h3>
     <p class="question">
       Describe here how development tasks have been subdivided among members of
       the group
     </p>
-    <p>Riccardo Vitali took care of the backend part, while
-    Federico Pozzi and Andrea Silvano worked on the frontend.</p>
+    <p>Riccardo Vitali took care of the backend implementation, 
+    while Federico Pozzi and Andrea Silvano worked on the frontend.</p>
     <h3>Analysis of existing API</h3>
     <p
       question="Describe here if you have found relevant APIs that have inspired the OpenAPI
     specification and why (at least two)."
     ></p>
     <p>
-      I was inspired by this simple and practical example:
+      We was inspired by this simple and practical example:
       <a href="https://petstore.swagger.io/">Swagger Petstore</a>, moreover
-      I explored the swagger documentation and I watched several swagger tutorials
+      we explored the swagger documentation and we watched several swagger tutorials
       on youtube.
-      Professor Zaccaria's lessons helped me a lot, providing me the necessary
+      Professor Zaccaria's lessons helped us a lot, providing the necessary
       information to get acquainted with the OpenAPI specification.
     </p>
     <h3>Learning outcome</h3>
@@ -386,11 +403,15 @@
       how you will use what you've learned in your everyday life?
     </p>
     <p>
-      I'd never seen a javascript code before in my life and I'd never worked
-      with databases or websites.
-      So I had to learn everything from scratch, the effort was great but,
-      between Professor Zaccaria's lectures and the many videos on youtube and
-      posts on stackoverflow I slowly became familiar with the environment.
+      - Riccardo Vitali had never seen a javascript code before in his life and he 
+      had never worked with databases or websites.
+      So he had to learn everything from scratch, the effort was great but,
+      thanks to Professor Zaccaria's lectures, the many videos on youtube and
+      the posts on stackoverflow, he slowly became familiar with the environment.
+      Additionally, he learnt how to use github and a platform such as Heroku and 
+      he got a basic knowledge of HTML and CSS.
+      - Federico Pozzi...
+      - Andrea Silvano...
     </p>
   </body>
 </html>
