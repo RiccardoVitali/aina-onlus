@@ -21,7 +21,7 @@ module.exports.usersLoginPOST = function usersLoginPOST (req, res, next) {
       if(response.username==undefined){
         req.session.uid = false;
 
-        res.status(303).location('/index.html');
+        res.status(303).location('/login.html');
         res.end();
       }
       /*if(response==409){
@@ -83,7 +83,7 @@ module.exports.usersLogout = function usersLogout (req, res, next) {
   res.clearCookie(SESS_NAME);
   console.log("req.session");
   console.log(req.session);
-  res.writeHead(301, { Location: "/login.html" });
+  res.writeHead(301, { Location: "/index.html" });
   res.end();
 
 };
