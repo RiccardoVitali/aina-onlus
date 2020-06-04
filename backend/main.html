@@ -219,27 +219,8 @@
           >description<span class="model__type">string</span></span
         >
 
-
       </div>
-
-      <div class="model">
-        <h1 class="model__resources">User</h1>
-        <span class="model__prop"
-          >username <span class="model__type">string</span></span
-        >
-        <span class="model__prop"
-          >password<span class="model__type">string</span></span
-        >
-      </div>
-
-      <div class="model">
-        <h1 class="model__resources">Newsletter</h1>
-        <span class="model__prop"
-          >email<span class="model__type">string</span></span
-        >
-
-      </div>
-
+      
       <div class="model">
         <h1 class="model__resources">People/Service</h1>
         <span class="model__prop"
@@ -250,6 +231,46 @@
         >
 
       </div>
+      
+      <div class="model">
+        <h1 class="model__resources">User</h1>
+        <span class="model__prop"
+          >username <span class="model__type">string</span></span
+        >
+        <span class="model__prop"
+          >email<span class="model__type">string</span></span
+        >
+        <span class="model__prop"
+          >password<span class="model__type">string</span></span
+        >
+      </div>
+      
+      <div class="model">
+        <h1 class="model__resources">Contact form</h1>
+        <span class="model__prop"
+          >name<span class="model__type">string</span></span
+        >
+        <span class="model__prop"
+          >email<span class="model__type">string</span></span
+        >
+        <span class="model__prop"
+          >subject<span class="model__type">string</span></span
+        >
+        <span class="model__prop"
+          >message<span class="model__type">string</span></span
+        >
+
+      </div>
+      
+      <div class="model">
+        <h1 class="model__resources">Newsletter</h1>
+        <span class="model__prop"
+          >email<span class="model__type">string</span></span
+        >
+
+      </div>
+      
+      
     </div>
 
     <h3>Data model</h3>
@@ -346,7 +367,7 @@
       We used cookie-session and cookie-parser for the session state.
       The idea is that a user can access his own page to see how his contribution 
       is helping the association, like letters or photo concerning distance
-      adoption or the progress of specific services.
+      adoption or the progress of specific services.<br>
       As soon as the user registers, his data are stored in the database,
       and when a user does the login, a new session is generated, contening
       all the information about him, in this way he can navigate the website
@@ -359,7 +380,7 @@
       easier to manage during development.-->
     </p>
     <p>
-      Three actions exists to change session state: <br />
+      <!--Three actions exists to change session state: <br />
       POST to /user/signup with username and password in body: will create new
       session if username is not taken.
       <br />
@@ -367,7 +388,7 @@
       username and password match.
       <br />
       POST to /user/logut with session in header: will destroy the session
-      provided in the header.
+      provided in the header.-->
     </p>
     <p class="question">
       - Which technology did you use (relational or a no-SQL database) for
@@ -391,7 +412,7 @@
       We was inspired by this simple and practical example:
       <a href="https://petstore.swagger.io/">Swagger Petstore</a>, moreover
       we explored the swagger documentation and we watched several swagger tutorials
-      on youtube.
+      on youtube.<br>
       Professor Zaccaria's lessons helped us a lot, providing the necessary
       information to get acquainted with the OpenAPI specification.
     </p>
@@ -403,12 +424,12 @@
     </p>
     <p>
       - Riccardo Vitali had never seen a javascript code before in his life and he 
-      had never worked with databases or websites.
+      had never worked with databases or websites.<br>
       So he had to learn everything from scratch, the effort was great but,
       thanks to Professor Zaccaria's lectures, the many videos on youtube and
       the posts on stackoverflow, he slowly became familiar with the environment.
       Additionally, he learnt how to use github and a platform such as Heroku and 
-      he got a basic knowledge of HTML and CSS.
+      he got a basic knowledge of HTML and CSS.<br>
       - Federico Pozzi...
       - Andrea Silvano...
     </p>
