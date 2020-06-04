@@ -26,6 +26,8 @@
     "node-fetch": "^2.6.0",
     "pg": "8.2.0",
     "routes": "^2.1.0",
-    "swagger-tools": "0.10.1"
+    "swagger-tools": "0.10.1",
+    "swagger-ui-express": "^4.1.4"
+
   }
 }
