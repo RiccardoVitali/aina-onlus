@@ -19,8 +19,6 @@ tags:
   description: "newsletter"
 - name: "rel"
   description: "relationship between people and service"
-- name: "users"
-  description: "users"
 paths:
   /services:
     get:
@@ -453,3 +451,18 @@ definitions:
       email: "lucio33@gmail.com"
       subject: "School"
       message: "How many teachers does the association support?"
+  User:
+    type: "object"
+    properties:
+      username:
+        type: "string"
+      email:
+        type: "string"
+      passoword:
+        type: "string"
+    title: "User"
+    description: "A user"
+    example:
+      username: ric
+      email: g@g.g
+      password: aa
