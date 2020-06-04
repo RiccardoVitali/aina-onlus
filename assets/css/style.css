@@ -22,7 +22,7 @@
 a {
   color: #3498db;
 }
-
+p {font-size: 3vh;}
 a:hover {
   color: #5faee3;
   text-decoration: none;
@@ -109,6 +109,7 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 5px;
 
 }
+
 
 /*header-----------------------------------------------*/
 #header {
@@ -695,7 +696,7 @@ padding: 70px 0;
 }
 
 .portfolio .portfolio-item {
-  /* position: relative; */
+   position: relative; 
   padding-bottom: 4vh;
   overflow: hidden;
 }
@@ -1156,19 +1157,19 @@ padding: 70px 0;
 }
 
 #footer .footer-newsletter form {
-  margin-top: 30px;
-  background: #fff;
-  padding: 6px 10px;
+  /* margin-top: 30px; */
+  background: black;
+  /* padding: 6px 10px; */
   position: relative;
   border-radius: 4px;
   text-align: left;
-  border: 1px solid #b6daf2;
+  border: 1px solid black;
 }
 
 #footer .footer-newsletter form input[type="email"] {
   border: 0;
   padding: 4px 8px;
-  width: calc(100% - 100px);
+  /* width: calc(100% - 100px); */
 }
 
 #footer .footer-newsletter form input[type="submit"] {
