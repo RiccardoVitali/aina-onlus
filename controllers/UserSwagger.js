@@ -21,7 +21,7 @@ module.exports.usersLoginPOST = function usersLoginPOST (req, res, next) {
       if(response.username==undefined){
         req.session.uid = false;
 
-        res.status(303).location('/login.html');
+        res.status(303).location('/index.html');
         res.end();
       }
       /*if(response==409){
