@@ -47,7 +47,7 @@ fetch("v1/users/me").then(function(response){
           <li><a href="/supportus.html">Support Us</a></li>
 
           <li><a href="/dash.html">  <span id="login">MY AINA</span> </a></li>
-          <li><form method="post" action="v1/users/logout">
+          <li><form style="padding-top:5px;" method="post" action="v1/users/logout">
                         <span id="logout"><input type="submit" value="logout" /></span>
                       </form></li>
 
