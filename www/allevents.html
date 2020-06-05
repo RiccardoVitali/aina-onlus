@@ -95,7 +95,7 @@
             </ul>
          </div>
 
-         <div class="row portfolio-container" id="events_card">
+         <div class="row" id="events_card">
            </div>
          </div>
         </div>
@@ -145,10 +145,10 @@ for(let i=0;i<json.length;i++){
   document.getElementById("events_card").innerHTML += `<div class="col-lg-4 col-md-6 portfolio-item filter-${json[i].date.substring(3,6)} wow fadeInUp">
 
               <div class="portfolio-wrap">
-                <figure>
+                <div>
                   <a href="/event.html?${json[i].id}" class="link-details" title="More Details"><img src="assets/img/events/${json[i].photo_url}" class="img-fluid" alt="">
                   </a>
-                </figure>
+                </div>
 
                 <div class="portfolio-info">
                   <h4><a href="/event.html?${json[i].id}">${json[i].name}</a></h4>
