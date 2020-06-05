@@ -76,31 +76,30 @@
                <li class="btn btn-outline-dark text" data-filter=".Dec">Dec</li>
             </ul>
          </div>-->
-        <div class="dropdown portfolio-menu">
-    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
-    <span class="caret"></span></button>
-            <ul class="dropdown-menu">
-               <li class="btn btn-outline-dark active" data-filter="*">All</li>
-               <li class="btn btn-outline-dark" data-filter=".Jan">Jan</li>
-               <li class="btn btn-outline-dark" data-filter=".Feb">Feb</li>
-               <li class="btn btn-outline-dark text" data-filter=".Mar">Mar</li>
-               <li class="btn btn-outline-dark text" data-filter=".Apr">Apr</li>
-               <li class="btn btn-outline-dark text" data-filter=".May">May</li>
-               <li class="btn btn-outline-dark text" data-filter=".Jun">Jun</li>
-               <li class="btn btn-outline-dark text" data-filter=".Jul">Jul</li>
-               <li class="btn btn-outline-dark text" data-filter=".Aug">Aug</li>
-               <li class="btn btn-outline-dark text" data-filter=".Sep">Sep</li>
-               <li class="btn btn-outline-dark text" data-filter=".Oct">Oct</li>
-               <li class="btn btn-outline-dark text" data-filter=".Nov">Nov</li>
-               <li class="btn btn-outline-dark text" data-filter=".Dec">Dec</li>
+        <div class=" portfolio-menu">
+
+            <ul  id="portfolio-flters">
+               <li  class="filter-active" data-filter="*">All</li>
+               <li  data-filter=".Jan">Jan</li>
+               <li  data-filter=".Feb">Feb</li>
+               <li  data-filter=".Mar">Mar</li>
+               <li  data-filter=".Apr">Apr</li>
+               <li  data-filter=".May">May</li>
+               <li  data-filter=".Jun">Jun</li>
+               <li  data-filter=".Jul">Jul</li>
+               <li  data-filter=".Aug">Aug</li>
+               <li  data-filter=".Sep">Sep</li>
+               <li  data-filter=".Oct">Oct</li>
+               <li  data-filter=".Nov">Nov</li>
+               <li  data-filter=".Dec">Dec</li>
             </ul>
          </div>
-          
+
          <div class="row" id="events_card">
            </div>
          </div>
         </div>
-         
+
     </section>
 
 
@@ -142,7 +141,7 @@ fetch("v1/events").then(function(response){
 }).then(function(json){
 
 for(let i=0;i<json.length;i++){
-  document.getElementById("events_card").innerHTML += `<div class="portfolio-item col-lg-3">
+  document.getElementById("events_card").innerHTML += `<div class="portfolio-item wow fadeInUp col-lg-3">
             <div class="item ${json[i].date.substring(3,6)}">
               <div class="portfolio-wrap">
                 <div>
