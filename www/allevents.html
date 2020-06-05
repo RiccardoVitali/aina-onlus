@@ -87,11 +87,11 @@
                <li  data-filter=".filter-May">May</li>
                <li  data-filter=".filter-Jun">Jun</li>
                <li  data-filter=".filter-Jul">Jul</li>
-               <li  data-filter=".filter-Aug">Aug</li>
-               <li  data-filter=".filter-Sep">Sep</li>
-               <li  data-filter=".filter-Oct">Oct</li>
-               <li  data-filter=".filter-Nov">Nov</li>
-               <li  data-filter=".filter-Dec">Dec</li>
+               <li  data-filter=".Aug">Aug</li>
+               <li  data-filter=".Sep">Sep</li>
+               <li  data-filter=".Oct">Oct</li>
+               <li  data-filter=".Nov">Nov</li>
+               <li  data-filter=".Dec">Dec</li>
             </ul>
          </div>
 
@@ -141,19 +141,19 @@ fetch("v1/events").then(function(response){
 }).then(function(json){
 
 for(let i=0;i<json.length;i++){
-  document.getElementById("events_card").innerHTML += `<div class="portfolio-item filter-${json[i].date.substring(3,6)} wow fadeInUp col-lg-3">
+  document.getElementById("events_card").innerHTML += `<div class="col-lg-4 col-md-6 portfolio-item filter-${json[i].date.substring(3,6)} wow fadeInUp">
 
               <div class="portfolio-wrap">
-                <div>
+                <figure>
                   <a href="/event.html?${json[i].id}" class="link-details" title="More Details"><img src="assets/img/events/${json[i].photo_url}" class="img-fluid" alt="">
                   </a>
-                </div>
+                </figure>
 
                 <div class="portfolio-info">
                   <h4><a href="/event.html?${json[i].id}">${json[i].name}</a></h4>
                   <p>${json[i].location}</p>
                 </div>
-
+              </div>
             </div>
           </div>`
           }
