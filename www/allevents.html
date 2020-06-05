@@ -80,18 +80,18 @@
 
             <ul  id="portfolio-flters">
                <li  class="filter-active" data-filter="*">All</li>
-               <li  data-filter=".Jan">Jan</li>
-               <li  data-filter=".Feb">Feb</li>
-               <li  data-filter=".Mar">Mar</li>
-               <li  data-filter=".Apr">Apr</li>
-               <li  data-filter=".May">May</li>
-               <li  data-filter=".Jun">Jun</li>
-               <li  data-filter=".Jul">Jul</li>
-               <li  data-filter=".Aug">Aug</li>
-               <li  data-filter=".Sep">Sep</li>
-               <li  data-filter=".Oct">Oct</li>
-               <li  data-filter=".Nov">Nov</li>
-               <li  data-filter=".Dec">Dec</li>
+               <li  data-filter=".filter-Jan">Jan</li>
+               <li  data-filter=".filter-Feb">Feb</li>
+               <li  data-filter=".filter-Mar">Mar</li>
+               <li  data-filter=".filter-Apr">Apr</li>
+               <li  data-filter=".filter-May">May</li>
+               <li  data-filter=".filter-Jun">Jun</li>
+               <li  data-filter=".filter-Jul">Jul</li>
+               <li  data-filter=".filter-Aug">Aug</li>
+               <li  data-filter=".filter-Sep">Sep</li>
+               <li  data-filter=".filter-Oct">Oct</li>
+               <li  data-filter=".filter-Nov">Nov</li>
+               <li  data-filter=".filter-Dec">Dec</li>
             </ul>
          </div>
 
@@ -141,7 +141,7 @@ fetch("v1/events").then(function(response){
 }).then(function(json){
 
 for(let i=0;i<json.length;i++){
-  document.getElementById("events_card").innerHTML += `<div class="portfolio-item ${json[i].date.substring(3,6)} wow fadeInUp col-lg-3">
+  document.getElementById("events_card").innerHTML += `<div class="portfolio-item filter-${json[i].date.substring(3,6)} wow fadeInUp col-lg-3">
 
               <div class="portfolio-wrap">
                 <div>
@@ -153,7 +153,7 @@ for(let i=0;i<json.length;i++){
                   <h4><a href="/event.html?${json[i].id}">${json[i].name}</a></h4>
                   <p>${json[i].location}</p>
                 </div>
-              
+
             </div>
           </div>`
           }
