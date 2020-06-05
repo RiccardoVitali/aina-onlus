@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>AINA ONLUS</title>
+  <title>Lumia Bootstrap Template - Index</title>
   <meta content="" name="descriptison">
   <meta content="" name="keywords">
 
@@ -76,22 +76,22 @@
                <li class="btn btn-outline-dark text" data-filter=".Dec">Dec</li>
             </ul>
          </div>-->
-        <div >
+        <div class=" portfolio-menu">
 
             <ul  id="portfolio-flters">
                <li  class="filter-active" data-filter="*">All</li>
-               <li  data-filter=".filter-Jan">Jan</li>
-               <li  data-filter=".filter-Feb">Feb</li>
-               <li  data-filter=".filter-Mar">Mar</li>
-               <li  data-filter=".filter-Apr">Apr</li>
-               <li  data-filter=".filter-May">May</li>
-               <li  data-filter=".filter-Jun">Jun</li>
-               <li  data-filter=".filter-Jul">Jul</li>
-               <li  data-filter=".filter-Aug">Aug</li>
-               <li  data-filter=".filter-Sep">Sep</li>
-               <li  data-filter=".filter-Oct">Oct</li>
-               <li  data-filter=".filter-Nov">Nov</li>
-               <li  data-filter=".filter-Dec">Dec</li>
+               <li  data-filter=".Jan">Jan</li>
+               <li  data-filter=".Feb">Feb</li>
+               <li  data-filter=".Mar">Mar</li>
+               <li  data-filter=".Apr">Apr</li>
+               <li  data-filter=".May">May</li>
+               <li  data-filter=".Jun">Jun</li>
+               <li  data-filter=".Jul">Jul</li>
+               <li  data-filter=".Aug">Aug</li>
+               <li  data-filter=".Sep">Sep</li>
+               <li  data-filter=".Oct">Oct</li>
+               <li  data-filter=".Nov">Nov</li>
+               <li  data-filter=".Dec">Dec</li>
             </ul>
          </div>
 
@@ -126,7 +126,6 @@
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="assets/vendor/venobox/venobox.min.js"></script>
   <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
-  <script src="https://kit.fontawesome.com/6d757dfe9b.js" crossorigin="anonymous"></script>
 
 
   <!-- Template Main JS File -->
@@ -142,24 +141,43 @@ fetch("v1/events").then(function(response){
 }).then(function(json){
 
 for(let i=0;i<json.length;i++){
-  document.getElementById("events_card").innerHTML += `<div class="col-lg-4 col-md-6 portfolio-item filter-${json[i].date.substring(3,6)} wow fadeInUp">
-
+  document.getElementById("events_card").innerHTML += `<div class="portfolio-item wow fadeInUp col-lg-3">
+            <div class="item ${json[i].date.substring(3,6)}">
               <div class="portfolio-wrap">
                 <div>
                   <a href="/event.html?${json[i].id}" class="link-details" title="More Details"><img src="assets/img/events/${json[i].photo_url}" class="img-fluid" alt="">
                   </a>
                 </div>
-
                 <div class="portfolio-info">
                   <h4><a href="/event.html?${json[i].id}">${json[i].name}</a></h4>
-                  <p><i class="fas fa-map-marker-alt"> ${json[i].location} </i></p>
-                  <p><i class="far fa-clock"></i> ${json[i].date}</p>
+                  <p>${json[i].location}</p>
                 </div>
               </div>
-            <div>
+            </div>
           </div>`
           }
 });
+
+ //js del nuovo filtro
+$('.portfolio-menu ul li').click(function(){
+         	$('.portfolio-menu ul li').removeClass('active');
+         	$(this).addClass('active');
+
+         	var selector = $(this).attr('data-filter');
+         	$('.portfolio-item').isotope({
+         		filter:selector
+         	});
+         	return  false;
+         });
+         $(document).ready(function() {
+         var popup_btn = $('.popup-btn');
+         popup_btn.magnificPopup({
+         type : 'image',
+         gallery : {
+         	enabled : true
+         }
+         });
+         });
 
   </script>
 
