@@ -3,7 +3,7 @@ fetch("v1/users/me").then(function(response){
   response.json().then(res=>{
 
     if(res.error!=undefined){
-      document.getElementById("header1").innerHTML = `<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light ml-5 mr-5">
+      document.getElementById("header1").innerHTML = `<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light ml-5 mr-5"style="background-color:black;">
 
 
         <a class="navbar-brand" href="/">
@@ -36,7 +36,7 @@ fetch("v1/users/me").then(function(response){
             </li>
 
           </ul>
-          &nbsp<form class="form-inline">
+        <form class="form-inline">
           <a href="login.html"><button class="btn btn-danger" type="button" id="login">Log In</button></a>
         </div>
 
@@ -45,7 +45,7 @@ fetch("v1/users/me").then(function(response){
       return;
     }
     else{
-      document.getElementById("header1").innerHTML = `<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light ml-5 mr-5">
+      document.getElementById("header1").innerHTML = `<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light ml-5 mr-5" style="background-color:black;">
 
 
         <a class="navbar-brand" href="/">
@@ -81,7 +81,7 @@ fetch("v1/users/me").then(function(response){
           <form class="form-inline" method="post" action="v1/users/logout">
 <input id="login" type="submit" value="Logout" />
 </form>
-&nbsp<form class="form-inline">
+<form class="form-inline">
 <a href="dash.html"><button class="btn btn-danger" type="button">My aina</button></a>
 </form>
       </nav>`
