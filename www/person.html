@@ -55,18 +55,7 @@
       </nav>
       <div class="container">
         <div id="person_card" class="row">
-          <!--
-          <div class="col-lg-4">
-            <img src="assets/img/people/gagliotti.jpg" class="img-fluid" alt="">
-          </div>
-          <div class="col-lg-6">
-            <h2><span id="name"></span></h2>
-            <h6><span id="role"></span> <a href="..."><span id="main_service" class="badge badge-dark"></span></a></h6>
-            <p> <span id="email"></span></p>
-            <p> <span id="phone"></span></p>
-            <p> <span id="description"></span></p>
-          </div>
-          -->
+        
         </div>
         <br><br><br>
 
@@ -76,13 +65,10 @@
         </div>
 
           <div class="row">
-            <span id="relative_people_card" class="row"></span>
-            <!-- <div class="card" style="width: 18rem; margin-right:30px;">
-                        <img src="assets/img/people/gagliotti.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                          <p class="card-text">names_person[i]  surnames_person[i] </p>
-                        </div>
-                      </div> -->
+            <div class="uk-child-width-1-2@m uk-grid uk-grid-match" uk-grid id="relative_people_card">
+
+            </div>
+
 
           </div>
 
@@ -98,41 +84,7 @@
           <div class="uk-child-width-1-3@m uk-grid-small uk-grid-match" uk-grid id="relative_events_card">
 
           </div>
-        <!-- <span id="relative_events_card" class="row"></span> -->
-        <!--          <div class="card" style="width: 18rem; margin-right:30px; height:23rem;">
-          <a href="/event<%= event_ids[0] %>" class="link-details" title="More Details">
-          <img src="assets/img/event01.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <div class="row">
-              <div class="col-lg-8">
-                <p class="card-text">Rome, Italy </p>
-                <h5 class="card-text"><%= event_names[0] %><br> wowowo</h5>
-                <p class="card-text">Foundraising</p>
-              </div>
-              <div class="col-lg-4">
-                <p class="card-text" style="text-align:right">Nome nome cogno </p>
-              </div>
-            </div>
-          </div>
-        </div>
 
-        <div class="card" style="width: 18rem; margin-right:30px; height:23rem;">
-          <a href="/event<%= event_ids[1] %>" class="link-details" title="More Details">
-          <img src="assets/img/event01.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <div class="row">
-              <div class="col-lg-8">
-                <p class="card-text">Rome, Italy </p>
-                <h5 class="card-text"><%= event_names[1] %><br> wowowo</h5>
-                <p class="card-text">Foundraising</p>
-              </div>
-              <div class="col-lg-4">
-                <p class="card-text" style="text-align:right">Nome nome cogno </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        -->
         </div>
         </section>
 
@@ -267,15 +219,17 @@ fetch("v1/people/"+lastChar).then(function(response){
        related_people_name_surname.push(x.name + " " + x.surname);
    }
    for(let i=0;i<related_people_ids.length;i++){
-     document.getElementById("relative_people_card").innerHTML += `<div class="card" style="width: 18rem; margin-right:30px; padding-bottom:2vh;">
-                 <a href="/person.html?${related_people_ids[i]}">
-                 <img src="assets/img/people/gagliotti.jpg" class="card-img-top" href="/person.html?${related_people_ids[i]}" alt="...">
-                 </a>
-                 <div class="card-body">
-                   <a href="/person.html?${related_people_ids[i]}">
-                   <p class="card-text" > ${related_people_name_surname[i]} </p>
-                   </a>
-                 </div>
+     document.getElementById("relative_people_card").innerHTML += `
+
+               <div class="uk-card-small uk-card-default uk-card-body uk-first-column"><div>
+                 <a href="/person.html?${related_people_ids[i]}" class="link-details" title="More Details"><img src="assets/img/people/coleman.jpg" class="img-fluid" alt="">
+                 </a> <br>
+                 <div class="portfolio-info">
+                           <h4><a href="/person.html?${related_people_ids[i]}"><span style="color:black">${related_people_name_surname[i]}</span></a></h4>
+                           <p>
+                           <i class="far fa-clock"> </i>&nbsp${json[i].role}</p>
+                         </div>
+
                </div>`
              }
    }
