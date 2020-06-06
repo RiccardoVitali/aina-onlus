@@ -90,9 +90,3 @@ fetch("v1/users/me").then(function(response){
     }
   })
 });
-ù
-<form style="padding-top:5px;" method="post" action="v1/users/logout">
-
-                      <input id="login" type="submit" value="Logout" />
-
-                    </form>
