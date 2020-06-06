@@ -210,11 +210,11 @@ for(let i=0;i<json.length;i++){
 
       <div class="uk-card-small uk-card-default uk-card-body uk-first-column"><div>
         <a href="/event.html?${json[i].id}" class="link-details" title="More Details"><img src="assets/img/events/${json[i].photo_url}" class="img-fluid" alt="">
-        </a>
+        </a> <br>
         <div class="portfolio-info">
                   <h4><a href="/event.html?${json[i].id}"><span style="color:black">${json[i].name}</span></a></h4>
-                  <p><i class="fas fa-map-marker-alt"> </i>${json[i].location}<br>
-                  <i class="far fa-clock"> </i>${json[i].date}</p>
+                  <p><i class="fas fa-map-marker-alt"> </i>&nbsp${json[i].location} <br>
+                  <i class="far fa-clock"> </i>&nbsp${json[i].date}</p>
                 </div>
 
       </div></li>
@@ -223,25 +223,6 @@ for(let i=0;i<json.length;i++){
 });
 
 
-// $('.portfolio-menu ul li').click(function(){
-//          	$('.portfolio-menu ul li').removeClass('active');
-//          	$(this).addClass('active');
-//
-//          	var selector = $(this).attr('data-filter');
-//          	$('.portfolio-item').isotope({
-//          		filter:selector
-//          	});
-//          	return  false;
-//          });
-         // $(document).ready(function() {
-         // var popup_btn = $('.popup-btn');
-         // popup_btn.magnificPopup({
-         // type : 'image',
-         // gallery : {
-         // 	enabled : true
-         // }
-         // });
-         //});
 
   </script>
 
