@@ -24,6 +24,7 @@
   <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
   <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.5.3/dist/css/uikit.min.css" />
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
@@ -162,6 +163,9 @@
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="assets/vendor/venobox/venobox.min.js"></script>
   <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.3/dist/js/uikit.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.3/dist/js/uikit-icons.min.js"></script>
+  <script src="https://kit.fontawesome.com/6d757dfe9b.js" crossorigin="anonymous"></script>
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
@@ -194,21 +198,17 @@ fetch("v1/services/"+lastChar).then(function(response){
     }
   }
   for(var z=0;z<related_events.length;z++){
-    document.getElementById("relative_events_card").innerHTML += `<div class="card" style="width: 18rem; margin-right:30px; height:23rem;">
-      <a href="/event.html?${json[related_events[z]].id}" class="link-details" title="More Details">
-      <img src="assets/img/event01.jpg" class="card-img-top" alt="...">
-      <div class="card-body">
-        <div class="row">
-          <div class="col-lg-8">
-            <p class="card-text">Rome, Italy </p>
-            <h5 class="card-text">${json[related_events[z]].name}<br> -----</h5>
-            <p class="card-text">Foundraising</p>
-          </div>
-          <div class="col-lg-4">
-            <p class="card-text" style="text-align:right">Nome nome cogno </p>
-          </div>
-        </div>
-      </div>
+    document.getElementById("relative_events_card").innerHTML += `
+
+    <div class="uk-card-small uk-card-default uk-card-body uk-first-column"><div>
+      <a href="/event.html?${json[related_events[z]].id}" class="link-details" title="More Details"><img src="assets/img/events/${json[related_events[z]].photo_url}" class="img-fluid" alt="">
+      </a> <br>
+      <div class="portfolio-info">
+                <h4><a href="/event.html?${json[related_events[z]].id}"><span style="color:black">${json[related_events[z]].name}</span></a></h4>
+                <p><i class="fas fa-map-marker-alt"> </i>&nbsp${json[related_events[z]].location} <br>
+                <i class="far fa-clock"> </i>&nbsp${json[related_events[z]].date}</p>
+              </div>
+
     </div>`
   }
 })

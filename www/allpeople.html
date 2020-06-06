@@ -72,11 +72,11 @@
 
               <ul class="uk-subnav uk-subnav-pill">
                  <li class="uk-active" uk-filter-control><a href="#">All</a></li>
-                  <li uk-filter-control="[data-tags*='nome del database']"><a href="#">Farm & Garden</a></li>
-                  <li uk-filter-control="[data-tags*='nome del database']"><a href="#">Outdoor Activities</a></li>
-                  <li uk-filter-control="[data-tags*='nome del database']"><a href="#">School</a></li>
-                  <li uk-filter-control="[data-tags*='nome del database']"><a href="#">Medical Clinic</a></li>
-                  <li uk-filter-control="[data-tags*='nome del database']"><a href="#">Accommodation</a></li>
+                  <li uk-filter-control="[data-tags*='Farm & Garden']"><a href="#">Farm & Garden</a></li>
+                  <li uk-filter-control="[data-tags*='Outdoor Activities']"><a href="#">Outdoor Activities</a></li>
+                  <li uk-filter-control="[data-tags*='School']"><a href="#">School</a></li>
+                  <li uk-filter-control="[data-tags*='Medical Clinic']"><a href="#">Medical Clinic</a></li>
+                  <li uk-filter-control="[data-tags*='Accommodation']"><a href="#">Accommodation</a></li>
 
               </ul>
 
@@ -132,7 +132,7 @@
   }).then(function(json) {
     console.log(json[2].id)
     for (let i = 0; i < json.length; i++) {
-      document.getElementById("people_card").innerHTML += `<li data-tags="servizio databse">
+      document.getElementById("people_card").innerHTML += `<li data-tags="${json[i].service_name}">
 
 
 
