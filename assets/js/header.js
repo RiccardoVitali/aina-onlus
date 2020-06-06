@@ -3,10 +3,10 @@ fetch("v1/users/me").then(function(response){
   response.json().then(res=>{
 
     if(res.error!=undefined){
-      document.getElementById("header1").innerHTML = `<nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light ml-5 mr-5">
+      document.getElementById("header1").innerHTML = `<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light ml-5 mr-5">
 
 
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="/">
           <img src="assets/img/logo.png" width="150" height="150" class="d-inline-block align-top" alt="">
 
         </a>
@@ -45,10 +45,10 @@ fetch("v1/users/me").then(function(response){
       return;
     }
     else{
-      document.getElementById("header1").innerHTML = `<nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light ml-5 mr-5">
+      document.getElementById("header1").innerHTML = `<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light ml-5 mr-5">
 
 
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="/">
           <img src="assets/img/logo.png" width="150" height="150" class="d-inline-block align-top" alt="">
 
         </a>
