@@ -3,7 +3,7 @@ fetch("v1/users/me").then(function(response){
   response.json().then(res=>{
 
     if(res.error!=undefined){
-      document.getElementById("header").innerHTML = `<nav class="navbar navbar-expand-lg navbar-light bg-light ml-5 mr-5">
+      document.getElementById("header1").innerHTML = `<nav class="navbar navbar-expand-lg navbar-light bg-light ml-5 mr-5">
 
 
         <a class="navbar-brand" href="#">
@@ -37,7 +37,8 @@ fetch("v1/users/me").then(function(response){
 
           </ul>
           <form class="form-inline">
-        <button class="btn btn-danger" type="button">Log In</button>
+          <button class="btn btn-danger" type="button">Log Out</button>
+          <button class="btn btn-danger" type="button">My aina</button>
         </div>
 
       </nav>`
@@ -79,8 +80,7 @@ fetch("v1/users/me").then(function(response){
 
           </ul>
           <form class="form-inline">
-        <button class="btn btn-danger" type="button">Log Out</button>
-        <button class="btn btn-danger" type="button">My aina</button>
+
         </div>
 
       </nav>`
