@@ -105,7 +105,7 @@
 
             <div class="uk-child-width-1-3@m uk-grid-small uk-grid-match" uk-grid id="relative_events_card">
 
-            
+
           <!-- <span id="relative_events_card" class="row"></span> -->
 <!--          <div class="card" style="width: 18rem; margin-right:30px; height:23rem;">
             <a href="/event<%= event_ids[0] %>" class="link-details" title="More Details">
@@ -202,7 +202,7 @@ fetch("v1/services/"+lastChar).then(function(response){
   }
   for(var z=0;z<related_events.length;z++){
     document.getElementById("relative_events_card").innerHTML += `
-
+<div class="col-lg-4">
     <div class="uk-card-small uk-card-default uk-card-body uk-first-column"><div>
       <a href="/event.html?${json[related_events[z]].id}" class="link-details" title="More Details"><img src="assets/img/events/${json[related_events[z]].photo_url}" class="img-fluid" alt="">
       </a> <br>
@@ -212,7 +212,7 @@ fetch("v1/services/"+lastChar).then(function(response){
                 <i class="far fa-clock"> </i>&nbsp${json[related_events[z]].date}</p>
               </div>
 
-    </div>`
+    </div></div>`
   }
 })
 
@@ -237,16 +237,22 @@ fetch("v1/services/"+lastChar).then(function(response){
         related_people_name_surname.push(x.name + " " + x.surname);
     }
     for(let i=0;i<related_people_ids.length;i++){
-      document.getElementById("relative_people_card").innerHTML += `<div class="card" style="width: 18rem; margin-right:30px;">
-        <a href="/person.html?${related_people_ids[i]}">
-        <img src="assets/img/people/gagliotti.jpg" class="card-img-top" href="/person.html?${related_people_ids[i]}" alt="...">
-        </a>
-        <div class="card-body">
-        <a href="/person.html?${related_people_ids[i]}">
-          <p class="card-text">${related_people_name_surname[i]}</p>
-        </a>
-        </div>
-      </div>`
+      document.getElementById("relative_people_card").innerHTML += `
+
+      <div class="col-lg-4">
+
+       <div class="uk-card-small uk-card-default uk-card-body uk-first-column"><div>
+         <a href="/person.html?${related_people_ids[i]}" class="link-details" title="More Details"><img src="assets/img/people/coleman.jpg" class="img-fluid" alt="">
+         </a> <br>
+         <div class="portfolio-info">
+                   <h4><a href="/person.html?${related_people_ids[i]}"><span style="color:black">${related_people_name_surname[i]}</span></a></h4>
+                   <p>
+                   <i class="far fa-clock"> </i>&nbsp${json[i].role}</p>
+                 </div>
+
+       </div></div>
+
+      `
               }
     }
     get_person_name_surname(related_people_ids);
