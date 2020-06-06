@@ -32,13 +32,15 @@ a:hover {
 
  }
  p{
-   font-size: 2.5vh;
+   font-size: 2.2vh;
    line-height: 2.8vh;
  }
 h1, h2, h3, h4, h5, h6 {
   font-family: "suisse-med", sans-serif;
 }
-
+.uk-subnav-pill>.uk-active>a{
+  background-color: black !important;
+}
 .red-true{
   background-color:#e41f2c;
   border-color:#e41f2c;
@@ -300,7 +302,7 @@ background-color: black;
 
 .text-norm {
   font-family: suisse-reg;
-  font-size: 2.5vh !important;
+  font-size: 2.2vh !important;
 }
 
 /*section-----------------------------------------------*/
