@@ -195,6 +195,7 @@
   <script src="assets/js/header.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.3/dist/js/uikit.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.3/dist/js/uikit-icons.min.js"></script>
+  <script src="https://kit.fontawesome.com/6d757dfe9b.js" crossorigin="anonymous"></script>
 </body>
 
 <script>
@@ -207,13 +208,13 @@ for(let i=0;i<json.length;i++){
 
 
 
-      <div class="uk-card uk-card-default uk-card-body uk-first-column"><div>
+      <div class="uk-card-small uk-card-default uk-card-body uk-first-column"><div>
         <a href="/event.html?${json[i].id}" class="link-details" title="More Details"><img src="assets/img/events/${json[i].photo_url}" class="img-fluid" alt="">
         </a>
         <div class="portfolio-info">
-                  <h4><a href="/event.html?${json[i].id}">${json[i].name}</a></h4>
-                  <p>${json[i].location}</p>
-                  <p>${json[i].date}</p>
+                  <h4><a href="/event.html?${json[i].id}"><span style="color:black">${json[i].name}</span></a></h4>
+                  <p><i class="fas fa-map-marker-alt"> </i>${json[i].location}<br>
+                  <i class="far fa-clock"> </i>${json[i].date}</p>
                 </div>
 
       </div></li>
