@@ -63,9 +63,9 @@
 
 
         <div class="row">
-          <div class="uk-child-width-1-4@m uk-grid-small uk-grid-match" uk-grid id="services_card">
+          <ul class="uk-child-width-1-4@m uk-grid-small uk-grid-match" uk-grid id="services_card">
 
-          </div>
+          </ul>
 
 
         </div>
@@ -116,6 +116,8 @@ fetch("v1/services").then(function(response){
 
 for(let i=0;i<json.length && i<6;i++){
   document.getElementById("services_card").innerHTML += `
+<li>
+
 
   <div class="uk-card-small uk-card-default uk-card-body uk-first-column"><div>
     <a href="/service.html?${json[i].id}" class="link-details" title="More Details"><img src="${json[i].photo_url}" class="img-fluid" alt="">
@@ -125,7 +127,7 @@ for(let i=0;i<json.length && i<6;i++){
 
             </div>
 
-  </div>`
+  </div></li>`
           }
 });
 
