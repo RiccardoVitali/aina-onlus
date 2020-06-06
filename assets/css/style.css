@@ -1386,14 +1386,14 @@ padding: 70px 0;
 /*copiare*/
 @media only screen and (max-width: 768px) {
   /*menu*/
-  #login {
+  /* #login {
       border: 5px solid #e41f2c;
       border-left: 120px solid #e41f2c;
       border-right: 120px solid #e41f2c;
       color: #fff;
       background-color: #e41f2c;
       border-radius: 5px;
-  }
+  } */
 
  /*homepage*/
  .title {
