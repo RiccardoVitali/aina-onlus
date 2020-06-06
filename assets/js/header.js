@@ -3,7 +3,7 @@ fetch("v1/users/me").then(function(response){
   response.json().then(res=>{
 
     if(res.error!=undefined){
-      document.getElementById("header1").innerHTML = `<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light ml-5 mr-5"style="background-color:black;">
+      document.getElementById("header1").innerHTML = `<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
 
 
         <a class="navbar-brand" href="/">
@@ -45,7 +45,7 @@ fetch("v1/users/me").then(function(response){
       return;
     }
     else{
-      document.getElementById("header1").innerHTML = `<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light ml-5 mr-5" style="background-color:black;">
+      document.getElementById("header1").innerHTML = `<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light ml-5 mr-5" >
 
 
         <a class="navbar-brand" href="/">
