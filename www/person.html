@@ -184,7 +184,7 @@ fetch("v1/people/"+lastChar).then(function(response){
   }
   for(var z=0;z<related_events.length;z++){
     document.getElementById("relative_events_card").innerHTML += `
-
+  <div class="col-lg-4">
     <div class="uk-card-small uk-card-default uk-card-body uk-first-column"><div>
       <a href="/event.html?${json[related_events[z]].id}" class="link-details" title="More Details"><img src="assets/img/events/${json[related_events[z]].photo_url}" class="img-fluid" alt="">
       </a> <br>
@@ -194,6 +194,7 @@ fetch("v1/people/"+lastChar).then(function(response){
                 <i class="far fa-clock"> </i>&nbsp${json[related_events[z]].date}</p>
               </div>
 
+    </div>
     </div>`
   }
 })
