@@ -17,28 +17,27 @@ fetch("v1/users/me").then(function(response){
         <div class="collapse navbar-collapse " id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item ">
-              <a class="nav-link" href="#">Services <span class="sr-only"></span></a>
+              <a class="nav-link" href="/allservices.html">Services <span class="sr-only"></span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Events</a>
+              <a class="nav-link" href="/allevents.html">Events</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">People</a>
+              <a class="nav-link" href="/allpeople.html">People</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link " href="#">Association</a>
+              <a class="nav-link " href="/association.html">Association</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link " href="#">Support Us</a>
+              <a class="nav-link " href="/supportus.html">Support Us</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link " href="#">Contact Us</a>
+              <a class="nav-link " href="/contactus.html">Contact Us</a>
             </li>
 
           </ul>
           <form class="form-inline">
-          <button class="btn btn-danger" type="button">Log Out</button>
-          <button class="btn btn-danger" type="button">My aina</button>
+          <a href="login.html"><button class="btn btn-danger" type="button" id="login">Log In</button></a>
         </div>
 
       </nav>`
@@ -60,32 +59,40 @@ fetch("v1/users/me").then(function(response){
         <div class="collapse navbar-collapse " id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item ">
-              <a class="nav-link" href="#">Services <span class="sr-only"></span></a>
+              <a class="nav-link" href="/allservices.html">Services <span class="sr-only"></span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Events</a>
+              <a class="nav-link" href="allevents.html">Events</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">People</a>
+              <a class="nav-link" href="allpeople.html">People</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link " href="#">Association</a>
+              <a class="nav-link " href="/association.html">Association</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link " href="#">Support Us</a>
+              <a class="nav-link " href="/supportus.html">Support Us</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link " href="#">Contact Us</a>
+              <a class="nav-link " href="/contactus.html">Contact Us</a>
             </li>
 
           </ul>
-          <form class="form-inline">
-
-        </div>
-
+          <form class="form-inline" method="post" action="v1/users/logout">
+<input id="login" type="submit" value="Logout" />
+</form>
+<form class="form-inline">
+<a href="dash.html"><button class="btn btn-danger" type="button">My aina</button></a>
+</form>
       </nav>`
 
       return ;
     }
   })
 });
+ù
+<form style="padding-top:5px;" method="post" action="v1/users/logout">
+
+                      <input id="login" type="submit" value="Logout" />
+
+                    </form>
