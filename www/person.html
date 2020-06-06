@@ -81,6 +81,7 @@
         <h3> Related Events </h3>
         </div>
         <div class="row">
+
           <div class="uk-child-width-1-2@m uk-grid-small uk-grid-match" uk-grid id="relative_events_card">
 
           </div>
@@ -221,6 +222,8 @@ fetch("v1/people/"+lastChar).then(function(response){
    for(let i=0;i<related_people_ids.length;i++){
      document.getElementById("relative_people_card").innerHTML += `
 
+              <div class="col-lg-4">
+
                <div class="uk-card-small uk-card-default uk-card-body uk-first-column"><div>
                  <a href="/person.html?${related_people_ids[i]}" class="link-details" title="More Details"><img src="assets/img/people/coleman.jpg" class="img-fluid" alt="">
                  </a> <br>
@@ -230,7 +233,7 @@ fetch("v1/people/"+lastChar).then(function(response){
                            <i class="far fa-clock"> </i>&nbsp${json[i].role}</p>
                          </div>
 
-               </div>`
+               </div></div>`
              }
    }
    get_person_name_surname(related_people_ids);
