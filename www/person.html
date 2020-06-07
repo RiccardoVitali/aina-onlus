@@ -176,7 +176,7 @@ fetch("v1/people/"+lastChar).then(function(response){
   fetch("v1/events").then(function(respo){
     return respo.json();
 }).then(function(json){
-  let related_events = [];
+  var related_events = [];
   for(var t=0;t<json.length;t++){
     if(json[t].person_id==lastChar){
       related_events.push(t);
@@ -203,7 +203,7 @@ fetch("v1/people/"+lastChar).then(function(response){
      return res.json();
    }).then(function(json){
 
-     let related_people_ids = [];
+     var related_people_ids = [];
 
      for(let j=0;j<json.length;j++){
        if(json[j].service_id == main_service && json[j].person_id != lastChar){
@@ -211,14 +211,16 @@ fetch("v1/people/"+lastChar).then(function(response){
        }
      }
 
-   let related_people_name_surname = [];
-
+   var related_people_name_surname = [];
+   var related_people_role = [];
    async function get_person_name_surname(related_people_ids){
      for(let h=0;h<related_people_ids.length;h++){
        let x = await fetch("v1/people/"+related_people_ids[h]).then((res)=>{
          return res.json();
        });
        related_people_name_surname.push(x.name + " " + x.surname);
+       related_people_role.push(x.role);
+
    }
    for(let i=0;i<related_people_ids.length;i++){
      document.getElementById("relative_people_card").innerHTML += `
@@ -231,7 +233,7 @@ fetch("v1/people/"+lastChar).then(function(response){
                  <div class="portfolio-info">
                            <h4><a href="/person.html?${related_people_ids[i]}"><span style="color:black">${related_people_name_surname[i]}</span></a></h4>
                            <p>
-                           <i class="far fa-clock"> </i>&nbsp${json[i].role}</p>
+                           <i class="far fa-clock"> </i>&nbsp${related_people_role[i]}</p>
                          </div>
 
                </div></div>`
