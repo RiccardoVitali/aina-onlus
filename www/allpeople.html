@@ -127,11 +127,18 @@
 
 
 <script>
+  
   fetch("v1/people").then(function(response) {
     return response.json();
   }).then(function(json) {
+    
     for (let i = 0; i < json.length; i++) {
-      document.getElementById("people_card").innerHTML += `<li data-tags="${json[i].service_name}">
+      fetch("v1/services/"+json[i].main_service).then(function(resp){
+        return resp.json();
+      }).then(function(json){
+        const service_name = json.name;
+        
+        document.getElementById("people_card").innerHTML += `<li data-tags="${service_name}">
 
       <div class="uk-card-small uk-card-default uk-card-body uk-first-column"><div>
         <a href="/person.html?${json[i].id}" class="link-details" title="More Details"><img src="assets/img/people/coleman.jpg" class="img-fluid" alt="">
@@ -143,7 +150,8 @@
                 </div>
 
       </div></li>`
-    }
+      }
+    });
   });
 </script>
 
