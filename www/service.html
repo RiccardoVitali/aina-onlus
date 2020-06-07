@@ -55,8 +55,8 @@
           <li class="breadcrumb-item active" aria-current="page">Service</li>
         </ol>
       </nav>
-      <div class="container">
-        <div class="row">
+      <div id="service" class="container">
+        <!-- <div class="row">
           <div class="col-lg-6">
             <h3><span id="name"></span></h3>
             <p><span id="description"></span>
@@ -65,7 +65,8 @@
           <div class="col-lg-6">
               <br><br><img src="assets/img/services/paolos.jpg" class="card-img-top" alt="...">
           </div>
-        </div>
+        </div> -->
+      </div>
         <br><br><br>
 
         <div class="row">
@@ -172,8 +173,18 @@ fetch("v1/services/"+lastChar).then(function(response){
 }).then(function(json){
   const name = json.name;
   const description = json.description;
-  document.getElementById("name").innerHTML = `${name}`;
-  document.getElementById("description").innerHTML = `${description}`;
+  const photo_url = json.photo_url;
+  //document.getElementById("name").innerHTML = `${name}`;
+  //document.getElementById("description").innerHTML = `${description}`;
+  document.getElementById("service").innerHTML=`<div class="row">
+          <div class="col-lg-6">
+            <h3>${name}</h3>
+            <p>${description}</p>
+          </div>
+          <div class="col-lg-6">
+              <br><br><img src="${photo_url}" class="card-img-top" alt="...">
+          </div>
+        </div>`
 
   fetch("v1/events").then(function(respo){
     return respo.json();
