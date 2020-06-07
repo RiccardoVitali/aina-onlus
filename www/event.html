@@ -52,7 +52,7 @@
 
 
       <div class="container-fluid " id="event_card">
-        <div class="row d-flex align-items-center">
+        <!-- <div class="row d-flex align-items-center">
           <div class="col-lg-6  ">
             <h2>${name}</h2>
             <p> <span uk-icon="calendar"></span>&nbsp ${date} &nbsp <a href="/service.html?${main_service}"><span class="badge badge-${color}">${main_service_name}</span></a><br>
@@ -80,7 +80,7 @@ ${description}
             <button class="uk-button uk-button-default"><span uk-icon="calendar"></span>&nbspAdd to Calendar </button>
 
           </div>
-        </div>
+        </div> -->
       </div>
 
 
@@ -121,9 +121,9 @@ ${description}
   <script src="assets/js/header.js"></script>
 
 </body>
-<!-- <script>
+ <script>
   var myString = window.location.search.toString();
-  var lastChar = myString[myString.length - 1];
+  var lastChar = myString.substring(1);
 
   fetch("v1/events/" + lastChar).then(function(response) {
     return response.json();
@@ -132,6 +132,7 @@ ${description}
     const date = json.date;
     const description = json.description;
     const location = json.location;
+    const photo_url = json.photo_url
     const personId = json.person_id;
     const serviceId = json.service_id;
 
@@ -146,10 +147,38 @@ ${description}
       }).then(function(json) {
         const service_name = json.name;
 
-        document.getElementById("event_card").innerHTML = ``;
+        document.getElementById("event_card").innerHTML = `        <div class="row d-flex align-items-center">
+          <div class="col-lg-6  ">
+            <h2>${name}</h2>
+            <p> <span uk-icon="calendar"></span>&nbsp ${date} &nbsp <a href="/service.html?${serviceId}"><span class="badge badge-${color}">${service_name}</span></a><br>
+              <span uk-icon="location"></span>&nbsp ${location} </p>
+            <p>
+${description}
+            </p>
+            <p> <span uk-icon="user"></span>Organized by <a href="/person.html?${personId}">${person_name_surname}</a> </p>
+          </div>
+          <div class="col-lg-6">
+            <img src="assets/img/events/${photo_url}" class="img-fluid" alt="">
+          </div>
+        </div>
+      <br><br>
+        <div class="row">
+          <div class="col-lg-6">
+            <h3><strong>Address</strong></h3>
+            <div class="map-responsive">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2796.590804565344!2d9.192072815141014!3d45.498184279101395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4786c0d4d6dbd7cd%3A0xd9391ebfde4a35c1!2sVia%20Budua%2C%2013%2C%2020159%20Milano%20MI!5e0!3m2!1sit!2sit!4v1591452538872!5m2!1sit!2sit" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+</div>
+          </div>
+          <div class="col-lg-6">
+            <h3><strong>Info</strong></h3>
+            <button class="uk-button uk-button-default"> <span uk-icon="download"></span>&nbspDownload Flyer</button><br><br>
+            <button class="uk-button uk-button-default"><span uk-icon="calendar"></span>&nbspAdd to Calendar </button>
+
+          </div>
+        </div>`;
       })
     })
   });
-</script> -->
+</script> 
 
 </html>
