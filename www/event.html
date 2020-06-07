@@ -146,7 +146,22 @@ ${description}
         return res.json();
       }).then(function(json) {
         const service_name = json.name;
-
+        var color;
+        if(main_service_name=="School"){
+           color = "warning";
+       }
+       if(main_service_name=="Farm & Garden"){
+           color = "success";
+       }
+       if(main_service_name=="Outdoor Activities"){
+           color = "info";
+       }
+       if(main_service_name=="Medical Clinic"){
+         color = "danger";
+       }
+       if(main_service_name=="Accommodation"){
+         color = "secondary";
+       }
         document.getElementById("event_card").innerHTML = `        <div class="row d-flex align-items-center">
           <div class="col-lg-6  ">
             <h2>${name}</h2>
