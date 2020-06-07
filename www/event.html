@@ -135,6 +135,23 @@ ${description}
     const photo_url = json.photo_url
     const personId = json.person_id;
     const serviceId = json.service_id;
+    
+    var color;
+        if(serviceId==1){ //school
+           color = "warning";
+        }
+        if(serviceId==4){ //Farm
+           color = "success";
+        }
+        if(serviceId==5){ // Accomodation
+          color = "info";
+        }
+        if(serviceId==2){ //Clinic
+          color = "danger";
+        }
+        if(serviceId==3){ // Outdoor activities
+          color = "secondary";
+        }
 
     //var person_name_surname;
     fetch("v1/people/" + personId).then(function(res) {
@@ -146,22 +163,7 @@ ${description}
         return res.json();
       }).then(function(json) {
         const service_name = json.name;
-        var color;
-        if(main_service_name=="School"){
-           color = "warning";
-       }
-       if(main_service_name=="Farm & Garden"){
-           color = "success";
-       }
-       if(main_service_name=="Outdoor Activities"){
-           color = "info";
-       }
-       if(main_service_name=="Medical Clinic"){
-         color = "danger";
-       }
-       if(main_service_name=="Accommodation"){
-         color = "secondary";
-       }
+       
         document.getElementById("event_card").innerHTML = `        <div class="row d-flex align-items-center">
           <div class="col-lg-6  ">
             <h2>${name}</h2>
