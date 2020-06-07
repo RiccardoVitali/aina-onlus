@@ -131,7 +131,7 @@ var lastChar = myString.substring(1,myString.length);
 fetch("v1/people/"+lastChar).then(function(response){
   return response.json();
 }).then(function(json){
-
+  const id = json.id;
   const name = json.name;
   const surname = json.surname;
   const email = json.email;
@@ -162,7 +162,7 @@ fetch("v1/people/"+lastChar).then(function(response){
     color = "secondary";
   }
   document.getElementById("person_card").innerHTML = `<div class="col-lg-4">
-    <img src="assets/img/people/gagliotti.jpg" class="img-fluid" alt="">
+    <img src="assets/img/people/p${id}.jpg" class="img-fluid" alt="">
   </div>
   <div class="col-lg-6">
     <h2>${name} ${surname}</h2>
@@ -228,7 +228,7 @@ fetch("v1/people/"+lastChar).then(function(response){
               <div class="col-lg-4">
 
                <div class="uk-card-small uk-card-default uk-card-body uk-first-column"><div>
-                 <a href="/person.html?${related_people_ids[i]}" class="link-details" title="More Details"><img src="assets/img/people/coleman.jpg" class="img-fluid" alt="">
+                 <a href="/person.html?${related_people_ids[i]}" class="link-details" title="More Details"><img src="assets/img/people/p${related_people_ids[i]}.jpg" class="img-fluid" alt="">
                  </a> <br>
                  <div class="portfolio-info">
                            <h4><a href="/person.html?${related_people_ids[i]}"><span style="color:black">${related_people_name_surname[i]}</span></a></h4>
