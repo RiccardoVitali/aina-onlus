@@ -130,13 +130,8 @@
   fetch("v1/people").then(function(response) {
     return response.json();
   }).then(function(json) {
-    console.log(json[2].id)
     for (let i = 0; i < json.length; i++) {
       document.getElementById("people_card").innerHTML += `<li data-tags="${json[i].service_name}">
-
-
-
-
 
       <div class="uk-card-small uk-card-default uk-card-body uk-first-column"><div>
         <a href="/person.html?${json[i].id}" class="link-details" title="More Details"><img src="assets/img/people/coleman.jpg" class="img-fluid" alt="">
