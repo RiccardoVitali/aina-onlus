@@ -28,12 +28,7 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: Lumia - v2.0.0
-  * Template URL: https://bootstrapmade.com/lumia-bootstrap-business-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+
 </head>
 
 <body>
@@ -47,15 +42,10 @@
   <main id="main">
 
 
-    <section id="person" class="mr-5 ml-5">
+    <section class="mr-5 ml-5">
 
-      <nav aria-label="breadcrumb">
-        <ol class="breadcrumb brc-bkg">
-          <li class="breadcrumb-item"><a href="/allservices.html">Services</a></li>
-          <li class="breadcrumb-item active" aria-current="page">Service</li>
-        </ol>
-      </nav>
-      <div id="service" class="container">
+
+      <div id="service" class="container-fluid">
         <!-- <div class="row">
           <div class="col-lg-6">
             <h3><span id="name"></span></h3>
@@ -70,19 +60,26 @@
         <br><br><br>
 
         <div class="row">
+          <div class="container-fluid">
+
+
           <h3> Related People </h3>
         </div>
 
-        <div class="row">
+
           <div class="uk-child-width-1-2@m uk-grid uk-grid-match" uk-grid id="relative_people_card">
 
           </div>
+
 
 
         </div>
 
         <br><br><br>
         <div class="row">
+          <div class="container-fluid">
+
+
 
           <h3> Related Events </h3>
         </div>
@@ -126,6 +123,7 @@
             </div>
           </div>
 -->
+        </div>
         </div>
     </section>
 
@@ -176,7 +174,11 @@ fetch("v1/services/"+lastChar).then(function(response){
   const photo_url = json.photo_url;
   //document.getElementById("name").innerHTML = `${name}`;
   //document.getElementById("description").innerHTML = `${description}`;
-  document.getElementById("service").innerHTML=`<div class="row">
+  document.getElementById("service").innerHTML=`
+  <ul class="uk-breadcrumb">
+  <li><a href="/allservices.html">Services</a></li>
+  <li><span>${name}</span></li>
+  </ul><div class="row">
           <div class="col-lg-6">
             <h3>${name}</h3>
             <p>${description}</p>
@@ -202,7 +204,7 @@ fetch("v1/services/"+lastChar).then(function(response){
       <a href="/event.html?${json[related_events[z]].id}" class="link-details" title="More Details"><img src="assets/img/events/${json[related_events[z]].photo_url}" class="img-fluid" alt="">
       </a> <br>
       <div class="portfolio-info">
-                <h4><a href="/event.html?${json[related_events[z]].id}"><span style="color:black">${json[related_events[z]].name}</span></a></h4>
+                <h4><a href="/event.html?${json[related_events[z]].id}"><br><span style="color:black">${json[related_events[z]].name}</span></a></h4>
                 <p><i class="fas fa-map-marker-alt"> </i>&nbsp${json[related_events[z]].location} <br>
                 <i class="far fa-clock"> </i>&nbsp${json[related_events[z]].date}</p>
               </div>
@@ -239,7 +241,7 @@ fetch("v1/services/"+lastChar).then(function(response){
 
        <div class="uk-card-small uk-card-default uk-card-body uk-first-column"><div>
          <a href="/person.html?${related_people_ids[i]}" class="link-details" title="More Details"><img src="assets/img/people/p${related_people_ids[i]}.jpg" class="img-fluid" alt="">
-         </a> <br>
+         </a> <br><br>
          <div class="portfolio-info">
                    <h4><a href="/person.html?${related_people_ids[i]}"><span style="color:black">${related_people_name_surname[i]}</span></a></h4>
                    <p>

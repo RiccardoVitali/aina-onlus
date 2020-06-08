@@ -41,17 +41,20 @@
   <main id="main">
 
 
-    <section class="mr-5 ml-5">
 
-      <nav aria-label="breadcrumb">
+    <section class="mr-5 ml-5" >
+      <div class="container-fluid" id="event_card">
+
+
+      <!-- <nav aria-label="breadcrumb">
         <ol class="breadcrumb brc-bkg">
           <li class="breadcrumb-item"><a href="allevents.html">Events</a></li>
           <li class="breadcrumb-item active" aria-current="page">Event</li>
         </ol>
-      </nav>
+      </nav> -->
 
 
-      <div class="container-fluid " id="event_card">
+
         <!-- <div class="row d-flex align-items-center">
           <div class="col-lg-6  ">
             <h2>${name}</h2>
@@ -81,7 +84,7 @@ ${description}
 
           </div>
         </div> -->
-      </div>
+
 
 
       </div>
@@ -136,7 +139,7 @@ ${description}
     const map_url = json.map_url
     const personId = json.person_id;
     const serviceId = json.service_id;
-    
+
     var color;
         if(serviceId==1){ //school
            color = "warning";
@@ -164,8 +167,12 @@ ${description}
         return res.json();
       }).then(function(json) {
         const service_name = json.name;
-       
-        document.getElementById("event_card").innerHTML = `        <div class="row d-flex align-items-center">
+
+        document.getElementById("event_card").innerHTML = `   <ul class="uk-breadcrumb">
+        <li><a href="/allevents.html">Events</a></li>
+        <li><span>${name}</span></li>
+        </ul>
+        </div>       <div class="row d-flex align-items-center">
           <div class="col-lg-6  ">
             <h2>${name}</h2>
             <p> <span uk-icon="calendar"></span>&nbsp ${date} &nbsp <a href="/service.html?${serviceId}"><span class="badge badge-${color}">${service_name}</span></a><br>
@@ -197,6 +204,6 @@ ${description}
       })
     })
   });
-</script> 
+</script>
 
 </html>
