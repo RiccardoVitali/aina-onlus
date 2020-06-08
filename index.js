@@ -5,10 +5,8 @@ const fs = require('fs'),
     path = require('path'),
     http = require('http');
 
-//var app = require('connect')();
 const express = require("express");
 const app = express();
-//const routes = require("./routes");
 const serveStatic = require("serve-static");
 const session = require("express-session");
 const cookieSession = require("cookie-session");
@@ -19,7 +17,6 @@ const serverPort = process.env.PORT || 4000;
 const bodyParser = require('body-parser');
 
 app.use(bodyParser.urlencoded({extended: true}));
-//const { setupDataLayer } = require("./service/DataLayer");
 
 //LOGIN
 app.use(cookieParser());
@@ -82,7 +79,6 @@ swaggerTools.initializeMiddleware(swaggerDoc, function (middleware) {
   app.use(serveStatic(__dirname));
 
   app.use(serveStatic(__dirname + '/www'));
-  //app.use(serveStatic(__dirname + '/assets'));  // NON PERCHE QUESTO NON VA (ho dovuto usare il mio amato express)
   app.use('/assets', express.static('assets'));
 
 
@@ -123,8 +119,7 @@ swaggerTools.initializeMiddleware(swaggerDoc, function (middleware) {
         return;
       }
     });
-    //res.end();
-    });
+   });
   });
 
     // CONTACT FORM -- CONTACT FORM -- CONTACT FORM -- CONTACT FORM -- CONTACT FORM --
@@ -133,7 +128,6 @@ swaggerTools.initializeMiddleware(swaggerDoc, function (middleware) {
       app.post("/contact",(req, res) => {
         req.on('data', function(chunk) {
 
-        //grab form data as string
         var split = chunk.toString().substring(1,chunk.toString().length-1).split(",");
 
         console.log(chunk.toString());
@@ -170,7 +164,6 @@ swaggerTools.initializeMiddleware(swaggerDoc, function (middleware) {
       app.post("/signup",(req, res) => {
         req.on('data', function(chunk) {
 
-        //grab form data as string
         var split = chunk.toString().substring(1,chunk.toString().length-1).split(",");
 
         console.log(chunk.toString());
@@ -192,7 +185,6 @@ swaggerTools.initializeMiddleware(swaggerDoc, function (middleware) {
       var checkemail = false;
       var i=0;
       while(i<response.length && checkuser == false){
-        //console.log(check);
         if(response[i].username.trim()==username.trim() ){
           checkuser=true;
         }
@@ -226,11 +218,8 @@ swaggerTools.initializeMiddleware(swaggerDoc, function (middleware) {
 
 
   // Start the server
-  //setupDataLayer().then( () => {
-
     http.createServer(app).listen(serverPort, function () {
       console.log('Your server is listening on port %d (http://localhost:%d)', serverPort, serverPort);
       console.log('Swagger-ui is available on http://localhost:%d/docs', serverPort);
     });
-  //});
 });
