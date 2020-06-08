@@ -14,7 +14,7 @@ fetch("v1/users/me").then(function(response){
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse " id="navbarNav">
+        <div class="collapse navbar-collapse justify-content-between " id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item ">
               <a class="nav-link" href="/allservices.html">Services <span class="sr-only"></span></a>
@@ -36,9 +36,11 @@ fetch("v1/users/me").then(function(response){
             </li>
 
           </ul>
+
         &nbsp<form class="form-inline">
           <a href="login.html"><button class="btn btn-danger" type="button" id="login">Log In</button></a>
-        </div>
+          </div>
+
 
       </nav>`
 
@@ -56,7 +58,7 @@ fetch("v1/users/me").then(function(response){
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse " id="navbarNav">
+        <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item ">
               <a class="nav-link" href="/allservices.html">Services <span class="sr-only"></span></a>
@@ -78,12 +80,13 @@ fetch("v1/users/me").then(function(response){
             </li>
 
           </ul>
+
           <form class="form-inline" method="post" action="v1/users/logout">
 <input id="login" type="submit" value="Logout" />
+&nbsp<a href="dash.html"><button class=" myaina" type="button">My aina</button></a>
 </form>
-&nbsp<form class="form-inline">
-<a href="dash.html"><button class="btn btn-danger" type="button">My aina</button></a>
-</form>
+
+
       </nav>`
 
       return ;
