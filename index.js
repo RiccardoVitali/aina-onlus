@@ -1,30 +1,6 @@
 'use strict';
 const pool = require("./controllers/database");
 
-/*
-const { Client } = require('pg');
-
-const client = new Client({
-  //connectionString: process.env.DATABASE_URL,
-  connectionString:'postgressql://fabio:sailor@localhost:5432/demo',
-  ssl: {
-    rejectUnauthorized: false
-  }
-});
-
-client.connect();
-
-client.query('SELECT table_schema,table_name FROM information_schema.tables;', (err, res) => {
-  if (err) throw err;
-  for (let row of res.rows) {
-    console.log(JSON.stringify(row));
-  }
-  client.end();
-});*/
-
-
-//let pathname = window.location.pathname;
-//console.log(pathname);
 const fs = require('fs'),
     path = require('path'),
     http = require('http');
@@ -32,7 +8,7 @@ const fs = require('fs'),
 //var app = require('connect')();
 const express = require("express");
 const app = express();
-const routes = require("./routes");
+//const routes = require("./routes");
 const serveStatic = require("serve-static");
 const session = require("express-session");
 const cookieSession = require("cookie-session");
