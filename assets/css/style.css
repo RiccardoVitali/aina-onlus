@@ -129,7 +129,14 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 5px;
 
 }
-
+.myaina{
+  border:5px solid #e41f2c;
+  border-left: 20px solid #e41f2c;
+  border-right: 20px solid #e41f2c;
+  color: #fff;
+  background-color: #e41f2c;
+  border-radius: 5px;
+}
 
 /*header-----------------------------------------------*/
 #header {
