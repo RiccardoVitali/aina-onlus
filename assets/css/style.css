@@ -35,8 +35,12 @@ a:hover {
    font-size: 2.2vh;
    line-height: 2.8vh;
  }
-h1, h2, h3, h4, h5, h6 {
+h1, h3, h4, h5, h6 {
   font-family: "suisse-med", sans-serif;
+}
+h2{
+    font-family: "suisse-reg", sans-serif;
+  color:rgba(0,0,0,.5)
 }
 .uk-subnav-pill>.uk-active>a{
   background-color: black !important;
@@ -110,16 +114,18 @@ h1, h2, h3, h4, h5, h6 {
   width: 40px;
   height: 40px;
   border-radius: 4px;
-  background: #3498db;
+  background: #e41f2c;
   color: #fff;
   transition: all 0.4s;
 }
 
 .back-to-top i:hover {
-  background: #57aae1;
+  background: #e41f2c;
   color: #fff;
 }
-
+.carousel-indicators{
+  display:none;
+}
 #login{
   border:5px solid #e41f2c;
   border-left: 20px solid #e41f2c;
@@ -327,7 +333,7 @@ background-color: black;
 
 /*section-----------------------------------------------*/
 section {
-  padding-top: 60px;
+  padding-top: 100px;
 }
 
 /* .section-bg {
@@ -363,8 +369,9 @@ section {
 #descr {
   font-family: suisse-reg;
 }
-#donate1{
+.donate1{
   font-family: suisse-med;
+  background-color: #e41f2c;
 }
 #donate {
   font-family: suisse-med;
