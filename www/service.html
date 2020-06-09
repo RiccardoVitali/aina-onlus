@@ -37,7 +37,8 @@
   <header id="header1" >
 
   </header><!-- End Header -->
-
+  <!-- ======= to avoid issues for the Header ======= -->
+<script src="assets/js/header.js"></script>
 
   <main id="main">
 
@@ -46,16 +47,7 @@
 
 
       <div id="service" class="container-fluid">
-        <!-- <div class="row">
-          <div class="col-lg-6">
-            <h3><span id="name"></span></h3>
-            <p><span id="description"></span>
-              </p>
-          </div>
-          <div class="col-lg-6">
-              <br><br><img src="assets/img/services/paolos.jpg" class="card-img-top" alt="...">
-          </div>
-        </div> -->
+
       </div>
         <br><br><br>
 
@@ -67,7 +59,7 @@
         </div>
 
 
-          <div class="uk-child-width-1-2@m uk-grid uk-grid-match" uk-grid id="relative_people_card">
+          <div class="uk-child-width-1-3@m uk-grid uk-grid-match" uk-grid id="relative_people_card">
 
           </div>
 
@@ -85,44 +77,9 @@
         </div>
         <div class="row">
 
-            <div class="uk-child-width-1-3@m uk-grid-small uk-grid-match" uk-grid id="relative_events_card">
+            <div class="uk-child-width-1-4@m uk-grid-small uk-grid-match" uk-grid id="relative_events_card">
 
 
-          <!-- <span id="relative_events_card" class="row"></span> -->
-<!--          <div class="card" style="width: 18rem; margin-right:30px; height:23rem;">
-            <a href="/event<%= event_ids[0] %>" class="link-details" title="More Details">
-            <img src="assets/img/event01.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <div class="row">
-                <div class="col-lg-8">
-                  <p class="card-text">Rome, Italy </p>
-                  <h5 class="card-text"><%= event_names[0] %><br> wowowo</h5>
-                  <p class="card-text">Foundraising</p>
-                </div>
-                <div class="col-lg-4">
-                  <p class="card-text" style="text-align:right">Nome nome cogno </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="card" style="width: 18rem; margin-right:30px; height:23rem;">
-            <a href="/event<%= event_ids[1] %>" class="link-details" title="More Details">
-            <img src="assets/img/event01.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <div class="row">
-                <div class="col-lg-8">
-                  <p class="card-text">Rome, Italy </p>
-                  <h5 class="card-text"><%= event_names[1] %><br> wowowo</h5>
-                  <p class="card-text">Foundraising</p>
-                </div>
-                <div class="col-lg-4">
-                  <p class="card-text" style="text-align:right">Nome nome cogno </p>
-                </div>
-              </div>
-            </div>
-          </div>
--->
         </div>
         </div>
     </section>
@@ -157,7 +114,7 @@
   <script src="assets/js/main.js"></script>
   <script src="assets/js/footer.js"></script>
   <script src="assets/js/newsletter.js"></script>
-  <script src="assets/js/header.js"></script>
+
 
 </body>
 
@@ -172,8 +129,7 @@ fetch("v1/services/"+lastChar).then(function(response){
   const name = json.name;
   const description = json.description;
   const photo_url = json.photo_url;
-  //document.getElementById("name").innerHTML = `${name}`;
-  //document.getElementById("description").innerHTML = `${description}`;
+
   document.getElementById("service").innerHTML=`
   <ul class="uk-breadcrumb">
   <li><a href="/allservices.html">Services</a></li>
