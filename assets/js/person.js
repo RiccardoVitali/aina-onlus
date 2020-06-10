@@ -66,7 +66,7 @@ fetch("v1/people/"+lastChar).then(function(response){
   }
   for(var z=0;z<related_events.length;z++){
     document.getElementById("relative_events_card").innerHTML += `
-  <div class="col-lg-4">
+  <div>
     <div class="uk-card-small uk-card-default uk-card-body uk-first-column"><div>
       <a href="/event.html?${json[related_events[z]].id}" class="link-details" title="More Details"><img src="assets/img/events/${json[related_events[z]].photo_url}" class="img-fluid" alt="">
       </a> <br>
@@ -106,22 +106,44 @@ fetch("v1/people/"+lastChar).then(function(response){
    }
    for(let i=0;i<related_people_ids.length;i++){
      document.getElementById("relative_people_card").innerHTML += `
+     <div>
 
-              <div class="uk-width-1-3@m">
+      <div class="uk-card-small uk-card-default uk-card-body uk-first-column"><div>
+        <a href="/person.html?${related_people_ids[i]}" class="link-details" title="More Details"><img src="assets/img/people/p${related_people_ids[i]}.jpg" class="img-fluid" alt="">
+        </a> <br>
+        <div class="portfolio-info">
+                  <h4><a href="/person.html?${related_people_ids[i]}"><br><span style="color:black">${related_people_name_surname[i]}</span></a></h4>
+                  <p>
+                  <i class="far fa-clock"> </i>&nbsp${related_people_role[i]}</p>
+                </div>
 
-               <div class="uk-card-small uk-card-default uk-card-body uk-first-column"><div>
-                 <a href="/person.html?${related_people_ids[i]}" class="link-details" title="More Details"><img src="assets/img/people/p${related_people_ids[i]}.jpg" class="img-fluid" alt="">
-                 </a> <br>
-                 <div class="portfolio-info">
-                           <h4><a href="/person.html?${related_people_ids[i]}"><br><span style="color:black">${related_people_name_surname[i]}</span></a></h4>
-                           <p>
-                           <i class="far fa-clock"> </i>&nbsp${related_people_role[i]}</p>
-                         </div>
-
-               </div></div>`
+      </div></div>
+  `
              }
    }
    get_person_name_surname(related_people_ids);
 
  });
 });
+
+
+// <div class="uk-child-width-1-3@m uk-grid-small uk-grid-match" uk-grid>
+//     <div>
+//         <div class="uk-card uk-card-default uk-card-body">
+//             <h3 class="uk-card-title">Default</h3>
+//             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+//         </div>
+//     </div>
+//     <div>
+//         <div class="uk-card uk-card-primary uk-card-body">
+//             <h3 class="uk-card-title">Primary</h3>
+//             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+//         </div>
+//     </div>
+//     <div>
+//         <div class="uk-card uk-card-secondary uk-card-body">
+//             <h3 class="uk-card-title">Secondary</h3>
+//             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+//         </div>
+//     </div>
+// </div>
