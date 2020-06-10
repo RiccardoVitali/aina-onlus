@@ -24,7 +24,7 @@ document.getElementById("footer").innerHTML = `<div class="footer-top ">
 
       <div class="col-lg-4 col-md-6 footer-newsletter">
       <div class="container-fluid">
-  <div class="row justify-content-center">
+  <div class="row justify-content-start">
 
      <h3 class="sub-n" style="color:white"> Subscribe to the newsletter </h3>
           <form id="email_form" name="email_form" onsubmit="check()">
@@ -35,9 +35,7 @@ document.getElementById("footer").innerHTML = `<div class="footer-top ">
           </form>
   </div>
 </div>
-      <!-- <form id="email_form" name="email_form" onsubmit="check()">
-        <input type="email" name="email"><input type="submit" value="Subscribe">
-      </form> -->
+  
     </div>
 
     </div>
