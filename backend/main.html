@@ -123,7 +123,13 @@
       data layer or presentation layer. How did you ensure that HTML is not
       rendered server side?
     </p>
-    <div><img src="img/WebArchitecture.png" width="700px" /></div>
+    <p>
+     The database is the data layer, while the Application server 
+     serves as application layer. The database is the one managed through Heroku, 
+     while the Application Server is the one generated from the swaggerUI. 
+     In a basic representation:
+    </p>
+    <div><img src="img/backend_structure.png" width="700px" /></div>
     <p>
       The initial response will be large and serve the static files including
       all CSS, all Javascript, all HTML pages and some images, but no real 
@@ -146,7 +152,7 @@
       Level 3: No Hateoas is implemented, the responses don’t include any links.
       The reason why Level 3 is not implemented was to make the implementation
       simpler, since I don’t have any previous experience with it and wanted to
-      focus on other parts.
+      focus on other parts. 
     </p>
     <h4>OpenAPI Resource models</h4>
     <p class="question">
