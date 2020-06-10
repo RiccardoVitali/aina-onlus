@@ -1,7 +1,5 @@
 function check(){
-  //window.location = popo;
   var email = document.forms["email_form"]["email"].value
-  console.log(email);
   fetch('/newsletter' , {
     method: 'POST',
     headers: {
@@ -11,7 +9,7 @@ function check(){
   })
   .then(res => {
     if(res.status==402){
-    alert("You do not insert anything");
+    alert("Insert a valid email address");
     }
     if(res.status==400){
     alert("The email:  "+email+"  is already registered");
