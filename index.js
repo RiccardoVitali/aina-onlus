@@ -21,7 +21,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 //LOGIN
 app.use(cookieParser());
 app.use(cookieSession({name: "session", keys: ["abc", "def"] }));
-
+/*
 const {
   PORT,
   NODE_ENV,
@@ -46,6 +46,7 @@ app.use(
   })
 );
 
+*/
 
 // swaggerRouter configuration
 var options = {
