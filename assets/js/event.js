@@ -67,7 +67,7 @@ ${description}
     <iframe src="https://www.google.com/maps/embed?${map_url}" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
 </div>
           </div>
-          <div class="col-lg-6">
+          <div class="col-lg-6 pt-5">
             <h3><strong>Info</strong></h3>
             <button class="uk-button uk-button-default"> <span uk-icon="download"></span>&nbspDownload Flyer</button><br><br>
             <button class="uk-button uk-button-default"><span uk-icon="calendar"></span>&nbspAdd to Calendar </button>

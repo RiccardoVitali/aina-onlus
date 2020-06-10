@@ -7,7 +7,7 @@ fetch("v1/users/me").then(function(response){
 
 
         <a class="navbar-brand" href="/">
-          <img src="assets/img/logo.png" width="150" height="150" class="d-inline-block align-top" alt="">
+          <img src="assets/img/logo.png"  height="150" class="d-inline-block align-top" alt="">
 
         </a>
 
@@ -51,7 +51,7 @@ fetch("v1/users/me").then(function(response){
 
 
         <a class="navbar-brand" href="/">
-          <img src="assets/img/logo.png" width="150" height="150" class="d-inline-block align-top" alt="">
+          <img src="assets/img/logo.png"  height="150" class="d-inline-block align-top" alt="">
 
         </a>
 
