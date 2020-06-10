@@ -48,100 +48,137 @@
 
   <main id="main">
 
-    <div class="container-fluid mr-5 ml-5 emp-profile" style="padding-top:15vh;">
-                <form method="post">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="profile-img">
-                                <img src="assets/img/user.jpg" alt=""/>
-                                <div class="file btn btn-lg btn-primary">
-                                    Choose your photo
-                                    <input type="file" name="file"/>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="profile-head">
-                                        <h1><div class="user"><div>
+<section>
+  <div class="container">
+          <div class="row">
+              <div class="col-12">
+                  <div class="card">
 
-                                        </h1>
+                      <div class="card-body">
+                          <div class="card-title mb-4">
+                              <div class="d-flex justify-content-start">
+                                  <div class="image-container">
+                                      <img src="assets/img/user.jpg" id="imgProfile" style="width: 150px; height: 150px" class="img-thumbnail" />
+
+                                  </div>
+                                  <div class="userData ml-3">
+                                      <div class="d-block" style="font-size: 1.5rem; font-weight: bold" id="username"></div>
+
+                                  </div>
+
+                              </div>
+                          </div>
+
+                          <div class="row">
+                              <div class="col-12">
+                                  <ul class="nav nav-tabs mb-4" id="myTab" role="tablist">
+                                      <li class="nav-item">
+                                          <a class="nav-link active" id="basicInfo-tab username" data-toggle="tab" href="#basicInfo" role="tab" aria-controls="basicInfo" aria-selected="true">Basic Info</a>
+                                      </li>
+                                      <li class="nav-item">
+                                          <a class="nav-link" id="connectedServices-tab" data-toggle="tab" href="#connectedServices" role="tab" aria-controls="connectedServices" aria-selected="false">Distance Adoption</a>
+                                      </li>
+                                  </ul>
+                                  <div class="tab-content ml-1" id="myTabContent">
+                                      <div class="tab-pane fade show active" id="basicInfo" role="tabpanel" aria-labelledby="basicInfo-tab">
 
 
-                                <ul class="nav nav-tabs" id="myTab" role="tablist">
-                                    <li class="nav-item">
-                                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">About</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Distance Adoption</a>
-                                    </li>
-                                </ul>
+                                          <div class="row">
+                                              <div class="col-sm-3 col-md-2 col-5">
+                                                  <label style="font-weight:bold;">Username</label>
+                                              </div>
+                                              <div class="col-md-8 col-6" id="username">
 
-                                <div class="tab-content profile-tab" id="myTabContent">
-                                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                                                <div class="row">
-                                                    <div class="col-md-6">
-                                                        <label>Username</label>
-                                                    </div>
-                                                    <div id="username" class="col-md-6">
+                                              </div>
+                                          </div>
+                                          <hr />
 
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-md-6">
-                                                        <label>Email</label>
-                                                    </div>
-                                                    <div id="email" class="col-md-6">
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-md-6">
-                                                        <label>Phone</label>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <p>344 423 3532</p>
-                                                    </div>
-                                                </div>
+                                          <div class="row">
+                                              <div class="col-sm-3 col-md-2 col-5">
+                                                  <label style="font-weight:bold;">Email</label>
+                                              </div>
+                                              <div class="col-md-8 col-6" id="email">
 
-                                    </div>
-                                    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                                                <div class="row">
-                                                  <div class="col-md-4">
-                                                      <img src="assets/img/child.jpg" class="img-fluid" alt="Responsive image">
-                                                  </div>
-                                                    <div class="col-md-4">
-                                                        <label>Child's Name</label><br />
-                                                        <label>Age</label><br />
-                                                        <label>Place of Birth</label><br />
-                                                        <label>Active until</label>
-                                                    </div>
-                                                    <div class="col-md-4" style="color:#0062cc;">
-                                                        <label>Jonathan Maruba</label><br />
-                                                          <label>13 yrs old</label><br />
-                                                          <label>Nairobi, KE</label><br />
-                                                            <label>Jan 2021</label>
-                                                    </div>
+                                              </div>
+                                          </div>
+                                          <hr />
 
-                                                </div>
+
+                                          <div class="row">
+                                              <div class="col-sm-3 col-md-2 col-5">
+                                                  <label style="font-weight:bold;">Phone</label>
+                                              </div>
+                                              <div class="col-md-8 col-6">
+                                                345 654 346
+                                              </div>
+                                          </div>
 
 
 
 
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
 
-                    </div>
-                    <div class="row">
-                        <div class="col-md-4">
-                          
-                        </div>
-                        <div class="col-md-8">
 
-                        </div>
-                    </div>
-                </form>
-            </div>
+                                      </div>
+                                      <div class="tab-pane fade" id="connectedServices" role="tabpanel" aria-labelledby="ConnectedServices-tab">
+                                        <div class="row">
+                                          <div class="image-container">
+                                              <img src="assets/img/child.jpg" id="imgProfile" style="width: 150px; height: 150px" class="img-thumbnail" />
+
+                                          </div>
+                                        </div>
+                                        <hr />
+
+                                        <div class="row">
+                                            <div class="col-sm-3 col-md-2 col-5">
+                                                <label style="font-weight:bold;">Child's Name</label>
+                                            </div>
+                                            <div class="col-md-8 col-6">
+                                                <label>Amira Maruba</label>
+                                            </div>
+                                        </div>
+                                        <hr />
+
+
+                                        <div class="row">
+                                            <div class="col-sm-3 col-md-2 col-5">
+                                                <label style="font-weight:bold;">Age</label>
+                                            </div>
+                                            <div class="col-md-8 col-6">
+                                              12 yrs old
+                                            </div>
+                                        </div>
+                                        <hr />
+                                        <div class="row">
+                                            <div class="col-sm-3 col-md-2 col-5">
+                                                <label style="font-weight:bold;">Place of Birth</label>
+                                            </div>
+                                            <div class="col-md-8 col-6">
+                                              Nairobi KE
+                                            </div>
+                                        </div>
+                                        <hr />
+                                        <div class="row">
+                                            <div class="col-sm-3 col-md-2 col-5">
+                                                <label style="font-weight:bold;">Adopted until</label>
+                                            </div>
+                                            <div class="col-md-8 col-6">
+                                            Jan 2021
+                                            </div>
+                                        </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+
+
+                      </div>
+
+                  </div>
+              </div>
+          </div>
+      </div>
+</section>
+
 
 
   </main><!-- End #main -->
