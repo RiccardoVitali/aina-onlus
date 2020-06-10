@@ -44,7 +44,7 @@ module.exports.usersMeGET = function usersMeGET (req, res, next) {
         utils.writeJson(res, response);
       }
       else{
-        utils.writeJson(res, { error: "Sorry, invalid credentials"}, 401);
+        utils.writeJson(res, { error: "Sorry, invalid credentials"}, 303);
       }
     })
     .catch(function (response) {
