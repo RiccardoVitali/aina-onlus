@@ -33,7 +33,7 @@ fetch("v1/services/"+lastChar).then(function(response){
   }
   for(var z=0;z<related_events.length;z++){
     document.getElementById("relative_events_card").innerHTML += `
-<div class="col-lg-4">
+<div>
     <div class="uk-card-small uk-card-default uk-card-body uk-first-column"><div>
       <a href="/event.html?${json[related_events[z]].id}" class="link-details" title="More Details"><img src="assets/img/events/${json[related_events[z]].photo_url}" class="img-fluid" alt="">
       </a> <br>
@@ -71,7 +71,7 @@ fetch("v1/services/"+lastChar).then(function(response){
     for(let i=0;i<related_people_ids.length;i++){
       document.getElementById("relative_people_card").innerHTML += `
 
-      <div class="col-lg-4">
+      <div>
 
        <div class="uk-card-small uk-card-default uk-card-body uk-first-column"><div>
          <a href="/person.html?${related_people_ids[i]}" class="link-details" title="More Details"><img src="assets/img/people/p${related_people_ids[i]}.jpg" class="img-fluid" alt="">
@@ -91,4 +91,3 @@ fetch("v1/services/"+lastChar).then(function(response){
 
   })
   })
-
