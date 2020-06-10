@@ -2,10 +2,11 @@
 
     response.json().then(res => {
       if (response.status == 303) {
-        return {
-          err: "Invalid credentials"
-        }
+        return { err: "Invalid credentials" }
       }
+     else {
+        return { err: ""}
+     }
     }).then(function(json) {
       document.getElementById("err").innerHTML = `${json.err}`;
 
