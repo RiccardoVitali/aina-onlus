@@ -9,7 +9,7 @@ function check(){
   })
   .then(res => {
     if(res.status==402){
-    alert("Insert a valid email address");
+    alert("Please insert a valid email address");
     }
     if(res.status==400){
     alert("The email:  "+email+"  is already registered");
