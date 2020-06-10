@@ -3,7 +3,7 @@
 
 var utils = require('../utils/writer.js');
 var User = require('../service/UserServiceSwagger');
-const { SESS_NAME } = require("../configs/config");
+//const { SESS_NAME } = require("../configs/config");
 
 
 module.exports.usersLoginPOST = function usersLoginPOST (req, res, next) {
