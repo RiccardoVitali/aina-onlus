@@ -1,5 +1,4 @@
 function contact(){
-  //window.location = popo;
   var email = document.forms["contact-form"]["email"].value;
   var name = document.forms["contact-form"]["name"].value;
   var subject = document.forms["contact-form"]["subject"].value;
