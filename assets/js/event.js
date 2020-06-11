@@ -30,7 +30,6 @@ var myString = window.location.search.toString();
           color = "secondary";
         }
 
-    //var person_name_surname;
     fetch("v1/people/" + personId).then(function(res) {
       return res.json();
     }).then(function(json) {
