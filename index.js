@@ -8,7 +8,7 @@ const fs = require('fs'),
 const express = require("express");
 const app = express();
 const serveStatic = require("serve-static");
-const session = require("express-session");
+//const session = require("express-session");
 const cookieSession = require("cookie-session");
 const cookieParser = require("cookie-parser");
 const swaggerTools = require('swagger-tools');
@@ -33,7 +33,7 @@ var options = {
 var spec = fs.readFileSync(path.join(__dirname,'api/swagger.yaml'), 'utf8');
 var swaggerDoc = jsyaml.safeLoad(spec);
 
-//redirect from /docs to /swaggerui
+//redirect from /docs to /backend/swaggerui
 const swaggerUi = require('swagger-ui-express');
 app.use('/backend/swaggerui', swaggerUi.serve, swaggerUi.setup(swaggerDoc));
 
@@ -63,7 +63,6 @@ swaggerTools.initializeMiddleware(swaggerDoc, function (middleware) {
       app.post("/newsletter",(req, res) => {
         req.on('data', function(chunk) {
 
-        //grab form data as string
         var email = chunk.toString();
         if(email.length==2){
         res.sendStatus(402);
@@ -73,7 +72,6 @@ swaggerTools.initializeMiddleware(swaggerDoc, function (middleware) {
         var check = false;
         var i=0;
         while(i<response.length && check==false){
-          //console.log(check);
           if(response[i].e.trim()==email.trim() ){
             check=true;
           }
@@ -104,8 +102,6 @@ swaggerTools.initializeMiddleware(swaggerDoc, function (middleware) {
         req.on('data', function(chunk) {
 
         var split = chunk.toString().substring(1,chunk.toString().length-1).split(",");
-
-        console.log(chunk.toString());
         var name = split[0];
         var email = split[1];
         var subject = split[2];
@@ -114,8 +110,6 @@ swaggerTools.initializeMiddleware(swaggerDoc, function (middleware) {
         message += split[i] + ",";
         }
         message += split[split.length-1];
-      console.log(message);
-
         if(email.length==2 || name.length==2 || subject.length==2 || message.length==2){
         res.sendStatus(402);
         return;
@@ -140,8 +134,6 @@ swaggerTools.initializeMiddleware(swaggerDoc, function (middleware) {
         req.on('data', function(chunk) {
 
         var split = chunk.toString().substring(1,chunk.toString().length-1).split(",");
-
-        console.log(chunk.toString());
         var username = split[0].substring(1,split[0].length-1);
         var email = split[1].substring(1,split[1].length-1);
         var password = split[2].substring(1,split[2].length-1);
