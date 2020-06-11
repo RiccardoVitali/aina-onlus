@@ -8,7 +8,6 @@ const fs = require('fs'),
 const express = require("express");
 const app = express();
 const serveStatic = require("serve-static");
-//const session = require("express-session");
 const cookieSession = require("cookie-session");
 const cookieParser = require("cookie-parser");
 const swaggerTools = require('swagger-tools');
