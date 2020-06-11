@@ -3,7 +3,6 @@
 
 var utils = require('../utils/writer.js');
 var User = require('../service/UserServiceSwagger');
-//const { SESS_NAME } = require("../configs/config");
 
 
 module.exports.usersLoginPOST = function usersLoginPOST (req, res, next) {
@@ -56,7 +55,6 @@ module.exports.usersMeGET = function usersMeGET (req, res, next) {
 module.exports.usersLogout = function usersLogout (req, res, next) {
 
   req.session = null;
-  //res.clearCookie(SESS_NAME);
   res.writeHead(301, { Location: "/index.html" });
   res.end();
 
