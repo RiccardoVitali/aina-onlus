@@ -1,12 +1,10 @@
 function sign_up(){
-  //window.location = popo;
   var username = document.forms["signup"]["username"].value;
   var email = document.forms["signup"]["email"].value;
   var password = document.forms["signup"]["password"].value;
   var password2 = document.forms["signup"]["password2"].value;
 
   const s = [username, email, password, password2];
-  console.log(s);
 
   fetch('/signup' , {
     method: 'POST',
@@ -30,7 +28,6 @@ function sign_up(){
     alert("An account with the email "+email+", already exists");
     }
     if(res.status==301){
-    console.log(window.location)
     window.location = '/login.html';
     alert("Hi "+ username +", you've create an account! Please, login");
     }
