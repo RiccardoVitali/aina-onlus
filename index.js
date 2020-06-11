@@ -21,32 +21,6 @@ app.use(bodyParser.urlencoded({extended: true}));
 //LOGIN
 app.use(cookieParser());
 app.use(cookieSession({name: "session", keys: ["abc", "def"] }));
-/*
-const {
-  PORT,
-  NODE_ENV,
-  SESS_NAME,
-  SESS_LIFTETIME,
-  SESS_SECRET
-} = require("./configs/config");
-
-const IN_PROD = NODE_ENV === "production";
-
-app.use(
-  session({
-    name: SESS_NAME,
-    resave: false,
-    saveUninitialized: false,
-    secret: SESS_SECRET,
-    cookie: {
-      maxAge: SESS_LIFTETIME,
-      sameSite: true,
-      secure: IN_PROD
-    }
-  })
-);
-
-*/
 
 // swaggerRouter configuration
 var options = {
