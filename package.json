@@ -4,7 +4,7 @@
   "description": "Onlus website",
   "main": "index.js",
   "scripts": {
-    "prestart": "npm i",
+    "prestart": "npm install",
     "start": "node index.js"
   },
   "keywords": [
