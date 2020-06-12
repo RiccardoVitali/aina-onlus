@@ -6,10 +6,7 @@ info:
   title: "AINA onlus"
   contact:
     email: "10641118@polimi.it"
-  license:
-    name: "AFR"
-    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
-host: "localhost:4000"
+host: "afronlus.herokuapp.com"
 basePath: "/v1"
 tags:
 - name: "service"
@@ -22,8 +19,6 @@ tags:
   description: "newsletter"
 - name: "rel"
   description: "relationship between people and service"
-- name: "users"
-  description: "users"
 paths:
   /services:
     get:
@@ -225,17 +220,17 @@ paths:
           description: "Unexpected error"
       x-swagger-router-controller: "Rel"
   /email:
-    post:
+    get:
       tags:
       - "email"
-      summary: "email of the newsletter"
-      operationId: "emailPOST"
+      summary: "get email of the newsletter"
+      operationId: "emailGET"
       produces:
       - "application/json"
       parameters: []
       responses:
         "200":
-          description: "newsletter's email"
+          description: "email of the nesletter"
           schema:
             type: "array"
             items:
@@ -243,13 +238,46 @@ paths:
         "404":
           description: "Unexpected error"
       x-swagger-router-controller: "Email"
-  /user/login:
+  /contact_form:
+    get:
+      tags:
+      - "contact_form"
+      summary: "get messages from the contact form"
+      operationId: "contact_formGET"
+      produces:
+      - "application/json"
+      parameters: []
+      responses:
+        "200":
+          description: "contact form"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Contact_form"
+        "404":
+          description: "Unexpected error"
+      x-swagger-router-controller: "Contact_form"
+  /users/login:
     post:
       tags:
         - user
       description: Login user
-      operationId: userLogin
-
+      operationId: usersLoginPOST
+      consumes:
+      - "application/x-www-form-urlencoded"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "username"
+        in: "formData"
+        description: "example: ric"
+        required: true
+        type: "string"
+      - name: "password"
+        in: "formData"
+        description: "example: aa"
+        required: true
+        type: "string"
       responses:
         200:
           description: Succesfull login
@@ -259,14 +287,17 @@ paths:
           description: Request body is not complete
         500:
           description: Internal Server Error
-
-  /user/signup:
-    post:
+      x-swagger-router-controller: "UserSwagger"
+  /users/me:
+    get:
       tags:
         - user
-      description: Register user
-      operationId: userRegister
-
+      description: Get user
+      operationId: usersMeGET
+      consumes:
+      - "application/x-www-form-urlencoded"
+      produces:
+      - "application/json"
       responses:
         200:
           description: succesfull Registration
@@ -274,18 +305,23 @@ paths:
           description: Request body is not complete
         500:
           description: Internal Server Error
-  /user/logout:
+      x-swagger-router-controller: "UserSwagger"
+  /users/logout:
     post:
       tags:
         - user
       description: Logout user
-      operationId: userLogout
+      operationId: usersLogout
+      consumes:
+      - "application/x-www-form-urlencoded"
+      produces:
+      - "application/json"
       responses:
         200:
           description: Successfull logout
-
         500:
           description: Internal Server Error
+      x-swagger-router-controller: "UserSwagger"
 definitions:
   Service:
     type: "object"
@@ -396,4 +432,37 @@ definitions:
     title: "Email"
     description: "email registered to the newsletter"
     example:
-      email: "email"
+      email: "email@email.com"
+  Contact_form:
+    type: "object"
+    properties:
+      name:
+        type: "string"
+      email:
+        type: "string"
+      subject:
+        type: "string"
+      message:
+        type: "string"
+    title: "Contact_form"
+    description: "contact form"
+    example:
+      name: "Lucio"
+      email: "lucio33@gmail.com"
+      subject: "School"
+      message: "How many teachers does the association support?"
+  User:
+    type: "object"
+    properties:
+      username:
+        type: "string"
+      email:
+        type: "string"
+      passoword:
+        type: "string"
+    title: "User"
+    description: "A user"
+    example:
+      username: ric
+      email: g@g.g
+      password: aa

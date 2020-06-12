@@ -1,17 +1,6 @@
-/**
-* Template Name: Lumia - v2.0.0
-* Template URL: https://bootstrapmade.com/lumia-bootstrap-business-template/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
-/*
-    Carousel
-*/
-
 !(function($) {
   "use strict";
 
-  // Smooth scroll for the navigation menu and links with .scrollto classes
   $(document).on('click', '.nav-menu a, .mobile-nav a, .scrollto', function(e) {
     if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
       e.preventDefault();
@@ -52,7 +41,6 @@
     }
   });
 
-  // Mobile Navigation
   if ($('.nav-menu').length) {
     var $mobile_nav = $('.nav-menu').clone().prop({
       class: 'mobile-nav d-lg-none'
@@ -91,14 +79,12 @@
     $('#header').addClass('header-scrolled');
   }
 
-  // Real view height for mobile devices
   if (window.matchMedia("(max-width: 767px)").matches) {
     $('#hero').css({
       height: $(window).height()
     });
   }
 
-  // Back to top button
   $(window).scroll(function() {
     if ($(this).scrollTop() > 100) {
       $('.back-to-top').fadeIn('slow');
@@ -114,7 +100,6 @@
     return false;
   });
 
-  // Skills section
   $('.skills-content').waypoint(function() {
     $('.progress .progress-bar').each(function() {
       $(this).css("width", $(this).attr("aria-valuenow") + '%');
@@ -123,13 +108,11 @@
     offset: '80%'
   });
 
-  // jQuery counterUp
   $('[data-toggle="counter-up"]').counterUp({
     delay: 10,
     time: 1000
   });
 
-  // Porfolio isotope and filter
   $(window).on('load', function() {
     var portfolioIsotope = $('.portfolio-container').isotope({
       itemSelector: '.portfolio-item',
@@ -145,13 +128,11 @@
       });
     });
 
-    // Initiate venobox (lightbox feature used in portofilo)
     $(document).ready(function() {
       $('.venobox').venobox();
     });
   });
 
-  // Testimonials carousel (uses the Owl Carousel library)
   $(".testimonials-carousel").owlCarousel({
     autoplay: true,
     dots: true,
@@ -169,7 +150,6 @@
     }
   });
 
-  // Portfolio details carousel
   $(".portfolio-details-carousel").owlCarousel({
     autoplay: true,
     dots: true,
@@ -180,9 +160,7 @@
 })(jQuery);
 
 $('#carousel-example').on('slide.bs.carousel', function (e) {
-    /*
-        CC 2.0 License Iatek LLC 2018 - Attribution required
-    */
+   
     var $e = $(e.relatedTarget);
     var idx = $e.index();
     var itemsPerSlide = 5;
@@ -191,7 +169,6 @@ $('#carousel-example').on('slide.bs.carousel', function (e) {
     if (idx >= totalItems-(itemsPerSlide-1)) {
         var it = itemsPerSlide - (totalItems - idx);
         for (var i=0; i<it; i++) {
-            // append slides to end
             if (e.direction=="left") {
                 $('.carousel-item').eq(i).appendTo('.carousel-inner');
             }

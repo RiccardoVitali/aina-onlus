@@ -10,10 +10,16 @@ To run the server, run:
 npm start
 ```
 
+To view the app
+
+```
+open https://afronlus.herokuapp.com
+```
+
 To view the Swagger UI interface:
 
 ```
-open http://localhost:8080/docs
+open https://afronlus.herokuapp.com/backend/swaggerui
 ```
 
-This project leverages the mega-awesome [swagger-tools](https://github.com/apigee-127/swagger-tools) middleware which does most all the work.
+

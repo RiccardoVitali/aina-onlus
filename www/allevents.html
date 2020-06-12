@@ -23,150 +23,83 @@
   <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
   <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
   <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <!-- UIkit CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.5.3/dist/css/uikit.min.css" />
+
+  <!-- UIkit JS -->
+
+
+
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: Lumia - v2.0.0
-  * Template URL: https://bootstrapmade.com/lumia-bootstrap-business-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+
 </head>
 
 <body>
 
   <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top d-flex align-items-center">
-    <div class="container d-flex align-items-center">
+  <header id="header1" >
 
-      <div class="logo mr-auto">
-        <!-- <h1><a href="index.html">Lumia</a></h1>
-         Uncomment below if you prefer to use an image logo -->
-        <a href="/"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>
-      </div>
-
-      <nav class="nav-menu d-none d-lg-block">
-        <ul>
-          <li><a href="/allservices.html">Services</a></li>
-
-          <li><a href="/allevents.html">Events</a></li>
-          <li><a href="/allpeople.html">People</a></li>
-          <li><a href="/association.html">Association</a></li>
-          <li><a href="/supportus.html">Support Us</a></li>
-          <li><a href="/users/login">MY AINA</a></li>
-
-        </ul>
-      </nav><!-- .nav-menu -->
-
-
-
-    </div>
   </header><!-- End Header -->
+  <!-- ======= to avoid issues for the Header ======= -->
+<script src="assets/js/header.js"></script>
+<main>
+
+
+  <br />
+     <section id="portfolio" class="portfolio mr-5 ml-5">
 
 
 
-     <section id="portfolio" class="portfolio">
-       <nav aria-label="breadcrumb">
-         <ol class="breadcrumb" style="background-color:white;">
-           <li class="breadcrumb-item"><a href="/events">Events</a></li>
+  <h2>Events</h2>
 
-         </ol>
-       </nav>
-      <div class="container">
 
-        <div class="section-title">
-          <h2>EVENTS</h2>
 
-        </div>
 
-        <div class="row">
+
+
+       <div class="row">
           <div class="col-lg-12">
-            <ul id="portfolio-flters">
-              <li data-filter="*" class="filter-active">All</li>
-              <li data-filter=".filter-Jan">Jan</li>
-              <li data-filter=".filter-Feb">Feb</li>
-              <li data-filter=".filter-Mar">Mar</li>
-              <li data-filter=".filter-Apr">Apr</li>
-              <li data-filter=".filter-May">May</li>
-            </ul>
-          </div>
+
+
+         <div uk-filter="target: .js-filter">
+
+             <ul class="uk-subnav uk-subnav-pill">
+                <li class="uk-active" uk-filter-control><a href="#">All</a></li>
+                 <li uk-filter-control="[data-tags*='Jan']"><a href="#">Jan</a></li>
+                 <li uk-filter-control="[data-tags*='Feb']"><a href="#">Feb</a></li>
+                 <li uk-filter-control="[data-tags*='Mar']"><a href="#">Mar</a></li>
+                 <li uk-filter-control="[data-tags*='Apr']"><a href="#">Apr</a></li>
+                 <li uk-filter-control="[data-tags*='May']"><a href="#">May</a></li>
+                 <li uk-filter-control="[data-tags*='Jun']"><a href="#">Jun</a></li>
+                 <li uk-filter-control="[data-tags*='Jul']"><a href="#">Jul</a></li>
+                 <li uk-filter-control="[data-tags*='Aug']"><a href="#">Aug</a></li>
+                 <li uk-filter-control="[data-tags*='Sep']"><a href="#">Sep</a></li>
+                 <li uk-filter-control="[data-tags*='Oct']"><a href="#">Oct</a></li>
+                 <li uk-filter-control="[data-tags*='Nov']"><a href="#">Nov</a></li>
+                 <li uk-filter-control="[data-tags*='Dec']"><a href="#">Dec</a></li>
+             </ul>
+
+             <ul class="js-filter uk-child-width-1-4@m uk-grid-small uk-grid-match" uk-grid id="events_card">
+
+    </ul>
+           </div>
+        
         </div>
 
-        <div class="row portfolio-container">
-          <span id="events_card" class="row"></span>
-<!--
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-Jan wow fadeInUp">
-            <div class="portfolio-wrap">
-              <div>
-                <a href="/event.html?4" class="link-details" title="More Details"><img src="assets/img/event01.jpg" class="img-fluid" alt="">
-                </a>
-              </div>
-
-              <div class="portfolio-info">
-                <h4><a href="/event.html?4">ZADRISKIE POINT</a></h4>
-                <p>Service 1</p>
-              </div>
-            </div>
-          </div>
--->
-
-
-      </div>
     </section>
 
 
 
   </main><!-- End #main -->
-  <br><br><br><br>
-  <br><br><br><br>
-  <br><br><br><br>
-  <br><br><br><br>
-  <br><br><br><br>
-  <br><br><br><br>
-  <br><br><br><br>
-  <br><br><br><br>
+
 
   <!-- ======= Footer ======= -->
   <footer id="footer">
 
-    <div class="footer-top">
-      <div class="container">
-        <div class="row">
-
-          <div class="col-lg-4 col-md-6 footer-contact">
-            <h5>TERMS & CONDITION</h5>
-            <p>
-              We employ the use of cookies. <br>
-              By accessing aina-onlus.it, you <br>
-              agreed to use cookies in agreement <br>
-              with the Aina Onlus’ Privacy Policy.
-            </p>
-          </div>
-          <div class="col-lg-4 col-md-6 footer-contact">
-            <h5>CONTACT US</h5>
-            <p>
-
-              <strong>Phone:</strong> +1 5589 55488 55<br>
-              <strong>Email:</strong> hello@aina-onlus.it<br>
-            </p>
-          </div>
-
-
-          <div class="col-lg-4 col-md-6 footer-newsletter">
-            <h5>NEWSLETTER</h5>
-
-            <form action="" method="post">
-              <input type="email" name="email"><input type="submit" value="Subscribe">
-            </form>
-          </div>
-
-        </div>
-      </div>
-    </div>
-    </footer>
+  </footer>
 
 
 
@@ -183,34 +116,16 @@
   <script src="assets/vendor/venobox/venobox.min.js"></script>
   <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
 
+
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
-
+  <script src="assets/js/newsletter.js"></script>
+  <script src="assets/js/footer.js"></script>
+  <script src="assets/js/allevents.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.3/dist/js/uikit.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.3/dist/js/uikit-icons.min.js"></script>
+  <script src="https://kit.fontawesome.com/6d757dfe9b.js" crossorigin="anonymous"></script>
 </body>
-
-<script>
-fetch("v1/events").then(function(response){
-  return response.json();
-}).then(function(json){
-
-for(let i=0;i<json.length && i<6;i++){
-  document.getElementById("events_card").innerHTML += `<div class="col-lg-4 col-md-6 portfolio-item filter-Jan wow fadeInUp">
-    <div class="portfolio-wrap">
-      <div>
-        <a href="/event.html?${json[i].id}" class="link-details" title="More Details"><img src="assets/img/event01.jpg" class="img-fluid" alt="">
-        </a>
-      </div>
-
-      <div class="portfolio-info">
-        <h4><a href="/event.html?${json[i].id}" >${json[i].name}</a></h4>
-        <p>Service 1</p>
-      </div>
-    </div>
-  </div>`
-          }
-});
-
-  </script>
 
 
 </html>

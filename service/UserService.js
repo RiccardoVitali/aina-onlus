@@ -6,26 +6,25 @@ let sqlDb = sqlDbFactory({
   client: "pg",
   debug: true,
   //connection: process.env.DATABASE_URL,
-  connection:'postgressql://fabio:sailor@localhost:5432/demo',
+  connection:process.env.DATABASE_URL || 'postgressql://federicopozzi:semplice@localhost:5433/template1',
   ssl: true
 });
-/**
- * Login
- * Login with a form
- *
- * username String
- * password String
- * no response value expected for this operation
- **/
-exports.usersLoginPOST = function(username,password) {
-  return new Promise(function(resolve, reject) {
-    resolve();
-  });
-}
 
-exports.usersMeGET = function() {
-  return sqlDb("users")
-  .then(data => {
-    return data;
-  });
-}
+exports.userGET = function() {
+   return sqlDb("users")
+   .then(data => {
+     return data;
+   });
+ };
+ exports.user_by_nameGET = function(username) {
+
+   return sqlDb("users")
+   .then(data => {
+     for(var i=0;i<data.length;i++){
+       if(data[i].username==username){
+         return data[i];
+       }
+     }
+     return false;
+   });
+ };

@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Aina Onlus</title>
+  </head>
+  <style>
+    .question {
+      color: red;
+      font-style: italic;
+    }
+
+    .models {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .model {
+      margin: 10px;
+    }
+
+    .model__resources {
+      font-weight: bold;
+      font-size: 16px;
+      margin-bottom: 2px;
+    }
+    .model__prop {
+      font-size: 14px;
+      display: block;
+    }
+
+    .model__type {
+      margin-left: 4px;
+      font-size: 12px;
+      font-style: initial;
+      color: darkgray;
+    }
+
+    body {
+      max-width: 750px;
+    }
+  </style>
+  <body>
+    <h1 id="documentation-of-the-backend-part">
+      Documentation of the Backend part
+    </h1>
+
+    <h1>Deliverable D1</h1>
+    <h2>General group information</h2>
+    <table>
+      <tr>
+        <th>First name</th>
+        <th>Last name</th>
+        <th>Matricola</th>
+        <th>Email address</th>
+      </tr>
+      <tr>
+        <td>Riccardo</td>
+        <td>Vitali</td>
+        <td>919599</td>
+        <td>riccardo3.vitali@mail.polimi.it</td>
+      </tr>
+      <tr>
+        <td>Andrea</td>
+        <td>Silvano</td>
+        <td>942107</td>
+        <td>andrea.silvano@mail.polimi.it</td>
+      </tr>
+      <tr>
+        <td>Federico</td>
+        <td>Pozzi</td>
+        <td>942245</td>
+        <td>federico3.pozzi@mail.polimi.it</td>
+      </tr>
+    </table>
+
+    <h2>Links to other deliverables</h2>
+    <p>
+      - Deliverable D0: the web application is accessible at
+      <a href="https://afronlus.herokuapp.com/"
+        >https://afronlus.herokuapp.com</a
+      >
+    </p>
+    <p>
+      - Deliverable D2: the YAML or JSON file containing the specification of
+      the app API can be found at
+      <a
+        href="https://afronlus.herokuapp.com/backend/spec.yaml"
+        >https://afronlus.herokuapp.com/backend/spec.yaml</a
+      >.
+    </p>
+    <p>
+      - Deliverable D3: the SwaggerUI page of the same API is available at
+      <a
+        href="https://afronlus.herokuapp.com/backend/swaggerui"
+        >https://afronlus.herokuapp.com/backend/swaggerui</a
+      >
+    </p>
+    <p>
+      - Deliverable D4: the source code of D0 is available as a zip file at
+      <a href="https://afronlus.herokuapp.com/backend/app.zip"
+        >https://afronlus.herokuapp.com/backend/app.zip</a
+      >       -----------------------DA FARE
+
+    </p>
+    <p>
+      - Deliverable D5: the address of the online source control repository is
+      available at
+      <a href="https://github.com/RiccardoVitali/afraina.git"
+        >https://github.com/RiccardoVitali/afraina.git</a
+      >. We hereby declare that this is a private repository and, upon request,
+      we will give access to the instructors.
+    </p>
+    <h2>Specification</h2>
+
+    <h3>Web Architecture</h3>
+    <p class="question">
+      Describe here, with a diagram, the components of your web application and
+      how they interact. Highlight which parts belong to the application layer,
+      data layer or presentation layer. How did you ensure that HTML is not
+      rendered server side?
+    </p>
+    <p>
+     The database is the data layer, while the Application server 
+     serves as application layer. The database is the one managed through Heroku, 
+     while the Application Server is the one generated from the swaggerUI. 
+     In a basic representation:
+    </p>
+    <div><img src="img/backend_structure.png" width="700px" /></div>
+    <p>
+      The initial response will be large and serve the static files including
+      all CSS, all Javascript, all HTML pages and some images, but no real 
+      content. The future requests will serve JSON with information from the 
+      database that will fill the appropriate HTML pages.
+    </p>
+
+    <h3>API</h3>
+    <h4>REST compliance       -----------------------DA FARE
+</h4>
+    <p class="question">
+      Describe here to what extent did you follow REST principles and what are
+      the reasons for which you might have decided to diverge. Note, you must
+      not describe the whole API here, just the design decisions.
+    </p>
+    <p>
+      We'll describe our approach to REST principles by targeting their main 
+      points, explaining if and why we followed those principles.
+      - Uniform Interface: this is fundamental to the REST Api design and we 
+      did our best to follow this principle. Our interface is resource based 
+      and we use HATEOAS (Hypermedia as the Engine of Application State).
+      - Client-Server: the client application and server application are totally 
+      able to evolve separately without any dependency on each other.
+      - Stateless: we obviously could not make our application stateless, as 
+      session management was requested. However, after a user logs in, each 
+      request from the client contain all the information necessary to service 
+      the request, including authentication and authorization details: we used 
+      a light session management that is not invasive and preserve the REST Api 
+      foundamentals.
+      - Layered System: the system is layered, as the server is deployed in a 
+      place other than the one where the postgres server is.
+      <!--
+      The Rest API could be considered to be of maturity level 2. Level 1: It
+      take advantage of resources, where every resource has it own URI: Level 2:
+      It takes advantage HTTP verbs, status codes, and query parameters is used.
+      Level 3: No Hateoas is implemented, the responses don’t include any links.
+      The reason why Level 3 is not implemented was to make the implementation
+      simpler, since I don’t have any previous experience with it and wanted to
+      focus on other parts. -->
+    </p>
+    <h4>OpenAPI Resource models</h4>
+    <p class="question">
+      Describe here synthetically, which models you have introduced for
+      resources.
+    </p>
+    <div class="models">
+      <div class="model">
+        <h1 class="model__resources">Person</h1>
+        <span class="model__prop"
+          >name <span class="model__type">string</span></span
+        >
+        <span class="model__prop"
+          >surname<span class="model__type">string</span></span
+        >
+        <span class="model__prop"
+          >email<span class="model__type">string</span></span
+        >
+        <span class="model__prop"
+          >role<span class="model__type">string</span></span
+        >
+        <span class="model__prop"
+          >description<span class="model__type">string</span></span
+        >
+        <span class="model__prop"
+          >phone<span class="model__type">string</span></span
+        >
+        <span class="model__prop"
+          >photo_url<span class="model__type">string</span></span
+        >
+        <span class="model__prop"
+          >main_service_id<span class="model__type">integer</span></span
+        >
+      </div>
+      <div class="model">
+        <h1 class="model__resources">Event</h1>
+        <span class="model__prop"
+          >name <span class="model__type">string</span></span
+        >
+        <span class="model__prop"
+          >location<span class="model__type">string</span></span
+        >
+        <span class="model__prop"
+          >date<span class="model__type">string</span></span
+        >
+        <span class="model__prop"
+          >description<span class="model__type">string</span></span
+        >
+        <span class="model__prop"
+          >photo_url<span class="model__type">string</span></span
+        >
+        <span class="model__prop"
+          >map_url<span class="model__type">string</span></span
+        >
+        <span class="model__prop"
+          >person_id<span class="model__type">integer</span></span
+        >
+        <span class="model__prop"
+          >service_id<span class="model__type">integer</span></span
+        >
+      </div>
+
+      <div class="model">
+        <h1 class="model__resources">Service</h1>
+        <span class="model__prop"
+          >name<span class="model__type">string</span></span
+        >
+        <span class="model__prop"
+          >subtitle<span class="model__type">string</span></span
+        >
+        <span class="model__prop"
+          >photo_url<span class="model__type">string</span></span
+        >
+        <span class="model__prop"
+          >description<span class="model__type">string</span></span
+        >
+
+      </div>
+      
+      <div class="model">
+        <h1 class="model__resources">People/Service</h1>
+        <span class="model__prop"
+          >person_id<span class="model__type">integer</span></span
+        >
+        <span class="model__prop"
+          >service_id<span class="model__type">integer</span></span
+        >
+
+      </div>
+      
+      <div class="model">
+        <h1 class="model__resources">User</h1>
+        <span class="model__prop"
+          >username <span class="model__type">string</span></span
+        >
+        <span class="model__prop"
+          >email<span class="model__type">string</span></span
+        >
+        <span class="model__prop"
+          >password<span class="model__type">string</span></span
+        >
+      </div>
+      
+      <div class="model">
+        <h1 class="model__resources">Contact form</h1>
+        <span class="model__prop"
+          >name<span class="model__type">string</span></span
+        >
+        <span class="model__prop"
+          >email<span class="model__type">string</span></span
+        >
+        <span class="model__prop"
+          >subject<span class="model__type">string</span></span
+        >
+        <span class="model__prop"
+          >message<span class="model__type">string</span></span
+        >
+
+      </div>
+      
+      <div class="model">
+        <h1 class="model__resources">Newsletter</h1>
+        <span class="model__prop"
+          >email<span class="model__type">string</span></span
+        >
+
+      </div>
+      
+      
+    </div>
+
+    <h3>Data model</h3>
+    <p class="question">
+      Describe with an ER diagram the model used in the data layer of your web
+      application. How these map to the OpenAPI data model?
+    </p>
+    The relationship between entities is the following:
+    a person can work for several services and can organize numerous events,
+    but each person has a main service (each person works mainly on one service).
+    People related to a person are those who work for the main service
+    of the person. <br>
+    An event can support only one service but a service can be supported by
+    many events. <br>
+    The person's id and the service's id, in the single event table, assign to a
+    single event who is the organizer and which service it supports by means
+    of ids. <br>
+    In order to manage the relationship between people and services
+    we have created a specific table. Each row of this table is formed by
+    the person's id and the service's id. <br>
+    The newsletter table takes track of the email of who is registered to the
+    association's newsletter. <br>
+    Tables are linked in a suitable way in order to avoid future mistakes:
+    person's id and service's id, in the events' table, are directly linked
+    to their respectively tables, in this way an event can be created only 
+    if it is attached to an existing person and service, and if we delete a person, or
+    a service, all the events linked to them will be deleted as consequence.
+    Instead, if we delete an event, nothing happens. <br>
+    Similarly, in the table of the relationship between people and services,
+    if we delete a specific relation nothing happens, but if we delete
+    a service, or a person, all the relationships related to it will
+    be eliminated. Moreover it's impossible to create a relationship 
+    between a person and a service if one of the two ids don't correspond
+    to an already existing person or service, and this holds also for
+    the main service's id in the people's table.<br>
+    
+    
+
+    <p></p>
+    <p><img src="img/erdplus-diagram.png" width="700px" /></p>
+    <p></p>
+    <h2>Implementation</h2>
+    <h3>Tools used</h3>
+    <p class="question">
+      Describe here which tools, languages and frameworks did you use for the
+      backend of the application.
+    </p>
+    <p>
+      The backend of the application has been implemented with NodeJS, where the
+      server framework Express has been used to created the server. We used Postgres 
+      for the data storage. We used Swagger to generate and manage the 
+      specification.
+    </p>
+    <h3>Discussion       -----------------------DA FARE
+</h3>
+    <p class="question">
+      - How did you make sure your web application adheres to the provided
+      OpenAPI specification?
+    </p>
+    <p>
+      We actually started from the OpenAPI specification to build the project, 
+      and during the process of building the web application, we changed and 
+      manipulated the specification in order to keep it updated and coherent 
+      with the state of our project.
+      We documented the routes in the web application and testing the
+      operations via
+      <a href="https://afronlus.herokuapp.com/backend/swaggerui">SwaggerUI</a>. 
+      However, requests from newsletter, contact-form and signup are internally 
+      managed.
+      <!--
+      login with example user works but future request will not
+      include session id and therefore routes that need authentication will not
+      be allowed from SwaggerUI. The reason for this is that "...for Swagger UI
+      and Swagger Editor Cookie authentication is currently not supported for
+      "try it out" requests due to browser security restrictions."-->
+    </p>
+    <p class="question">
+      - Why do you think your web application adheres to common practices to
+      partition the web application (static assets vs. application data)
+    </p>
+    <p>
+      We think our web application adheres to common practices to partition
+      the web application because we have separated the static resources 
+      (html, css, js) from the data by putting them respectively on the server
+      and on a remote database, and the data are accessed through specific
+      calls.
+      <!--
+      The Node module serve-static is used to serve a folder named www
+      containing html pages.
+      While the application data, in this case as JSON, will be served when the
+      different routes are accessed with the help of Express. -->
+    </p>
+    <p class="question">
+      - Describe synthetically why and how did you manage session state, what
+      are the state change triggering actions (e.g., POST to login etc..).
+    </p>
+    <p>
+      We used cookie-session and cookie-parser for the session state.
+      The idea is that a user can access his own page to see how his contribution 
+      is helping the association, like letters or photo concerning distance
+      adoption or the progress of specific services.<br>
+      As soon as the user registers, his data are stored in the database,
+      and when a user does the login, a new session is generated, contening
+      all the information about him, in this way he can navigate the website
+      remaining logged in, until he does the logout that will destroy that 
+      session.
+      <!--The application is using express-session to help to manage session. In
+      this version of the default server-side session storage, MemoryStore is
+      used. This is not something that should be in a real production since it
+      will often leak memory and scale badly. The reason why I have used it is
+      easier to manage during development.-->
+    </p>
+    <p>
+      <!--Three actions exists to change session state: <br />
+      POST to /user/signup with username and password in body: will create new
+      session if username is not taken.
+      <br />
+      POST to /user/login with username and password: will create new session if
+      username and password match.
+      <br />
+      POST to /user/logut with session in header: will destroy the session
+      provided in the header.-->
+    </p>
+    <p class="question">
+      - Which technology did you use (relational or a no-SQL database) for
+      managing the data model?
+    </p>
+    <p>We have been using a relational database, Postgres</p>
+    <h2>Other information</h2>
+    <h3>Task assignment</h3>
+    <p class="question">
+      Describe here how development tasks have been subdivided among members of
+      the group
+    </p>
+    <p>Riccardo Vitali took care of the backend implementation, 
+    while Federico Pozzi and Andrea Silvano worked on the frontend.</p>
+    <h3>Analysis of existing API</h3>
+    <p
+      question="Describe here if you have found relevant APIs that have inspired the OpenAPI
+    specification and why (at least two)."
+    ></p>
+    <p>
+      We was inspired by this simple and practical example:
+      <a href="https://petstore.swagger.io/">Swagger Petstore</a>, moreover
+      we explored the swagger documentation and we watched several swagger tutorials
+      on youtube.<br>
+      Professor Zaccaria's lessons helped us a lot, providing the necessary
+      information to get acquainted with the OpenAPI specification.
+    </p>
+    <h3>Learning outcome</h3>
+    <p class="question">
+      What was the most important thing all the members have learned while
+      developing this part of the project, what questions remained unanswered,
+      how you will use what you've learned in your everyday life?
+    </p>
+    <p>
+      - Riccardo Vitali had never seen a javascript code before in his life and he 
+      had never worked with databases or websites.<br>
+      So he had to learn everything from scratch, the effort was great but,
+      thanks to Professor Zaccaria's lectures, the many videos on youtube and
+      the posts on stackoverflow, he slowly became familiar with the environment.
+      Additionally, he learnt how to use github and a platform such as Heroku and 
+      he got a basic knowledge of HTML and CSS.<br>
+      - Federico Pozzi...
+      - Andrea Silvano...
+    </p>
+  </body>
+</html>
