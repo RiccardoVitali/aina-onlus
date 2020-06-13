@@ -1,22 +1,51 @@
 fetch("v1/users/me").then(function(response){
 
   response.json().then(res=>{
-var loc = window.location.toString();
-console.log(loc);
-    var x;
-            console.log("loc.substring");
-
-        console.log(loc.substring(31));
-
-    if(loc.substring(31)=="allservices.html"){
-      x="active"
+  var loc = window.location.toString();
+  var service;
+  var person;
+  var event;
+  var ass;
+  var cont;
+  var supp;
+  
+    if(loc.substring(31)=="allservices.html" || loc.substring(31,38)=="service"){
+      service="active"
     }
     else{
-      x="";  
+      service="";  
     }
-                console.log("x");
-
-    console.log(x);
+    if(loc.substring(31)=="allevents.html" || loc.substring(31,36)=="event"){
+      event="active"
+    }
+    else{
+      event="";  
+    }
+    if(loc.substring(31)=="allpeople.html" || loc.substring(31,37)=="person"){
+      person="active"
+    }
+    else{
+      person"";  
+    }
+    if(loc.substring(31)=="association.html"){
+      ass="active"
+    }
+    else{
+      ass="";  
+    }
+    if(loc.substring(31)=="contactus.html"){
+      cont="active"
+    }
+    else{
+      cont="";  
+    }
+    if(loc.substring(31)=="supportus.html" || loc.substring(31)=="pay.html"){
+      supp="active"
+    }
+    else{
+      supp="";  
+    }
+    
 
     if(res.error!=undefined){
       document.getElementById("header1").innerHTML = `<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-white">
@@ -33,22 +62,22 @@ console.log(loc);
         <div class="collapse navbar-collapse justify-content-between " id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item ">
-              <a class="nav-link ${x}" href="/allservices.html">Services <span class="sr-only"></span></a>
+              <a class="nav-link ${service}" href="/allservices.html">Services <span class="sr-only"></span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/allevents.html">Events</a>
+              <a class="nav-link ${event}" href="/allevents.html">Events</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/allpeople.html">People</a>
+              <a class="nav-link ${person}" href="/allpeople.html">People</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link " href="/association.html">Association</a>
+              <a class="nav-link ${ass}" href="/association.html">Association</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link " href="/supportus.html">Support Us</a>
+              <a class="nav-link ${supp}" href="/supportus.html">Support Us</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link " href="/contactus.html">Contact Us</a>
+              <a class="nav-link ${cont}" href="/contactus.html">Contact Us</a>
             </li>
 
           </ul>
