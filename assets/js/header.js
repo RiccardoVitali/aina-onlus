@@ -25,7 +25,7 @@ fetch("v1/users/me").then(function(response){
       person="active"
     }
     else{
-      person"";  
+      person="";  
     }
     if(loc.substring(31)=="association.html"){
       ass="active"
@@ -106,22 +106,22 @@ fetch("v1/users/me").then(function(response){
         <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item ">
-              <a class="nav-link" href="/allservices.html">Services <span class="sr-only"></span></a>
+              <a class="nav-link ${service}" href="/allservices.html">Services <span class="sr-only"></span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="allevents.html">Events</a>
+              <a class="nav-link ${event}" href="allevents.html">Events</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="allpeople.html">People</a>
+              <a class="nav-link ${person}" href="allpeople.html">People</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link " href="/association.html">Association</a>
+              <a class="nav-link ${ass}" href="/association.html">Association</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link " href="/supportus.html">Support Us</a>
+              <a class="nav-link ${supp}" href="/supportus.html">Support Us</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link " href="/contactus.html">Contact Us</a>
+              <a class="nav-link ${cont}" href="/contactus.html">Contact Us</a>
             </li>
 
           </ul>
