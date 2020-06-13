@@ -1,7 +1,7 @@
 fetch("v1/users/me").then(function(response){
 
   response.json().then(res=>{
-var str = window.location.search.toString();
+var str = window.location.toString();
 console.log(str);
     if(res.error!=undefined){
       document.getElementById("header1").innerHTML = `<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-white">
