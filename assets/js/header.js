@@ -1,8 +1,23 @@
 fetch("v1/users/me").then(function(response){
 
   response.json().then(res=>{
-var str = window.location.toString();
-console.log(str);
+var loc = window.location.toString();
+console.log(loc);
+    var x;
+            console.log("loc.substring");
+
+        console.log(loc.substring(31));
+
+    if(loc.substring(31)=="allservices.html"){
+      x="active"
+    }
+    else{
+      x="";  
+    }
+                console.log("x");
+
+    console.log(x);
+
     if(res.error!=undefined){
       document.getElementById("header1").innerHTML = `<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-white">
 
@@ -18,7 +33,7 @@ console.log(str);
         <div class="collapse navbar-collapse justify-content-between " id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item ">
-              <a class="nav-link" href="/allservices.html">Services <span class="sr-only"></span></a>
+              <a class="nav-link ${x}" href="/allservices.html">Services <span class="sr-only"></span></a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/allevents.html">Events</a>
