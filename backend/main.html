@@ -5,327 +5,303 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>Aina Onlus</title>
-  </head>
+  <title>Aina Onlus</title>
+  <link href="/assets/css/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.5.3/dist/css/uikit.min.css" />
   <style>
-    .question {
-      color: red;
-      font-style: italic;
-    }
+    p {
+      font-family: suisse-reg;
 
-    .models {
-      display: flex;
-      flex-wrap: wrap;
-    }
-
-    .model {
-      margin: 10px;
-    }
-
-    .model__resources {
-      font-weight: bold;
-      font-size: 16px;
-      margin-bottom: 2px;
-    }
-    .model__prop {
-      font-size: 14px;
-      display: block;
-    }
-
-    .model__type {
-      margin-left: 4px;
-      font-size: 12px;
-      font-style: initial;
-      color: darkgray;
     }
 
     body {
-      max-width: 750px;
+      padding-left: 10rem;
+      padding-right: 10rem;
     }
   </style>
-  <body>
-    <h1 id="documentation-of-the-backend-part">
-      Documentation of the Backend part
-    </h1>
+</head>
 
-    <h1>Deliverable D1</h1>
-    <h2>General group information</h2>
-    <table>
-      <tr>
-        <th>First name</th>
-        <th>Last name</th>
-        <th>Matricola</th>
-        <th>Email address</th>
-      </tr>
-      <tr>
-        <td>Riccardo</td>
-        <td>Vitali</td>
-        <td>919599</td>
-        <td>riccardo3.vitali@mail.polimi.it</td>
-      </tr>
-      <tr>
-        <td>Andrea</td>
-        <td>Silvano</td>
-        <td>942107</td>
-        <td>andrea.silvano@mail.polimi.it</td>
-      </tr>
-      <tr>
-        <td>Federico</td>
-        <td>Pozzi</td>
-        <td>942245</td>
-        <td>federico3.pozzi@mail.polimi.it</td>
-      </tr>
-    </table>
+<body>
+  <h1 style="padding-top:5rem;">
+    AINA onlus - Backend Documentation
+  </h1>
 
-    <h2>Links to other deliverables</h2>
-    <p>
-      - Deliverable D0: the web application is accessible at
-      <a href="https://afronlus.herokuapp.com/"
-        >https://afronlus.herokuapp.com</a
-      >
-    </p>
-    <p>
-      - Deliverable D2: the YAML or JSON file containing the specification of
-      the app API can be found at
-      <a
-        href="https://afronlus.herokuapp.com/backend/spec.yaml"
-        >https://afronlus.herokuapp.com/backend/spec.yaml</a
-      >.
-    </p>
-    <p>
-      - Deliverable D3: the SwaggerUI page of the same API is available at
-      <a
-        href="https://afronlus.herokuapp.com/backend/swaggerui"
-        >https://afronlus.herokuapp.com/backend/swaggerui</a
-      >
-    </p>
-    <p>
-      - Deliverable D4: the source code of D0 is available as a zip file at
-      <a href="https://afronlus.herokuapp.com/backend/app.zip"
-        >https://afronlus.herokuapp.com/backend/app.zip</a
-      >       -----------------------DA FARE
 
-    </p>
-    <p>
-      - Deliverable D5: the address of the online source control repository is
-      available at
-      <a href="https://github.com/RiccardoVitali/afraina.git"
-        >https://github.com/RiccardoVitali/afraina.git</a
-      >. We hereby declare that this is a private repository and, upon request,
+  <h2>1 - General group information</h2>
+  <ul style="font-family:suisse-reg" ;>
+    <li>
+      Federico Pozzi <br />
+      Personal Code: 942245 <br />
+      E-mail: federico3.pozzi@mail.polimi.it
+    </li>
+    <br />
+    <li>
+      Andrea Silvano <br />
+      Personal Code: 942107 <br />
+      E-mail: andrea.silvano@mail.polimi.it
+    </li>
+    <br />
+    <li>
+      Riccardo Vitali <br />
+      Personal Code: 919599 <br />
+      E-mail: riccardo3.vitali@mail.polimi.it
+    </li>
+
+  </ul>
+
+
+
+  <h2>2 - Links to other deliverables</h2>
+  <ul style="font-family:suisse-reg" ;>
+
+
+    <li>
+      Deliverable D0: the web application is accessible at
+      <br />
+      <a href="https://afronlus.herokuapp.com/">https://afronlus.herokuapp.com</a>
+    </li>
+    <br />
+    <li>
+      Deliverable D2: the YAML or JSON file containing the specification of
+      the app API can be found at <br />
+      <a href="https://afronlus.herokuapp.com/backend/spec.yaml">https://afronlus.herokuapp.com/backend/spec.yaml</a>.
+    </li>
+    <br />
+    <li>
+      Deliverable D3: the SwaggerUI page of the same API is available at<br />
+      <a href="https://afronlus.herokuapp.com/backend/swaggerui">https://afronlus.herokuapp.com/backend/swaggerui</a>
+    </li>
+    <br />
+    <li>
+      Deliverable D4: the source code of D0 is available as a zip file at<br />
+      <a href="https://afronlus.herokuapp.com/backend/app.zip">https://afronlus.herokuapp.com/backend/app.zip</a> -----------------------DA FARE
+
+    </li>
+    <br />
+    <li>
+      Deliverable D5: the address of the online source control repository is
+      available at<br />
+      <a href="https://github.com/RiccardoVitali/afraina.git">https://github.com/RiccardoVitali/afraina.git</a>. <br />We hereby declare that this is a private repository and, upon request,
       we will give access to the instructors.
-    </p>
-    <h2>Specification</h2>
+    </li>
+  </ul>
+  <h2>3 - Specification</h2>
 
-    <h3>Web Architecture</h3>
-<!--     <p class="question">
+  <h3>3.1 - Web Architecture</h3>
+  <!--     <p class="question">
       Describe here, with a diagram, the components of your web application and
       how they interact. Highlight which parts belong to the application layer,
       data layer or presentation layer. How did you ensure that HTML is not
       rendered server side?
     </p> -->
-    <p>
-     The database is the data layer, while the Application server 
-     serves as application layer. The database is the one managed through Heroku, 
-     while the Application Server is the one generated from the swaggerUI. 
-     In a basic representation:
-    </p>
-    <div><img src="img/backend_structure.png" width="700px" /></div>
-    <p>
-      The initial response will be large and serve the static files including
-      all CSS, all Javascript, all HTML pages and some images, but no real 
-      content. The future requests will serve JSON with information from the 
-      database that will fill the appropriate HTML pages.
-    </p>
+  <p>
+    The database is the data layer, while the Application server
+    serves as application layer. The database is the one managed through Heroku,
+    while the Application Server is the one generated from the swaggerUI.
+    In a basic representation:
+  </p>
+  <div><img src="img/backend_structure.png" width="700px" /></div>
+  <p>
+    The initial response will be large and serve the static files including
+    all CSS, all Javascript, all HTML pages and some images, but no real
+    content. The future requests will serve JSON with information from the
+    database that will fill the appropriate HTML pages.
+  </p>
 
-    <h3>API</h3>
-    <h4>REST compliance    
-</h4>
-<!--     <p class="question">
+  <h3>3.2 - API</h3>
+  <h4>3.2.1 - REST compliance
+  </h4>
+  <!--     <p class="question">
       Describe here to what extent did you follow REST principles and what are
       the reasons for which you might have decided to diverge. Note, you must
       not describe the whole API here, just the design decisions.
     </p> -->
-    <p>
-      We'll describe our approach to REST principles by targeting their main 
-      points, explaining if and why we followed those principles.<br>
-      
-      - Uniform Interface: this is fundamental to the REST API design and we 
-      did our best to follow this principle. Our interface is resource based 
-      and we use HATEOAS (Hypermedia as the Engine of Application State).
-      All the resources are accessible through a HTTP GET request.<br>
-      
-      - Client-Server: Client and server can be developed independently and 
-      evolve separately with no dependency from each other.<br>
-      
-      - Stateless: Interaction between client and server is stateless, unless a user logs in. 
-      The server does not store any information about the previous requests and 
-      it is able to properly respond to one request only by checking it. 
-      The server does not need any history of received requests.
-      If a user logs in, the request from the client contains all the information necessary to satisfy 
-      the request, including authentication and authorization details.<br>
-      
-      - Application Architecture: the application architecture is layered. Three main layers are available in the application: presentation, application and data. 
-      Each layer can interact only with the following one, in order to split responsibility among them and assigning a specific focus to each layer.
-      
-    </p>
-    <h4>OpenAPI Resource models</h4>
-<!--     <p class="question">
-      Describe here synthetically, which models you have introduced for
-      resources.
-    </p> -->
-    <div class="models">
-      <div class="model">
-        <h1 class="model__resources">Person</h1>
-        <span class="model__prop"
-          >name <span class="model__type">string</span></span
-        >
-        <span class="model__prop"
-          >surname<span class="model__type">string</span></span
-        >
-        <span class="model__prop"
-          >email<span class="model__type">string</span></span
-        >
-        <span class="model__prop"
-          >role<span class="model__type">string</span></span
-        >
-        <span class="model__prop"
-          >description<span class="model__type">string</span></span
-        >
-        <span class="model__prop"
-          >phone<span class="model__type">string</span></span
-        >
-        <span class="model__prop"
-          >photo_url<span class="model__type">string</span></span
-        >
-        <span class="model__prop"
-          >main_service_id<span class="model__type">integer</span></span
-        >
-      </div>
-      <div class="model">
-        <h1 class="model__resources">Event</h1>
-        <span class="model__prop"
-          >name <span class="model__type">string</span></span
-        >
-        <span class="model__prop"
-          >location<span class="model__type">string</span></span
-        >
-        <span class="model__prop"
-          >date<span class="model__type">string</span></span
-        >
-        <span class="model__prop"
-          >description<span class="model__type">string</span></span
-        >
-        <span class="model__prop"
-          >photo_url<span class="model__type">string</span></span
-        >
-        <span class="model__prop"
-          >map_url<span class="model__type">string</span></span
-        >
-        <span class="model__prop"
-          >person_id<span class="model__type">integer</span></span
-        >
-        <span class="model__prop"
-          >service_id<span class="model__type">integer</span></span
-        >
-      </div>
+  <p>
+    We'll describe our approach to REST principles by targeting their main
+    points, explaining if and why we followed those principles.<br>
 
-      <div class="model">
-        <h1 class="model__resources">Service</h1>
-        <span class="model__prop"
-          >name<span class="model__type">string</span></span
-        >
-        <span class="model__prop"
-          >subtitle<span class="model__type">string</span></span
-        >
-        <span class="model__prop"
-          >photo_url<span class="model__type">string</span></span
-        >
-        <span class="model__prop"
-          >description<span class="model__type">string</span></span
-        >
+    <ul>
 
-      </div>
-      
-      <div class="model">
-        <h1 class="model__resources">People/Service</h1>
-        <span class="model__prop"
-          >person_id<span class="model__type">integer</span></span
-        >
-        <span class="model__prop"
-          >service_id<span class="model__type">integer</span></span
-        >
+      <li>
+        Uniform Interface: this is fundamental to the REST API design and we
+        did our best to follow this principle. Our interface is resource based
+        and we use HATEOAS (Hypermedia as the Engine of Application State).
+        All the resources are accessible through a HTTP GET request.
+      </li><br>
 
-      </div>
-      
-      <div class="model">
-        <h1 class="model__resources">User</h1>
-        <span class="model__prop"
-          >username <span class="model__type">string</span></span
-        >
-        <span class="model__prop"
-          >email<span class="model__type">string</span></span
-        >
-        <span class="model__prop"
-          >password<span class="model__type">string</span></span
-        >
-      </div>
-      
-      <div class="model">
-        <h1 class="model__resources">Contact form</h1>
-        <span class="model__prop"
-          >name<span class="model__type">string</span></span
-        >
-        <span class="model__prop"
-          >email<span class="model__type">string</span></span
-        >
-        <span class="model__prop"
-          >subject<span class="model__type">string</span></span
-        >
-        <span class="model__prop"
-          >message<span class="model__type">string</span></span
-        >
+      <li>
+        Client-Server: Client and server can be developed independently and
+        evolve separately with no dependency from each other.
+      </li><br>
 
-      </div>
-      
-      <div class="model">
-        <h1 class="model__resources">Newsletter</h1>
-        <span class="model__prop"
-          >email<span class="model__type">string</span></span
-        >
+      <li>
+        Stateless: Interaction between client and server is stateless, unless a user logs in.
+        The server does not store any information about the previous requests and
+        it is able to properly respond to one request only by checking it.
+        The server does not need any history of received requests.
+        If a user logs in, the request from the client contains all the information necessary to satisfy
+        the request, including authentication and authorization details.
+      </li><br>
 
+      <li>
+        Application Architecture: the application architecture is layered. Three main layers are available in the application: presentation, application and data.
+        Each layer can interact only with the following one, in order to split responsibility among them and assigning a specific focus to each layer.
+      </li>
+    </ul>
+  </p>
+  <h4>3.2.2 - OpenAPI Resource models</h4>
+  <div class="uk-grid-column-medium uk-grid-row-large uk-child-width-1-4@s uk-grid uk-grid-stack" uk-grid>
+    <div>
+      <div class="uk-card uk-card-default uk-card-small uk-card-body">
+        <h3 class="uk-card-title">Person</h3>
+        <ul class="uk-list">
+          <li>
+            name - string
+            <br />
+            surname - string
+            <br />
+            email - string
+
+            <br />
+            role - string
+            <br />
+            description - string
+            <br />
+            phone - string
+            <br />
+            photo_url - string
+            <br />
+            main_service_id - integer
+          </li>
+        </ul>
       </div>
-      
-      
+    </div>
+    <div>
+      <div class="uk-card uk-card-default uk-card-small uk-card-body">
+        <h3 class="uk-card-title">Event</h3>
+        <ul class="uk-list">
+          <li>
+            name - string
+            <br />
+            location - string
+            <br />
+            date - string
+            <br />
+            description - string
+            <br />
+            photo_url - string
+            <br />
+            map_url - string
+            <br />
+            person_id - integer
+            <br />
+            service_id - integer
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div>
+      <div class="uk-card uk-card-default uk-card-small uk-card-body">
+        <h3 class="uk-card-title">People/Service</h3>
+        <ul class="uk-list">
+          <li>
+            person_id - integer
+            <br />
+
+            service_id - integer
+
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div>
+      <div class="uk-card uk-card-default uk-card-small uk-card-body">
+        <h3 class="uk-card-title">User</h3>
+        <ul class="uk-list">
+          <li>
+            username - string
+            <br />
+
+            email - string
+            <br />
+
+            password - string
+
+          </li>
+        </ul>
+      </div>
     </div>
 
-    <h3>Data model</h3>
-<!--     <p class="question">
+    <div style="padding-top:3rem;">
+      <div class="uk-card uk-card-default uk-card-small uk-card-body">
+        <h3 class="uk-card-title">Contact Form</h3>
+        <ul class="uk-list">
+          <li>
+            name - string
+            <br />
+
+            email - string
+            <br />
+
+            subject - string
+            <br />
+
+            message - string
+
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div style="padding-top:3rem;">
+      <div class="uk-card uk-card-default uk-card-small uk-card-body">
+        <h3 class="uk-card-title">Newsletter</h3>
+        <ul class="uk-list">
+          <li>
+            email - string
+            <br />
+
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <h3>3.3 - Data model</h3>
+  <!--     <p class="question">
       Describe with an ER diagram the model used in the data layer of your web
       application. How these map to the OpenAPI data model?
     </p> -->
+  <p>
     The relationship between entities is the following:
     a person can work for several services and can organize numerous events,
     but each person has only one main service (each person works mainly on one service).
     People related to a person are those who work for the main service
     of the person. <br>
     An event can support only one service but a service can be supported by
-    many events. <br>
+    many events. </p>
+    <p>
+
+
     We have assigned an unique ID number to each person and to each service. This allows us to define
     in a single event who the organizer is and which service the event is supporting through the use of IDs.
     <br>
     In order to manage the relationship between people and services
     we created a specific table. Each row of this table is formed by
-    the person's ID and the service's ID. <br>
-    Tables are linked in a suitable way in order to avoid future mistakes:
+    the person's ID and the service's ID. </p>
+    <p>Tables are linked in a suitable way in order to avoid future mistakes:
     person's ID and service's ID, in the events' table, are directly linked
-    to their respectively tables, in this way an event can be created only 
+    to their respectively tables, in this way an event can be created only
     if it is attached to an existing person and service, and if we delete a person, or
     a service, all the events linked to them will be deleted as consequence.
-    If a service is eliminated, nothing happens. <br>
+    If a service is eliminated, nothing happens. </p>
+    <p>
     Similarly, in the table of the relationship between people and services,
     if we delete a specific relation nothing happens, but if we delete
     a service, or a person, all the relationships related to it will
-    be eliminated. Moreover, it's impossible to create a relationship 
+    be eliminated. Moreover, it's impossible to create a relationship
     between a person and a service if one of the two IDs does not correspond
     to an already existing person or service, and this holds also for
     the main service's id in the person's table.<br>
@@ -335,119 +311,149 @@
     association's newsletter. It is not possible to register the same email twice.<br>
     The contact form table is used to store all the messages, and the associated email,
     that are sent to the association through the page Contact us.<br>
-    
-    
+  </p>
 
-    <p></p>
-    <p><img src="img/ER.png" width="700px" /></p>
-    <p></p>
-    <h2>Implementation</h2>
-    <h3>Tools used</h3>
-<!--     <p class="question">
+
+
+  <p></p>
+  <p><img src="/backend/img/ER.svg" width="600" uk-svg> </p>
+  <p></p>
+  <h2>4 - Implementation</h2>
+  <h3>4.1 - Tools used</h3>
+  <!--     <p class="question">
       Describe here which tools, languages and frameworks did you use for the
       backend of the application.
     </p> -->
-      The backend of the application was entirely created with NodeJS. The server framework Express has been used to create the server.
-      The skeleton has been generated by Swagger with Generate Server button in the Swagger editor. 
-      Then, with the help of knex module, the Postgres database has been connected to the server.
-    </p>
-    <h3>Discussion
-</h3>
-<!--     <p class="question">
+  The backend of the application was entirely created with NodeJS. The server framework Express has been used to create the server.
+  The skeleton has been generated by Swagger with Generate Server button in the Swagger editor.
+  Then, with the help of knex module, the Postgres database has been connected to the server.
+  </p>
+  <h3>4.2 - Discussion
+  </h3>
+  <!--     <p class="question">
       - How did you make sure your web application adheres to the provided
       OpenAPI specification?
     </p> -->
-    <p>
-      We started from OpenAPI specifications to start building the application.
-      During the process, Swagger helped in the control of the APIs specified with OpenAPI editor. 
-      It validates the requests made by the client checking if they respect the specification described in the yaml file. 
-      The resposes of GET requests reflect the structure of database entities.
-      We tested the operations via
-      <a href="https://afronlus.herokuapp.com/backend/swaggerui">SwaggerUI</a>. 
-      However, requests from newsletter, contact-form and signup are not shown in SwaggerUI.
-    </p>
-<!--     <p class="question">
+  <p>
+    We started from OpenAPI specifications to start building the application.
+    During the process, Swagger helped in the control of the APIs specified with OpenAPI editor.
+    It validates the requests made by the client checking if they respect the specification described in the yaml file.
+    The resposes of GET requests reflect the structure of database entities.
+    We tested the operations via
+    <a href="https://afronlus.herokuapp.com/backend/swaggerui">SwaggerUI</a>.
+    However, requests from newsletter, contact-form and signup are not shown in SwaggerUI.
+  </p>
+  <!--     <p class="question">
       - Why do you think your web application adheres to common practices to
       partition the web application (static assets vs. application data)
     </p> -->
-    <p>
-      To comply with REST specification, we divided static contents from data needed to fill the page sections.
-      The data is fetched via specific calls from the client, then it is retrieved and executed in the client browser 
-      that makes a request to the server and waits a response to fill the page with the received data.
-   
-    </p>
-<!--     <p class="question">
+  <p>
+    To comply with REST specification, we divided static contents from data needed to fill the page sections.
+    The data is fetched via specific calls from the client, then it is retrieved and executed in the client browser
+    that makes a request to the server and waits a response to fill the page with the received data.
+
+  </p>
+  <!--     <p class="question">
       - Describe synthetically why and how did you manage session state, what
       are the state change triggering actions (e.g., POST to login etc..).
     </p> -->
-    <p>
-      We used cookie-session and cookie-parser for the session state.
-      As soon as the user registers, his data is stored in the database,
-      and when a user logs in, a new session is generated, contening
-      all the information about him, in this way he can navigate the website
-      remaining logged in, until he logs out thus destroying that session.
-    </p>
-<!--     <p class="question">
+  <p>
+    We used cookie-session and cookie-parser for the session state.
+    As soon as the user registers, his data is stored in the database,
+    and when a user logs in, a new session is generated, contening
+    all the information about him, in this way he can navigate the website
+    remaining logged in, until he logs out thus destroying that session.
+  </p>
+  <!--     <p class="question">
       - Which technology did you use (relational or a no-SQL database) for
       managing the data model?
     </p> -->
-    Postgres, an object-relational database has been used for the data layer.
-    The database queries have been managed with knex node module.
-    <h2>Other information</h2>
-    <h3>Task assignment</h3>
-<!--     <p class="question">
+  Postgres, an object-relational database has been used for the data layer.
+  The database queries have been managed with knex node module.
+  <h2>5 - Other information</h2>
+  <h3>5.1 - Task assignment</h3>
+  <!--     <p class="question">
       Describe here how development tasks have been subdivided among members of
       the group
     </p> -->
-    <p>
+  <p>
     Percentage of time invested in a specific task <br>
-      Riccardo Vitali
-      - 80% backend
-      - 10% OpenAPI specs
-      - 10% frontend
+    <ul class="uk-list">
+    <strong>Riccardo Vitali</strong><br />
+
+
+
+        80% backend<br />
+      10% OpenAPI specs<br />
+       10% frontend
+
+
       <br>
-       Federico Pozzi
-      - 90% frontend
-      - 10% backend
+    <br />
+      <strong>Federico Pozzi</strong><br />
+
+
+
+          90% frontend<br />
+
+         10% backend
+
+
       <br>
-        Andrea Silvano
-      - 90% frontend
-      - 10% backend
-      <br>
-      Documentation has been developed by the three members of the group together.
-    </p>
-    
-    <h3>Analysis of existing API</h3>
-<!--     <p
+      <br />
+        <strong>Andrea Silvano</strong><br />
+
+
+
+        90% frontend<br />
+
+       10% backend
+    </ul>
+    <br>
+    Documentation has been developed by the three members of the group together.
+  </p>
+
+  <h3>5.2 - Analysis of existing API</h3>
+  <!--     <p
       question="Describe here if you have found relevant APIs that have inspired the OpenAPI
     specification and why (at least two)."
     ></p> -->
-    <p>
-      We were inspired by this simple and practical example:
-      <a href="https://petstore.swagger.io/">Swagger Petstore</a>, moreover
-      we explored the swagger documentation and we watched several swagger tutorials
-      on youtube.<br>
-      Professor Zaccaria's lessons helped us a lot, providing the necessary
-      information to get acquainted with the OpenAPI specification.
-    </p>
-    <h3>Learning outcome</h3>
-<!--     <p class="question">
+  <p>
+    We were inspired by this simple and practical example:
+    <a href="https://petstore.swagger.io/">Swagger Petstore</a>, moreover
+    we explored the swagger documentation and we watched several swagger tutorials
+    on youtube.<br>
+    Professor Zaccaria's lessons helped us a lot, providing the necessary
+    information to get acquainted with the OpenAPI specification.
+  </p>
+  <h3>5.4 - Learning outcome</h3>
+  <!--     <p class="question">
       What was the most important thing all the members have learned while
       developing this part of the project, what questions remained unanswered,
       how you will use what you've learned in your everyday life?
     </p> -->
+  <p>
+    - Riccardo Vitali had never seen a javascript code before in his life and he
+    had never worked with databases or websites, so he had to learn everything
+    from scratch, the effort was great but,
+    thanks to Professor Zaccaria's lectures, the many videos on youtube and
+    the posts on stackoverflow, he slowly became familiar with the environment.
+    Additionally, he got a basic knowledge of HTML and CSS and he learnt how
+    to use github and a platform such as Heroku.
+  </p>
     <p>
-      - Riccardo Vitali had never seen a javascript code before in his life and he 
-      had never worked with databases or websites, so he had to learn everything 
-      from scratch, the effort was great but,
-      thanks to Professor Zaccaria's lectures, the many videos on youtube and
-      the posts on stackoverflow, he slowly became familiar with the environment.
-      Additionally, he got a basic knowledge of HTML and CSS and he learnt how 
-      to use github and a platform such as Heroku.
-      <br>
-      - Federico Pozzi comes from Design school, he had the chance to improve his coding skills, particularly css, html and javascript, becoming able to build from scratch a full website. 
-Moreover he got aware of the functionality of a database and SQL, by discovering how the architecture is made and how It works. He thinks that all the knowledge he learned in this course will be a solid base for his future.<br>
-      - Andrea Silvano has learned the basics of Database and how to link a DB to the frontend. Currently enrolled in the Master's Degree in Communication Design thanks to Hypermedia application is now able to develop static webpages with ease and furthermore implementing some notions of basic database in the webpage. Thanks to this course he's now able to fluently work with HTML, CSS, JS and DB entries.
+      - Federico Pozzi comes from Design school, he had the chance to improve his coding skills, particularly css, html and javascript, becoming able to build from scratch a full website.
+      Moreover he got aware of the functionality of a database and SQL, by discovering how the architecture is made and how It works. He thinks that all the knowledge he learned in this course will be a solid base for his future.
     </p>
-  </body>
+    <p>
+      - Andrea Silvano has learned the basics of Database and how to link a DB to the frontend. Currently enrolled in the Master's Degree in Communication Design thanks to Hypermedia application is now able to develop static webpages with ease and
+      furthermore implementing some notions of basic database in the webpage. Thanks to this course he's now able to fluently work with HTML, CSS, JS and DB entries.
+    </p>
+  </p>
+
+  <br />
+  <br />
+  <br />
+</body>
+
 </html>
