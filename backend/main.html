@@ -148,16 +148,16 @@
     <p>
       We'll describe our approach to REST principles by targeting their main 
       points, explaining if and why we followed those principles.<br>
-      - Uniform Interface: this is fundamental to the REST Api design and we 
+      - Uniform Interface: this is fundamental to the REST API design and we 
       did our best to follow this principle. Our interface is resource based 
       and we use HATEOAS (Hypermedia as the Engine of Application State).<br>
       - Client-Server: the client application and server application are totally 
       able to evolve separately without any dependency on each other.<br>
       - Stateless: we obviously could not make our application stateless, as 
       session management was requested. However, after a user logs in, each 
-      request from the client contain all the information necessary to service 
+      request from the client contains all the information necessary to service 
       the request, including authentication and authorization details: we used 
-      a light session management that is not invasive and preserve the REST Api 
+      a light session management that is not invasive and preserves the REST API 
       foundamentals.<br>
       - Layered System: the system is layered, as the server is deployed in a 
       place other than the one where the postgres server is.
@@ -304,31 +304,31 @@
     of the person. <br>
     An event can support only one service but a service can be supported by
     many events. <br>
-    The person's id and the service's id, in the single event table, assign to a
-    single event who is the organizer and which service it supports by means
-    of ids. <br>
+    We have assigned an unique ID number to each person and to each service. This allows us to define
+    in a single event who the organizer is and which service the event is supporting through the use of IDs.
+    <br>
     In order to manage the relationship between people and services
-    we have created a specific table. Each row of this table is formed by
-    the person's id and the service's id. <br>
+    we created a specific table. Each row of this table is formed by
+    the person's ID and the service's ID. <br>
     Tables are linked in a suitable way in order to avoid future mistakes:
-    person's id and service's id, in the events' table, are directly linked
+    person's ID and service's ID, in the events' table, are directly linked
     to their respectively tables, in this way an event can be created only 
     if it is attached to an existing person and service, and if we delete a person, or
     a service, all the events linked to them will be deleted as consequence.
-    Instead, if we delete an event, nothing happens. <br>
+    If a service is eliminated, nothing happens. <br>
     Similarly, in the table of the relationship between people and services,
     if we delete a specific relation nothing happens, but if we delete
     a service, or a person, all the relationships related to it will
-    be eliminated. Moreover it's impossible to create a relationship 
-    between a person and a service if one of the two ids does not correspond
+    be eliminated. Moreover, it's impossible to create a relationship 
+    between a person and a service if one of the two IDs does not correspond
     to an already existing person or service, and this holds also for
     the main service's id in the person's table.<br>
-    The user table stores all the users that have created an account, it is not
+    The user table stores all the users that have created an account: it is not
     possible to sign up a user with a username that is already used.
-    The newsletter table and takes track of the email of who is registered to the
-    association's newsletter. It is not possible to register the same email two times.<br>
+    The newsletter table keeps track of the email of who is registered to the
+    association's newsletter. It is not possible to register the same email twice.<br>
     The contact form table is used to store all the messages, and the associated email,
-    that are sent to the association through the page 'contact us'.<br>
+    that are sent to the association through the page Contact us.<br>
     
     
 
@@ -343,8 +343,8 @@
     </p>
     <p>
       The backend of the application has been implemented with NodeJS, where the
-      server framework Express has been used to created the server. We used Postgres 
-      for the data storage. We used Swagger to generate and manage the 
+      server framework Express has been used to created the server. We use Postgres 
+      for the data storage. We use Swagger to generate and manage the 
       specification.
     </p>
     <h3>Discussion
@@ -356,7 +356,7 @@
     <p>
       We actually started from the OpenAPI specification to build the project, 
       and during the process of building the web application, we changed and 
-      manipulated the specification in order to keep it updated and coherent 
+      manipulated the specification in order to keep it updated and consistenr 
       with the state of our project.
       We tested the operations via
       <a href="https://afronlus.herokuapp.com/backend/swaggerui">SwaggerUI</a>. 
@@ -371,7 +371,7 @@
       We think our web application adheres to common practices to partition
       the web application because we have separated the static resources 
       (html, css, js) from the data by putting them respectively on the server
-      and on a remote database, and the data are accessed through specific
+      and on a remote database, and the data is accessed through specific
       calls.
     </p>
     <p class="question">
@@ -382,11 +382,11 @@
       We used cookie-session and cookie-parser for the session state.
       The idea is that a user can access his own page to see how his contribution 
       is helping the association, he can receive letters or photo concerning distance
-      adoption or the progress of a specific services.<br>
-      As soon as the user registers, his data are stored in the database,
-      and when a user does the login, a new session is generated, contening
+      adoption or the progress of a specific service.<br>
+      As soon as the user registers, his data is stored in the database,
+      and when a user logs in, a new session is generated, contening
       all the information about him, in this way he can navigate the website
-      remaining logged in, until he does the logout that will destroy that 
+      remaining logged in, until he logs out thus destroying that 
       session.
     </p>
     <p class="question">
@@ -408,7 +408,7 @@
     specification and why (at least two)."
     ></p>
     <p>
-      We was inspired by this simple and practical example:
+      We were inspired by this simple and practical example:
       <a href="https://petstore.swagger.io/">Swagger Petstore</a>, moreover
       we explored the swagger documentation and we watched several swagger tutorials
       on youtube.<br>
@@ -429,7 +429,7 @@
       the posts on stackoverflow, he slowly became familiar with the environment.
       Additionally, he got a basic knowledge of HTML and CSS and he learnt how 
       to use github and a platform such as Heroku.
-      .<br>
+      <br>
       - Federico Pozzi comes from Design school, he had the chance to improve his coding skills, particularly css, html and javascript, becoming able to build from scratch a full website. 
 Moreover he got aware of the functionality of a database and SQL, by discovering how the architecture is made and how It works. He thinks that all the knowledge he learned in this course will be a solid base for his future.<br>
       - Andrea Silvano has learned the basics of Database and how to link a DB to the frontend. Currently enrolled in the Master's Degree in Communication Design thanks to Hypermedia application is now able to develop static webpages with ease and furthermore implementing some notions of basic database in the webpage. Thanks to this course he's now able to fluently work with HTML, CSS, JS and DB entries.
