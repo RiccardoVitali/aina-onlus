@@ -147,18 +147,18 @@
     </p>
     <p>
       We'll describe our approach to REST principles by targeting their main 
-      points, explaining if and why we followed those principles.
+      points, explaining if and why we followed those principles.<br>
       - Uniform Interface: this is fundamental to the REST Api design and we 
       did our best to follow this principle. Our interface is resource based 
-      and we use HATEOAS (Hypermedia as the Engine of Application State).
+      and we use HATEOAS (Hypermedia as the Engine of Application State).<br>
       - Client-Server: the client application and server application are totally 
-      able to evolve separately without any dependency on each other.
+      able to evolve separately without any dependency on each other.<br>
       - Stateless: we obviously could not make our application stateless, as 
       session management was requested. However, after a user logs in, each 
       request from the client contain all the information necessary to service 
       the request, including authentication and authorization details: we used 
       a light session management that is not invasive and preserve the REST Api 
-      foundamentals.
+      foundamentals.<br>
       - Layered System: the system is layered, as the server is deployed in a 
       place other than the one where the postgres server is.
       <!--
