@@ -323,8 +323,10 @@
     between a person and a service if one of the two ids does not correspond
     to an already existing person or service, and this holds also for
     the main service's id in the person's table.<br>
+    The user table stores all the users that have created an account, it is not
+    possible to sign up a user with a username that is already used.
     The newsletter table and takes track of the email of who is registered to the
-    association's newsletter. <br>
+    association's newsletter. It is not possible to register the same email two times.<br>
     The contact form table is used to store all the messages, and the associated email,
     that are sent to the association through the page 'contact us'.<br>
     
@@ -356,17 +358,10 @@
       and during the process of building the web application, we changed and 
       manipulated the specification in order to keep it updated and coherent 
       with the state of our project.
-      We documented the routes in the web application and testing the
-      operations via
+      We tested the operations via
       <a href="https://afronlus.herokuapp.com/backend/swaggerui">SwaggerUI</a>. 
       However, requests from newsletter, contact-form and signup are internally 
       managed.
-      <!--
-      login with example user works but future request will not
-      include session id and therefore routes that need authentication will not
-      be allowed from SwaggerUI. The reason for this is that "...for Swagger UI
-      and Swagger Editor Cookie authentication is currently not supported for
-      "try it out" requests due to browser security restrictions."-->
     </p>
     <p class="question">
       - Why do you think your web application adheres to common practices to
@@ -378,11 +373,6 @@
       (html, css, js) from the data by putting them respectively on the server
       and on a remote database, and the data are accessed through specific
       calls.
-      <!--
-      The Node module serve-static is used to serve a folder named www
-      containing html pages.
-      While the application data, in this case as JSON, will be served when the
-      different routes are accessed with the help of Express. -->
     </p>
     <p class="question">
       - Describe synthetically why and how did you manage session state, what
@@ -391,29 +381,13 @@
     <p>
       We used cookie-session and cookie-parser for the session state.
       The idea is that a user can access his own page to see how his contribution 
-      is helping the association, like letters or photo concerning distance
-      adoption or the progress of specific services.<br>
+      is helping the association, he can receive letters or photo concerning distance
+      adoption or the progress of a specific services.<br>
       As soon as the user registers, his data are stored in the database,
       and when a user does the login, a new session is generated, contening
       all the information about him, in this way he can navigate the website
       remaining logged in, until he does the logout that will destroy that 
       session.
-      <!--The application is using express-session to help to manage session. In
-      this version of the default server-side session storage, MemoryStore is
-      used. This is not something that should be in a real production since it
-      will often leak memory and scale badly. The reason why I have used it is
-      easier to manage during development.-->
-    </p>
-    <p>
-      <!--Three actions exists to change session state: <br />
-      POST to /user/signup with username and password in body: will create new
-      session if username is not taken.
-      <br />
-      POST to /user/login with username and password: will create new session if
-      username and password match.
-      <br />
-      POST to /user/logut with session in header: will destroy the session
-      provided in the header.-->
     </p>
     <p class="question">
       - Which technology did you use (relational or a no-SQL database) for
@@ -449,12 +423,13 @@
     </p>
     <p>
       - Riccardo Vitali had never seen a javascript code before in his life and he 
-      had never worked with databases or websites.<br>
-      So he had to learn everything from scratch, the effort was great but,
+      had never worked with databases or websites, so he had to learn everything 
+      from scratch, the effort was great but,
       thanks to Professor Zaccaria's lectures, the many videos on youtube and
       the posts on stackoverflow, he slowly became familiar with the environment.
-      Additionally, he learnt how to use github and a platform such as Heroku and 
-      he got a basic knowledge of HTML and CSS.<br>
+      Additionally, he got a basic knowledge of HTML and CSS and he learnt how 
+      to use github and a platform such as Heroku.
+      .<br>
       - Federico Pozzi...  -----------------------DA FARE
       - Andrea Silvano...  -----------------------DA FARE
     </p>
