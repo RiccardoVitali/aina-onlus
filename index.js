@@ -52,8 +52,8 @@ swaggerTools.initializeMiddleware(swaggerDoc, function (middleware) {
   app.use(middleware.swaggerUi());
   app.use(serveStatic(__dirname));
 
-  app.use(serveStatic(__dirname + '/public'));
-  app.use(serveStatic(__dirname + '/public/pages'));
+  //app.use(serveStatic(__dirname + '/public'));
+  //app.use(serveStatic(__dirname + '/public/pages'));
   app.use(express.static('public'));
 
 
