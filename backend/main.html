@@ -161,14 +161,6 @@
       foundamentals.<br>
       - Layered System: the system is layered, as the server is deployed in a 
       place other than the one where the postgres server is.
-      <!--
-      The Rest API could be considered to be of maturity level 2. Level 1: It
-      take advantage of resources, where every resource has it own URI: Level 2:
-      It takes advantage HTTP verbs, status codes, and query parameters is used.
-      Level 3: No Hateoas is implemented, the responses don’t include any links.
-      The reason why Level 3 is not implemented was to make the implementation
-      simpler, since I don’t have any previous experience with it and wanted to
-      focus on other parts. -->
     </p>
     <h4>OpenAPI Resource models</h4>
     <p class="question">
@@ -307,7 +299,7 @@
     </p>
     The relationship between entities is the following:
     a person can work for several services and can organize numerous events,
-    but each person has a main service (each person works mainly on one service).
+    but each person has only one main service (each person works mainly on one service).
     People related to a person are those who work for the main service
     of the person. <br>
     An event can support only one service but a service can be supported by
@@ -318,8 +310,6 @@
     In order to manage the relationship between people and services
     we have created a specific table. Each row of this table is formed by
     the person's id and the service's id. <br>
-    The newsletter table takes track of the email of who is registered to the
-    association's newsletter. <br>
     Tables are linked in a suitable way in order to avoid future mistakes:
     person's id and service's id, in the events' table, are directly linked
     to their respectively tables, in this way an event can be created only 
@@ -332,7 +322,11 @@
     be eliminated. Moreover it's impossible to create a relationship 
     between a person and a service if one of the two ids does not correspond
     to an already existing person or service, and this holds also for
-    the main service's id in the people's table.<br>
+    the main service's id in the person's table.<br>
+    The newsletter table and takes track of the email of who is registered to the
+    association's newsletter. <br>
+    The contact form table is used to store all the messages, and the associated email,
+    that are sent to the association through the page 'contact us'.<br>
     
     
 
