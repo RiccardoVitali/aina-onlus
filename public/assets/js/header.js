@@ -8,44 +8,44 @@ fetch("v1/users/me").then(function(response){
   var ass;
   var cont;
   var supp;
-  
+
     if(loc.substring(31)=="allservices.html" || loc.substring(31,38)=="service"){
-      service="active"
+      service="active";
     }
     else{
-      service="";  
+      service="";
     }
     if(loc.substring(31)=="allevents.html" || loc.substring(31,36)=="event"){
-      event="active"
+      event="active";
     }
     else{
-      event="";  
+      event="";
     }
     if(loc.substring(31)=="allpeople.html" || loc.substring(31,37)=="person"){
-      person="active"
+      person="active";
     }
     else{
-      person="";  
+      person="";
     }
     if(loc.substring(31)=="association.html"){
-      ass="active"
+      ass="active";
     }
     else{
-      ass="";  
+      ass="";
     }
     if(loc.substring(31)=="contactus.html"){
-      cont="active"
+      cont="active";
     }
     else{
-      cont="";  
+      cont="";
     }
     if(loc.substring(31)=="supportus.html" || loc.substring(31)=="pay.html"){
-      supp="active"
+      supp="active";
     }
     else{
-      supp="";  
+      supp="";
     }
-    
+
 
     if(res.error!=undefined){
       document.getElementById("header1").innerHTML = `<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-white">

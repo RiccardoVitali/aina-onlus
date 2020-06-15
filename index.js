@@ -52,8 +52,8 @@ swaggerTools.initializeMiddleware(swaggerDoc, function (middleware) {
   app.use(middleware.swaggerUi());
   app.use(serveStatic(__dirname));
 
-  app.use(serveStatic(__dirname + '/www'));
-  app.use('/assets', express.static('assets'));
+  app.use(serveStatic(__dirname + '/pages'));
+  app.use('/public', express.static('public'));
 
 
   //NEWSLETTER-NEWSLETTER-NEWSLETTER-NEWSLETTER-NEWSLETTER
@@ -124,8 +124,8 @@ swaggerTools.initializeMiddleware(swaggerDoc, function (middleware) {
 
     })
   });
-  
-  
+
+
     // SIGN UP --- SIGN UP --- SIGN UP --- SIGN UP --- SIGN UP --- SIGN UP --- SIGN UP --- SIGN UP ---
   var User = require('./service/UserService');
 
