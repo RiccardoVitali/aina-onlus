@@ -49,6 +49,7 @@ swaggerTools.initializeMiddleware(swaggerDoc, function (middleware) {
   app.use(middleware.swaggerRouter(options));
 
   // Serve the Swagger documents and Swagger UI
+
   app.use(middleware.swaggerUi());
   app.use(serveStatic(__dirname));
 
