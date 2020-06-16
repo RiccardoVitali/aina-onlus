@@ -311,7 +311,6 @@ paths:
       tags:
         - user
       description: Logout user
-      operationId: usersLogout
       consumes:
       - "application/x-www-form-urlencoded"
       produces:
